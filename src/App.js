@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/navBar";
+import React from "react";
+import { Route, Redirect, BrowserRouter } from "react-router-dom";
+import LiveSessions from "./components/liveSessions";
+import HomeBody from "./components/homeBody";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <NavBar />
+        <main className="Container">
+          <Route path="/live-sessions" component={LiveSessions}></Route>
+          <Route path="/" exact component={HomeBody}></Route>
+          <Redirect to="/not-found" />
+          <Redirect from="/home" to="/" />
+        </main>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
