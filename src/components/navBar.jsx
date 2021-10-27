@@ -31,7 +31,7 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/contact-us">
-                Contact us
+                Contact uss
               </NavLink>
             </li>
             <ul className="navbar-nav position-absolute end-0 mx-3">
