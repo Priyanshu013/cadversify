@@ -1,8 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "aos/dist/aos.css";
+import Aos from "aos";
+import "./components.css";
+import { FaUserGraduate } from "react-icons/fa";
 
 class HomeBody extends React.Component {
   render() {
+    Aos.init();
     return (
       <div>
         <section className="p-5">
@@ -19,7 +24,6 @@ class HomeBody extends React.Component {
                   Connect your first call for free! >
                 </NavLink>
               </p>
-              <i className="fas fa-user-tie"></i>
             </div>
           </div>
         </section>
@@ -33,38 +37,16 @@ class HomeBody extends React.Component {
             <div className="row icon-boxes">
               <div
                 className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
-                data-aos="zoom-in"
+                data-aos="zoom-in-up"
                 data-aos-delay="200"
               >
                 <div className="icon-box">
-                  <div className="icon">
-                    <i className="ri-stack-line"></i>
-                  </div>
+                  <h3 className="icon-box-icons">
+                    <FaUserGraduate />
+                  </h3>
                   <h4 className="title">
-                    <a href="">Become an opportunist</a>
+                    <a href="">Lorem Ipsum</a>
                   </h4>
-                  <p className="description">
-                    Choose this If you are here to learn from experienced
-                    professionals who are working in your dream career for
-                    years.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
-                data-aos="zoom-in"
-                data-aos-delay="300"
-              >
-                <div className="icon-box">
-                  <div className="icon"></div>
-                  <h4 className="title">
-                    <a href="">Sed ut perspiciatis</a>
-                  </h4>
-                  <p className="description">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore
-                  </p>
                 </div>
               </div>
             </div>
