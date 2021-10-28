@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import "./components.css";
@@ -45,7 +45,7 @@ class HomeBody extends React.Component {
                     <FaUserGraduate />
                   </h3>
                   <h4 className="title">
-                    <a href="">Lorem Ipsum</a>
+                    <Link to="">Lorem Ipsum</Link>
                   </h4>
                 </div>
               </div>
