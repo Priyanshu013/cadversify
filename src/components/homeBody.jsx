@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import "./components.css";
 import { FaUserGraduate } from "react-icons/fa";
-import sitelogo from "./site_assets/brand_logo.png";
+import { FaUserTie } from "react-icons/fa";
 
 class HomeBody extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class HomeBody extends React.Component {
               </h1>
               <p className="lead text-muted"></p>
               <p>
-                <NavLink to="" className="btn btn-warning my-2">
+                <NavLink to="" className="btn btn-warning my-2 card">
                   Connect your first call for free! >
                 </NavLink>
               </p>
@@ -31,12 +31,12 @@ class HomeBody extends React.Component {
 
         <section id="hero">
           <div
-            className="container position-relative"
+            className="container position-relative ml-auto"
             data-aos="zoom-in-up"
             data-aos-delay="200"
           >
             <span
-              className="card text-black bg-light mb-3"
+              className="card text-black bg-light mb-3 card-top-margin "
               style={{ width: 150, height: 190 }}
             >
               <h3 className="icon-box-icons">
@@ -53,11 +53,11 @@ class HomeBody extends React.Component {
               style={{ width: 150, height: 190 }}
             >
               <h3 className="icon-box-icons">
-                <FaUserGraduate />
+                <FaUserTie />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
                 <NavLink to="" style={{ color: "red" }}>
-                  Become an opportunist
+                  Become a Cadvocate
                 </NavLink>
               </h4>
             </span>

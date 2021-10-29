@@ -1,6 +1,6 @@
 import React from "react";
 
-class LiveSessions extends React.Component {
+class Features extends React.Component {
   render() {
     return (
       <div>
@@ -13,4 +13,4 @@ class LiveSessions extends React.Component {
   }
 }
 
-export default LiveSessions;
+export default Features;

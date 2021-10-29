@@ -35,20 +35,14 @@ const NavBar = () => {
               </NavLink>
             </li>
             <ul className="navbar-nav position-absolute end-0 mx-3">
-              {/*      
-              SIGN UP BUTTON         
-              <li className="nav-item px-2">
-                <button className="btn btn-primary navbar-buttons ">
-                  Join
-                </button>
+              <li className="nav-item px">
+                <NavLink to="" className="btn btn-outline-primary card">
+                  Student Login
+                </NavLink>
               </li>
-              */}
-              <li className="nav-item px-4">
-                <NavLink
-                  to=""
-                  className="btn btn-outline-primary navbar-buttons "
-                >
-                  Login
+              <li className="nav-item px-0">
+                <NavLink to="" className="btn btn-outline-primary card ">
+                  Cadvocate Login
                 </NavLink>
               </li>
             </ul>
