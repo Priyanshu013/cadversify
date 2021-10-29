@@ -6,7 +6,7 @@ import sitelogo from "./site_assets/brand_logo.png";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light position-relative ">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light collapse.navbar-collapse position-relative ">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img src={sitelogo} className="navbar-brand" alt="" />
@@ -44,9 +44,12 @@ const NavBar = () => {
               </li>
               */}
               <li className="nav-item px-4">
-                <button className="btn btn-outline-primary navbar-buttons ">
+                <NavLink
+                  to=""
+                  className="btn btn-outline-primary navbar-buttons "
+                >
                   Login
-                </button>
+                </NavLink>
               </li>
             </ul>
           </ul>

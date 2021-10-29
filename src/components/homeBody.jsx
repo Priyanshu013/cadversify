@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import "./components.css";
 import { FaUserGraduate } from "react-icons/fa";
+import sitelogo from "./site_assets/brand_logo.png";
 
 class HomeBody extends React.Component {
   render() {
@@ -28,28 +29,38 @@ class HomeBody extends React.Component {
           </div>
         </section>
 
-        <section id="hero" className="d-flex align-items-center">
+        <section id="hero">
           <div
             className="container position-relative"
-            data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos="zoom-in-up"
+            data-aos-delay="200"
           >
-            <div className="row icon-boxes">
-              <div
-                className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
-                data-aos="zoom-in-up"
-                data-aos-delay="200"
-              >
-                <div className="icon-box">
-                  <h3 className="icon-box-icons">
-                    <FaUserGraduate />
-                  </h3>
-                  <h4 className="title">
-                    <Link to="">Lorem Ipsum</Link>
-                  </h4>
-                </div>
-              </div>
-            </div>
+            <span
+              className="card text-black bg-light mb-3"
+              style={{ width: 150, height: 190 }}
+            >
+              <h3 className="icon-box-icons">
+                <FaUserGraduate />
+              </h3>
+              <h4 className="title" style={{ textAlign: "center" }}>
+                <NavLink to="" style={{ color: "red" }}>
+                  Become an opportunist
+                </NavLink>
+              </h4>
+            </span>
+            <span
+              className="card text-black bg-light mb-3"
+              style={{ width: 150, height: 190 }}
+            >
+              <h3 className="icon-box-icons">
+                <FaUserGraduate />
+              </h3>
+              <h4 className="title" style={{ textAlign: "center" }}>
+                <NavLink to="" style={{ color: "red" }}>
+                  Become an opportunist
+                </NavLink>
+              </h4>
+            </span>
           </div>
         </section>
       </div>
