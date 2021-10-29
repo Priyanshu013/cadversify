@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components.css";
 import sitelogo from "./site_assets/brand_logo.png";
@@ -36,14 +36,18 @@ const NavBar = () => {
             </li>
             <ul className="navbar-nav position-absolute end-0 mx-3">
               <li className="nav-item px">
-                <NavLink to="" className="btn btn-outline-primary card">
-                  Student Login
-                </NavLink>
+                <Link to="" style={{ textDecoration: "none" }}>
+                  <button className="btn btn-outline-primary card">
+                    Student Login
+                  </button>
+                </Link>
               </li>
               <li className="nav-item px-0">
-                <NavLink to="" className="btn btn-outline-primary card ">
-                  Cadvocate Login
-                </NavLink>
+                <Link to="" style={{ textDecoration: "none" }}>
+                  <button to="" className="btn btn-outline-primary card ">
+                    Cadvocate Login
+                  </button>
+                </Link>
               </li>
             </ul>
           </ul>

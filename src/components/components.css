@@ -1,13 +1,14 @@
 .navbar-brand {
   width: 160px;
   height: 100px;
-  padding: 0px 0px 5px 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 .navbar {
   min-height: 5px;
   max-height: 70px;
   font-size: 18px;
+  margin-bottom: -25px;
 }
 
 .icon-box-icons {
@@ -18,7 +19,7 @@
 .card {
   border-radius: 4px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+  transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   display: inline-block;
@@ -32,4 +33,14 @@
 
 .card-top-margin {
   margin-top: 40px;
+}
+
+.home-background {
+  background: url(./site_assets/hom-bg.png) no-repeat center;
+  background-size: cover;
+  height: 550px;
+}
+
+.card-align {
+  text-align: right;
 }

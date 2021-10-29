@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import "./components.css";
@@ -11,41 +11,40 @@ class HomeBody extends React.Component {
     Aos.init();
     return (
       <div>
-        <section className="p-5">
+        <section className="p-0 home-background">
           <div>
             <div className="col-lg-6 mt-4">
-              <h1 style={{ color: "brown" }}>
+              <h1 className="ps-5 pt-5" style={{ color: "#B22222" }}>
                 <strong>
                   <em>Talk to professionals working in your dream career</em>
                 </strong>
               </h1>
               <p className="lead text-muted"></p>
-              <p>
-                <NavLink to="" className="btn btn-warning my-2 card">
+              <p className="ps-5 py-5">
+                <Link to="" className="btn btn-warning my-2 card">
                   Connect your first call for free! >
-                </NavLink>
+                </Link>
               </p>
             </div>
           </div>
-        </section>
 
-        <section id="hero">
           <div
-            className="container position-relative ml-auto"
-            data-aos="zoom-in-up"
-            data-aos-delay="200"
+            className="container position-relative card-align "
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="1000"
           >
             <span
-              className="card text-black bg-light mb-3 card-top-margin "
+              className="card text-black bg-light mb-3 "
               style={{ width: 150, height: 190 }}
             >
               <h3 className="icon-box-icons">
                 <FaUserGraduate />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
-                <NavLink to="" style={{ color: "red" }}>
-                  Become an opportunist
-                </NavLink>
+                <Link to="" style={{ textDecoration: "none" }}>
+                  <p style={{ color: "red" }}>Become an opportunist</p>
+                </Link>
               </h4>
             </span>
             <span
@@ -56,8 +55,8 @@ class HomeBody extends React.Component {
                 <FaUserTie />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
-                <NavLink to="" style={{ color: "red" }}>
-                  Become a Cadvocate
+                <NavLink to="" style={{ textDecoration: "none" }}>
+                  <p style={{ color: "red" }}>Become a Cadvocate</p>
                 </NavLink>
               </h4>
             </span>
