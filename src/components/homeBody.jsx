@@ -5,7 +5,6 @@ import Aos from "aos";
 import "./components.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
-//test
 
 class HomeBody extends React.Component {
   render() {
