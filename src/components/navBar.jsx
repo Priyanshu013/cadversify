@@ -6,7 +6,7 @@ import sitelogo from "./site_assets/brand_logo.png";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light collapse.navbar-collapse position-relative ">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img src={sitelogo} className="navbar-brand" alt="" />

@@ -14,14 +14,18 @@ class HomeBody extends React.Component {
         <section className="p-0 home-background">
           <div>
             <div className="col-lg-6 mt-4">
-              <h1 className="ps-5 pt-5" style={{ color: "#B22222" }}>
+              <h1 className="ps-5 pt-5" style={{ fontSize: 50 }}>
                 <strong>
                   <em>Talk to professionals working in your dream career</em>
                 </strong>
               </h1>
               <p className="lead text-muted"></p>
               <p className="ps-5 py-5">
-                <Link to="" className="btn btn-warning my-2 card">
+                <Link
+                  to=""
+                  className="btn btn-warning my-2 card"
+                  style={{ fontSize: 20 }}
+                >
                   Connect your first call for free! >
                 </Link>
               </p>
@@ -35,8 +39,8 @@ class HomeBody extends React.Component {
             data-aos-duration="1000"
           >
             <span
-              className="card text-black bg-light mb-3 "
-              style={{ width: 150, height: 190 }}
+              className="card text-black bg-light "
+              style={{ width: 180, height: 220 }}
             >
               <h3 className="icon-box-icons">
                 <FaUserGraduate />
@@ -48,8 +52,8 @@ class HomeBody extends React.Component {
               </h4>
             </span>
             <span
-              className="card text-black bg-light mb-3"
-              style={{ width: 150, height: 190 }}
+              className="card text-black bg-light "
+              style={{ width: 180, height: 220 }}
             >
               <h3 className="icon-box-icons">
                 <FaUserTie />

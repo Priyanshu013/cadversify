@@ -3,13 +3,14 @@ import NavBar from "./components/navBar";
 import React from "react";
 import { Route, Redirect, BrowserRouter } from "react-router-dom";
 import LiveSessions from "./components/liveSessions";
+import "./components/components.css";
 import HomeBody from "./components/homeBody";
 import Features from "./components/features";
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter className="home-background">
         <NavBar />
         <main className="Container">
           <Route path="/live-sessions" component={LiveSessions}></Route>
