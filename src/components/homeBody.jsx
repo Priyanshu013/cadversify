@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import "./components.css";
+import "./CSS/homeBody.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
 
@@ -13,7 +13,7 @@ class HomeBody extends React.Component {
       <div>
         <section className="p-0 home-background">
           <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <h1 className="ps-5 pt-5 tag-line">
+            <h1 className="ps-5 pt-5 tag-line top-margin">
               <strong>
                 <em>You dream, we envision</em>
               </strong>
