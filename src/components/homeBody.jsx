@@ -12,13 +12,19 @@ class HomeBody extends React.Component {
     return (
       <div>
         <section className="p-0 home-background">
-          <div>
+          <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+            <h1 className="ps-5 pt-5 tag-line">
+              <strong>
+                <em>You dream, we envision</em>
+              </strong>
+            </h1>
+
             <div className="col-lg-6 mt-4">
-              <h1 className="ps-5 pt-5" style={{ fontSize: 50 }}>
+              <h2 className="ps-5 pt-2">
                 <strong>
                   <em>Talk to professionals working in your dream career</em>
                 </strong>
-              </h1>
+              </h2>
               <p className="lead text-muted"></p>
               <p className="ps-5 py-5">
                 <Link
@@ -33,13 +39,13 @@ class HomeBody extends React.Component {
           </div>
 
           <div
-            className="container position-relative card-align "
+            className="container position-relative card-align card-deck "
             data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-duration="1000"
+            data-aos-delay="1000"
+            data-aos-duration="2000"
           >
             <span
-              className="card text-black bg-light "
+              className="card text-black bg-light border-dark"
               style={{ width: 180, height: 220 }}
             >
               <h3 className="icon-box-icons">
@@ -52,7 +58,7 @@ class HomeBody extends React.Component {
               </h4>
             </span>
             <span
-              className="card text-black bg-light "
+              className="card text-black border-dark "
               style={{ width: 180, height: 220 }}
             >
               <h3 className="icon-box-icons">

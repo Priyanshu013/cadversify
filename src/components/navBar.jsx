@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components.css";
-import sitelogo from "./site_assets/brand_logo.png";
+import sitelogo from "./site_assets/brand_logo_1.png";
 
 const NavBar = () => {
   return (
@@ -15,7 +15,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" exact to="/">
                 Home
               </NavLink>
             </li>
@@ -36,18 +36,18 @@ const NavBar = () => {
             </li>
             <ul className="navbar-nav position-absolute end-0 mx-3">
               <li className="nav-item px">
-                <Link to="" style={{ textDecoration: "none" }}>
+                <NavLink to="" style={{ textDecoration: "none" }}>
                   <button className="btn btn-outline-primary card">
                     Student Login
                   </button>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item px-0">
-                <Link to="" style={{ textDecoration: "none" }}>
+                <NavLink to="" style={{ textDecoration: "none" }}>
                   <button to="" className="btn btn-outline-primary card ">
                     Cadvocate Login
                   </button>
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </ul>
