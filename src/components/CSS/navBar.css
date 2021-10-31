@@ -1,0 +1,13 @@
+.navbar-brand {
+  width: 280px;
+  height: 55px;
+  padding: 0px 0px 0px 0px;
+}
+
+.navbar {
+  min-height: 75px;
+  max-height: 90px;
+  font-size: 22px;
+  background-color: rgb(255, 255, 255);
+  border-color: #e6d9d944;
+}

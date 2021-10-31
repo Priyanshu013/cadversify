@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./components.css";
 import sitelogo from "./site_assets/brand_logo_1.png";
 
 const NavBar = () => {
@@ -42,7 +41,7 @@ const NavBar = () => {
                   </button>
                 </NavLink>
               </li>
-              <li className="nav-item px-0">
+              <li className="nav-item ">
                 <NavLink to="" style={{ textDecoration: "none" }}>
                   <button to="" className="btn btn-outline-primary card ">
                     Cadvocate Login

@@ -12,7 +12,7 @@ class HomeBody extends React.Component {
     return (
       <div>
         <section className="p-0 home-background">
-          <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+          <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <h1 className="ps-5 pt-5 tag-line">
               <strong>
                 <em>You dream, we envision</em>
