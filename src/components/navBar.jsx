@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./CSS/navBar.css";
 import sitelogo from "./site_assets/brand_logo_1.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = () => {
   return (
@@ -30,28 +30,36 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact-us">
-                Contact us
+              <NavLink className="nav-link" to="/about">
+                About
               </NavLink>
             </li>
-            <ul className="navbar-nav position-absolute end-0 mx-3">
-              <li className="nav-item px">
-                <NavLink to="">
-                  <button className="btn btn-outline-primary card">
-                    Student Login
-                  </button>
-                </NavLink>
-              </li>
-              <li className="nav-item ">
-                <NavLink to="">
-                  <button to="" className="btn btn-outline-primary card ">
-                    Cadvocate Login
-                  </button>
-                </NavLink>
-              </li>
-            </ul>
           </ul>
         </div>
+        <ul className="navbar-nav position-absolute end-0 mx-3 inline">
+          <li className="nav-item px">
+            <NavLink to="">
+              <button className="btn btn-outline-primary buttons">
+                Opportunist Login
+              </button>
+            </NavLink>
+          </li>
+          <li className="nav-item ">
+            <NavLink to="">
+              <button to="" className="btn btn-outline-primary buttons ">
+                Cadvocate Login
+              </button>
+            </NavLink>
+          </li>
+        </ul>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
       </div>
     </nav>
   );

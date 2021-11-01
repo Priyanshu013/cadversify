@@ -8,11 +8,10 @@
   min-height: 75px;
   max-height: 90px;
   font-size: 20px;
-  background-color: rgb(255, 255, 255);
-  border-color: #e6d9d944;
+  background-color: rgb(231, 228, 228);
 }
 
-.card {
+.buttons {
   border-radius: 4px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
@@ -20,9 +19,10 @@
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   display: inline-block;
   margin-right: 20px;
+  border-radius: 12px;
 }
 
-.card:hover {
+.buttons:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }

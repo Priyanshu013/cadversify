@@ -5,49 +5,36 @@ import Aos from "aos";
 import "./CSS/homeBody.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
+import LowerHomeBody from "./lowerHomeBody";
 
 class HomeBody extends React.Component {
   render() {
     Aos.init();
     return (
       <div>
-        <section className="p-0 home-background">
+        <section className="home-background body">
           <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <h1 className="ps-5 pt-5 tag-line top-margin">
-              <strong>
-                <em>You dream, we envision</em>
-              </strong>
+            <h1 className="ps-5 pt-5">
+              <div className="col-lg-7 mt-4">
+                <h2 className="ps-5 pt-2 headline">
+                  Talk to professionals working in your dream career
+                </h2>
+                <p className="ps-5 py-5">
+                  <Link to="" className="btn btn-warning my-2 head-button">
+                    Connect your first call for free! >
+                  </Link>
+                </p>
+              </div>
             </h1>
-
-            <div className="col-lg-6 mt-4">
-              <h2 className="ps-5 pt-2">
-                <strong>
-                  <em>Talk to professionals working in your dream career</em>
-                </strong>
-              </h2>
-              <p className="lead text-muted"></p>
-              <p className="ps-5 py-5">
-                <Link
-                  to=""
-                  className="btn btn-warning my-2 card"
-                  style={{ fontSize: 20 }}
-                >
-                  Connect your first call for free! >
-                </Link>
-              </p>
-            </div>
           </div>
 
           <div
-            className="container position-relative card-align card-deck "
+            className="container position-relative card-align card-deck pt-3 "
             data-aos="fade-up"
             data-aos-delay="1000"
             data-aos-duration="2000"
           >
-            <span
-              className="card text-black bg-light border-dark"
-              style={{ width: 180, height: 220 }}
-            >
+            <span className="card text-black border-dark ">
               <h3 className="icon-box-icons">
                 <FaUserGraduate />
               </h3>
@@ -57,10 +44,7 @@ class HomeBody extends React.Component {
                 </Link>
               </h4>
             </span>
-            <span
-              className="card text-black border-dark "
-              style={{ width: 180, height: 220 }}
-            >
+            <span className="card text-black border-dark ">
               <h3 className="icon-box-icons">
                 <FaUserTie />
               </h3>
@@ -72,6 +56,7 @@ class HomeBody extends React.Component {
             </span>
           </div>
         </section>
+        <LowerHomeBody />
       </div>
     );
   }
