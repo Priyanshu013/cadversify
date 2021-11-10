@@ -1,6 +1,6 @@
 .quote-carding {
   border-radius: 4px;
-  transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 2.12),
+  transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 0.12),
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   display: inline-block;
@@ -10,12 +10,12 @@
 
 .quote-carding:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 20px rgb(61, 184, 255), 0 4px 8px rgb(206, 206, 206);
 }
 
 .quote-text {
   font-family: algerian;
-  color: brown;
+  color: red;
   font-size: xxx-large;
 }
 
