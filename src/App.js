@@ -26,10 +26,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-//changes
-//changed nothing
-//once again
-//again
-//why why why
-//why?
