@@ -10,7 +10,7 @@ import About from "./components/about";
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter className="home-background">
+      <BrowserRouter>
         <NavBar />
         <main className="Container">
           <Route path="/live-sessions" component={LiveSessions}></Route>
