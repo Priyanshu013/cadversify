@@ -26,7 +26,6 @@ class HomeBody extends React.Component {
                 </p>
               </div>
             </h1>
-<<<<<<< HEAD
 
             <div className="col-lg-6 mt-4">
               <h2 className="ps-5 pt-2">
@@ -45,8 +44,6 @@ class HomeBody extends React.Component {
                 </Link>
               </p>
             </div>
-=======
->>>>>>> 136cb34f30156778fbf7d1bfa9c4bd1b2efc0020
           </div>
 
           <div
