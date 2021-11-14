@@ -32,7 +32,7 @@ class HomeBody extends React.Component {
                   className="btn btn-warning my-2 card"
                   style={{ fontSize: 20 }}
                 >
-                  Connect your first call for free! >
+                  Connect your first call for free! 
                 </Link>
               </p>
             </div>
