@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b15cd6b.chunk.css",
+    "main.js": "/static/js/main.8576c1e3.chunk.js",
+    "main.js.map": "/static/js/main.8576c1e3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1730f29f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1730f29f.js.map",
+    "static/css/2.37248984.chunk.css": "/static/css/2.37248984.chunk.css",
+    "static/js/2.c4efadd7.chunk.js": "/static/js/2.c4efadd7.chunk.js",
+    "static/js/2.c4efadd7.chunk.js.map": "/static/js/2.c4efadd7.chunk.js.map",
+    "static/js/3.982f1728.chunk.js": "/static/js/3.982f1728.chunk.js",
+    "static/js/3.982f1728.chunk.js.map": "/static/js/3.982f1728.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.37248984.chunk.css.map": "/static/css/2.37248984.chunk.css.map",
+    "static/css/main.7b15cd6b.chunk.css.map": "/static/css/main.7b15cd6b.chunk.css.map",
+    "static/js/2.c4efadd7.chunk.js.LICENSE.txt": "/static/js/2.c4efadd7.chunk.js.LICENSE.txt",
+    "static/media/brand_logo_1.4d6e8d62.png": "/static/media/brand_logo_1.4d6e8d62.png",
+    "static/media/components.css": "/static/media/home-bg.8bcd8097.png",
+    "static/media/liveSessions.css": "/static/media/nature.25f05b50.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1730f29f.js",
+    "static/css/2.37248984.chunk.css",
+    "static/js/2.c4efadd7.chunk.js",
+    "static/css/main.7b15cd6b.chunk.css",
+    "static/js/main.8576c1e3.chunk.js"
+  ]
+}

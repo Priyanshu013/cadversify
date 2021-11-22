@@ -26,6 +26,24 @@ class HomeBody extends React.Component {
                 </p>
               </div>
             </h1>
+
+            <div className="col-lg-6 mt-4">
+              <h2 className="ps-5 pt-2">
+                <strong>
+                  <em>Talk to professionals working in your dream career</em>
+                </strong>
+              </h2>
+              <p className="lead text-muted"></p>
+              <p className="ps-5 py-5">
+                <Link
+                  to=""
+                  className="btn btn-warning my-2 card"
+                  style={{ fontSize: 20 }}
+                >
+                  Connect your first call for free! 
+                </Link>
+              </p>
+            </div>
           </div>
 
           <div
