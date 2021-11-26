@@ -16,9 +16,9 @@ class App extends React.Component {
           <Route path="/live-sessions" component={LiveSessions}></Route>
           <Route path="/features" component={Features}></Route>
           <Route path="/about" component={About}></Route>
-          <Route path="/" exact component={HomeBody}></Route>
           <Redirect to="/not-found" />
           <Redirect from="/home" to="/" />
+          <Route path="/" exact component={HomeBody}></Route>
         </main>
       </BrowserRouter>
     );

@@ -9,24 +9,32 @@ class LiveSessions extends React.Component {
     Aos.init();
     return (
       <div className="livesession-bg">
-        <div className="contact-form">
-          <h2>Sign in to join the Live Session</h2>
-          <form>
-            <p>Email</p>
-            <input placeholder="Enter Email" type="email" />
-            <p>Password</p>
-            <input placeholder="Enter Password" type="password" />{" "}
-            <input type="submit" defaultValue="Sign in" />
-            <p>
-              <input type="checkbox" />
-              Remember Me
-            </p>
-            <p>
-              <Link to="" style={{ textAlign: "center", fontSize: 20 }}>
-                New User?
-              </Link>
-            </p>
-          </form>
+        <div>
+          <div
+            className="contact-form"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+          >
+            <h2>Sign in to join the Live Session</h2>
+            <form>
+              <p>Email</p>
+              <input placeholder="Enter Email" type="email" />
+              <p>Password</p>
+              <input placeholder="Enter Password" type="password" />{" "}
+              <p>
+                <input type="checkbox" />
+                Remember Me
+              </p>
+              <p>
+                <input type="submit" defaultValue="Sign in" />
+
+                <Link to="" style={{ textAlign: "center", fontSize: 20 }}>
+                  New User?
+                </Link>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     );
