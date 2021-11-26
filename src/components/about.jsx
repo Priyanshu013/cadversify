@@ -5,7 +5,7 @@ class About extends React.Component {
     return (
       <div>
         <h1 style={{ textAlign: "center" }} className="pt-5">
-          Ruko jara....sabar karo
+          This feature is under construction...
         </h1>
         <h3 style={{ textAlign: "center" }}>Sorry for inconvinience </h3>
       </div>

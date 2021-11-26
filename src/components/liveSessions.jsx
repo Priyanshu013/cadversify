@@ -11,7 +11,7 @@ class LiveSessions extends React.Component {
       <div className="livesession-bg">
         <div className="contact-form">
           <h2>Sign in to join the Live Session</h2>
-          <form action>
+          <form>
             <p>Email</p>
             <input placeholder="Enter Email" type="email" />
             <p>Password</p>
