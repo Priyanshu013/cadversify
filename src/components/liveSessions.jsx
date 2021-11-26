@@ -9,7 +9,7 @@ class LiveSessions extends React.Component {
     Aos.init();
     return (
       <div className="livesession-bg">
-        <div>
+        <div className="text-center">
           <div
             className="contact-form"
             data-aos="fade-up"
