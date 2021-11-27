@@ -1,76 +1,41 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-}
-body:before {
-  content: "";
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-}
-
-.contact-form {
-  align-content: center;
-  width: 400px;
-  height: 400px;
-  padding: 80px 40px;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.contact-form h2 {
-  margin: 0;
-  padding: 0 0 20px;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-}
-.contact-form p {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: #fff;
-}
-.contact-form input {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.contact-form input[type="email"],
-.contact-form input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-}
-.contact-form input[type="submit"] {
-  height: 30px;
-  color: #fff;
-  font-size: 15px;
-  background: red;
-  cursor: pointer;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  margin-top: 25%;
-}
-.contact-form a {
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-}
-input[type="checkbox"] {
-  width: 20%;
-}
-Link {
-  text-align: center;
-}
-
 .livesession-bg {
   background: url(../site_assets/meeting.png) no-repeat center;
   background-size: 100% 100%;
   height: 900px;
+}
+
+.login-card {
+  height: 450px;
+  width: 400px;
+  padding-top: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgba(218, 218, 218, 0.795);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.form-container {
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.form-container h2 {
+  color: brown;
+  font-family: algerian;
+  font-size: 30px;
+}
+
+.form-container h4 {
+  color: rgb(0, 110, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.login-logo {
+  padding-left: 30px;
 }
