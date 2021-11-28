@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import "./CSS/lowerHomeBody.css";
+import "../CSS/lowerHomeBody.css";
 
 class LowerHomeBody extends React.Component {
   render() {

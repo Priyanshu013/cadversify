@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import "./CSS/homeBody.css";
+import "../CSS/homeBody.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
 import LowerHomeBody from "./lowerHomeBody";

@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import "./CSS/liveSessions.css";
-import sitelogo from "./site_assets/brand_logo_1.png";
+import "../CSS/liveSessions.css";
+import sitelogo from "../site_assets/brand_logo_1.png";
 
 class LiveSessions extends React.Component {
   render() {

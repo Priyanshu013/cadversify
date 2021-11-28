@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import "./CSS/about.css";
+import "../CSS/about.css";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import Priyanshu from "./site_assets/priyanshu.jpg";
-import Aniket from "./site_assets/aniket.jpg";
+import Priyanshu from "../site_assets/priyanshu.jpg";
+import Aniket from "../site_assets/aniket.jpg";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
