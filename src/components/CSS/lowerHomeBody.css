@@ -1,16 +1,16 @@
 .quote-carding {
-  border-radius: 4px;
-  transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 0.12),
+  transition: 1s transform cubic-bezier(0.155, 1.105, 0.295, 0.12),
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   display: inline-block;
-  margin-right: 20px;
   border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  border-style: groove;
 }
 
 .quote-carding:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 20px rgb(61, 184, 255), 0 4px 8px rgb(206, 206, 206);
+  box-shadow: 0 10px 20px rgb(18, 168, 255), 0 4px 8px rgb(206, 206, 206);
 }
 
 .quote-text {
@@ -20,7 +20,7 @@
 }
 
 .home-background-low {
-  background: url(../site_assets/home-lower-bg.jpg) no-repeat center;
+  background: url(../site_assets/lower_home_bg.jpg) no-repeat center;
   background-size: 100% 100%;
   height: 1000px;
 }

@@ -29,7 +29,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-.card {
+.card-home {
   border-radius: 20px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
@@ -38,12 +38,14 @@
   display: inline-block;
   margin-right: 20px;
   display: inline-block;
-  background-color: rgb(240, 239, 239);
+  background-color: rgb(255, 255, 255);
   width: 180px;
   height: 220px;
+  border-style: groove;
+  border-width: 2px;
 }
 
-.card:hover {
+.card-home:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }

@@ -34,7 +34,7 @@ class HomeBody extends React.Component {
             data-aos-delay="1000"
             data-aos-duration="2000"
           >
-            <span className="card text-black border-dark ">
+            <span className="card-home text-black border-dark ">
               <h3 className="icon-box-icons">
                 <FaUserGraduate />
               </h3>
@@ -44,7 +44,7 @@ class HomeBody extends React.Component {
                 </Link>
               </h4>
             </span>
-            <span className="card text-black border-dark ">
+            <span className="card-home text-black border-dark ">
               <h3 className="icon-box-icons">
                 <FaUserTie />
               </h3>
