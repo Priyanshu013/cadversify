@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import Priyanshu from "./site_assets/priyanshu.jpg";
 import Aniket from "./site_assets/aniket.jpg";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 class About extends React.Component {
   render() {
@@ -28,8 +30,13 @@ class About extends React.Component {
             </p>
           </div>
           <div>
-            <div className="container-fluid pt-5 col d-flex justify-content-center">
-              <div className="row ">
+            <div
+              className="container-fluid pt-5 col d-flex justify-content-center"
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <div className="row">
                 <div className="col-12 mt-3">
                   <div className="card-horizontal">
                     <div className="profile-card">
@@ -46,8 +53,19 @@ class About extends React.Component {
                         I read this somewhere-
                         <br />
                         "If you have a problem but couldn't find a solution,
-                        create it." <br />
+                        create it." <br /> This motivated me to find a solution
+                        to a problem which every student faces- career
+                        uncertainity. How about finding a mentor who could guide
+                        you like no other? Give it a shot!
                       </p>
+                      <div>
+                        <a href="https://www.instagram.com/priyanshu_s_jain/">
+                          <FaInstagramSquare className="iconStyle" />
+                        </a>
+                        <a href="https://www.facebook.com/priyanshu.jain.94651">
+                          <FaFacebook className="iconStyle" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -55,7 +73,12 @@ class About extends React.Component {
             </div>
           </div>
           <div>
-            <div className="container-fluid pt-5 col d-flex justify-content-center">
+            <div
+              className="container-fluid pt-5 col d-flex justify-content-center"
+              data-aos="fade-left"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
               <div className="row ">
                 <div className="col-12 mt-3">
                   <div className="card-horizontal">
@@ -69,6 +92,23 @@ class About extends React.Component {
                     <div className="card-body ps-3">
                       <h4 className="card-title">Aniket Poojari</h4>
                       <p className="card-text">Web Developer, Cadversify.</p>
+                      <p className="profile-desc">
+                        I read this somewhere-
+                        <br />
+                        "If you have a problem but couldn't find a solution,
+                        create it." <br /> This motivated me to find a solution
+                        to a problem which every student faces- career
+                        uncertainity. How about finding a mentor who could guide
+                        you like no other? Give it a shot!
+                      </p>
+                      <div>
+                        <a href="">
+                          <FaInstagramSquare className="iconStyle" />
+                        </a>
+                        <a href="">
+                          <FaFacebook className="iconStyle" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

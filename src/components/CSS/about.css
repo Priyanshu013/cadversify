@@ -5,12 +5,6 @@
   align-content: center;
 }
 
-.about_brand {
-  width: 800px;
-  height: 150px;
-  margin-top: 10px;
-}
-
 .about_header {
   font-size: 100px;
   margin-top: 100px;
@@ -38,10 +32,6 @@
   border-style: groove;
   text-align: center;
 }
-.card-horizontal:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgb(18, 168, 255), 0 4px 8px rgb(206, 206, 206);
-}
 
 .profile-card {
   border-radius: 20px;
@@ -49,6 +39,7 @@
 .card-title {
   font-size: 40px;
   color: rgb(0, 0, 0);
+  font-variant: small-caps;
 }
 .card-text {
   color: rgb(255, 62, 62);
@@ -60,14 +51,28 @@
   text-align: center;
 }
 .profile_image {
-  height: 300px;
-  width: 260px;
+  height: 410px;
+  width: 370px;
 }
 .profile-desc {
   font-size: 26px;
   font-style: italic;
   font-family: unset;
-  font-weight: bold;
+  color: #000;
+}
+.iconStyle {
+  font-size: xxx-large;
+  margin-right: 20px;
+  background-color: rgb(255, 255, 255);
+  transition: 1s transform cubic-bezier(0.155, 1.105, 0.295, 0.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.iconStyle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgb(18, 168, 255), 0 4px 8px rgb(206, 206, 206);
 }
 #title {
   font-size: 40px;
