@@ -1,5 +1,4 @@
 import React from "react";
-import aboutlogo from "./site_assets/brand_logo_1.png";
 import { NavLink, Link } from "react-router-dom";
 import "./CSS/about.css";
 import "aos/dist/aos.css";
@@ -59,10 +58,16 @@ class About extends React.Component {
                         you like no other? Give it a shot!
                       </p>
                       <div>
-                        <a href="https://www.instagram.com/priyanshu_s_jain/">
+                        <a
+                          href="https://www.instagram.com/priyanshu_s_jain/"
+                          target="_blank"
+                        >
                           <FaInstagramSquare className="iconStyle" />
                         </a>
-                        <a href="https://www.facebook.com/priyanshu.jain.94651">
+                        <a
+                          href="https://www.facebook.com/priyanshu.jain.94651"
+                          target="_blank"
+                        >
                           <FaFacebook className="iconStyle" />
                         </a>
                       </div>
