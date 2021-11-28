@@ -3,40 +3,57 @@ import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import "./CSS/liveSessions.css";
+import sitelogo from "./site_assets/brand_logo_1.png";
 
 class LiveSessions extends React.Component {
   render() {
     Aos.init();
     return (
-      <div className="livesession-bg">
-        <div>
-          <div
-            className="contact-form"
-            data-aos="fade-up"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
-            <h2>Sign in to join the Live Session</h2>
-            <form>
-              <p>Email</p>
-              <input placeholder="Enter Email" type="email" />
-              <p>Password</p>
-              <input placeholder="Enter Password" type="password" />{" "}
+      <section className="livesession-bg d-flex align-items-center justify-content-center">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1500"
+          className=" login-card"
+        >
+          <section className="container-fluid">
+            <form className="form-container">
+              <div className="form-group">
+                <NavLink className="navbar-brand login-logo" to="/">
+                  <img src={sitelogo} className="navbar-brand" />
+                </NavLink>
+                <h2 className="text-center font-weight-bold"> Login </h2>
+                <h4 className="text-center font-weight-bold">
+                  You need to be logged in to watch the live session
+                </h4>
+                <input
+                  type="email"
+                  className="form-control mt-4 my-2"
+                  id="InputEmail1"
+                  aria-describeby="emailHelp"
+                  placeholder="Enter email"
+                />
+                <input
+                  type="password"
+                  className="form-control my-2"
+                  id="InputPassword1"
+                  placeholder="Password"
+                />
+              </div>
+              <Link
+                to="/live-sessions"
+                type="submit"
+                className="btn btn-primary btn-block my-4"
+              >
+                Login
+              </Link>
               <p>
-                <input type="checkbox" />
-                Remember Me
-              </p>
-              <p>
-                <input type="submit" defaultValue="Sign in" />
-
-                <Link to="" style={{ textAlign: "center", fontSize: 20 }}>
-                  New User?
-                </Link>
+                Don't have an account? <Link to="/">Register now!</Link>
               </p>
             </form>
-          </div>
+          </section>
         </div>
-      </div>
+      </section>
     );
   }
 }

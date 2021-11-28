@@ -1,0 +1,11 @@
+.about_bg {
+  background: url(../site_assets/about-bg.jpg) no-repeat center;
+  background-size: 100% 100%;
+  height: 2000px;
+}
+
+.about_brand {
+  width: 800px;
+  height: 150px;
+  margin-top: 10px;
+}
