@@ -1,0 +1,38 @@
+.login-form{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    height: 100%;
+}
+    .login-card {
+    height: 600px;
+    width: 400px;
+    padding-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(218, 218, 218, 0.795);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .form-container {
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .form-container h1 {
+    color: #1c4059;
+    font-family: algerian;
+    font-size: 30px;
+  }
+  
+  
+  .login-logo {
+    padding-left: 30px;
+    margin-top: -40px;
+  }
+  

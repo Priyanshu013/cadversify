@@ -38,14 +38,14 @@ const NavBar = () => {
         </div>
         <ul className="navbar-nav position-absolute end-0 mx-3 inline">
           <li className="nav-item px">
-            <NavLink to="">
+            <NavLink to="/oppLogin">
               <button className="btn btn-outline-primary buttons">
                 Opportunist Login
               </button>
             </NavLink>
           </li>
           <li className="nav-item ">
-            <NavLink to="">
+            <NavLink to="/cadLogin">
               <button to="" className="btn btn-outline-primary buttons ">
                 Cadvocate Login
               </button>
