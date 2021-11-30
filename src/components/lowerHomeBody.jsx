@@ -35,7 +35,6 @@ class LowerHomeBody extends React.Component {
           </div>
         </div>
 
-        
         <div className="row no-gutters d-flex align-items-stretch">
           <div className=" d-flex align-self-stretch">
             <div className="places d-sm-flex align-items-stretch">
@@ -48,32 +47,21 @@ class LowerHomeBody extends React.Component {
                     <div className="top-text">
                       <h3>What is Cadversify?</h3>
                     </div>
-
                   </div>
-                  <p>It is a platform which connects students to 
-
-working professionals from different 
-
-domains all across the world. 
-
-Search for  the career which you want to 
-
-go ahead with, choose a suitable 
-
-professional, book an appointment, and 
-
-you’re all set to have deep conversations
-
-and know real-life experiences.
-</p>
+                  <p>
+                    It is a platform which connects students to working
+                    professionals from different domains all across the world.
+                    Search for the career which you want to go ahead with,
+                    choose a suitable professional, book an appointment, and
+                    you’re all set to have deep conversations and know real-life
+                    experiences.
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-        
-        
+
         <div className="row no-gutters d-flex align-items-stretch">
           <div className=" d-flex align-self-stretch">
             <div className="places d-sm-flex align-items-stretch">
@@ -86,37 +74,25 @@ and know real-life experiences.
                     <div className="top-text">
                       <h3>Why Cadversify?</h3>
                     </div>
-
                   </div>
-                  <p>It is the largest community of experienced 
-
-professionals who are happy to share their 
-
-years of experiences with people who 
-
-are planning to start off their career with 
-
-the right mentorship and have a clear idea 
-
-of real-life scenarios that will once become 
-
-a daily routine for them
-
-</p>
+                  <p>
+                    It is the largest community of experienced professionals who
+                    are happy to share their years of experiences with people
+                    who are planning to start off their career with the right
+                    mentorship and have a clear idea of real-life scenarios that
+                    will once become a daily routine for them
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
-        
-        
         <div className="row no-gutters d-flex align-items-stretch">
           <div className=" d-flex align-self-stretch">
             <div className="places d-sm-flex align-items-stretch">
               <div className="dest-img img my-10">
-                <img src={testimage}  className="img-fluid"></img>
+                <img src={testimage} className="img-fluid"></img>
               </div>
               <div className="main d-flex align-items-center">
                 <div>
@@ -124,35 +100,25 @@ a daily routine for them
                     <div className="top-text">
                       <h3>What is Cadversify's vision?</h3>
                     </div>
-
                   </div>
-                  <p>Our vision is to eliminate the fear of 
-
-deciding a career in a person’s mind and
-
-give them an opportunity to make a bold
-
-move, talk to professionals from all over the
-
-world, build connections, and get a clear 
-
-understanding of what’s right for them.
-
-</p>
+                  <p>
+                    Our vision is to eliminate the fear of deciding a career in
+                    a person’s mind and give them an opportunity to make a bold
+                    move, talk to professionals from all over the world, build
+                    connections, and get a clear understanding of what’s right
+                    for them.
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
-        
-        
         <div className="row no-gutters d-flex align-items-stretch">
           <div className=" d-flex align-self-stretch">
             <div className="places d-sm-flex align-items-stretch">
               <div className="dest-img img my-10 order-md-last">
-                <img src={testimage}  className="img-fluid"></img>
+                <img src={testimage} className="img-fluid"></img>
               </div>
               <div className="main d-flex align-items-center">
                 <div>
@@ -160,31 +126,24 @@ understanding of what’s right for them.
                     <div className="top-text">
                       <h3>One-on-one sessions </h3>
                     </div>
-
                   </div>
-                  <p>Connect to verified professionals from a 
-
-field on a one-on-on video call session,
-
-enabling a personalised and an exclusive
-
-experience to talk with some of the greatest minds out there!
-
-</p>
+                  <p>
+                    Connect to verified professionals from a field on a
+                    one-on-on video call session, enabling a personalised and an
+                    exclusive experience to talk with some of the greatest minds
+                    out there!
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
-        
-        
         <div className="row no-gutters d-flex align-items-stretch">
           <div className=" d-flex align-self-stretch">
             <div className="places d-sm-flex align-items-stretch">
               <div className="dest-img img my-10">
-                <img src={testimage}  className="img-fluid"></img>
+                <img src={testimage} className="img-fluid"></img>
               </div>
               <div className="main d-flex align-items-center">
                 <div>
@@ -192,36 +151,25 @@ experience to talk with some of the greatest minds out there!
                     <div className="top-text">
                       <h3>Group meeting</h3>
                     </div>
-
                   </div>
-                  <p>Connect to a working professional along
-
-with your friends who share similar visions as
-
-you. Clear all your doubts together with up 
-
-to 3 of your friends, and split up the bills!
-
-Not only this, you’ll be getting a special 
-
-referral bonus if you get a new friend on 
-
-the platform.
-
-</p>
+                  <p>
+                    Connect to a working professional along with your friends
+                    who share similar visions as you. Clear all your doubts
+                    together with up to 3 of your friends, and split up the
+                    bills! Not only this, you’ll be getting a special referral
+                    bonus if you get a new friend on the platform.
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
-
         <div className="row no-gutters d-flex align-items-stretch">
           <div className=" d-flex align-self-stretch">
             <div className="places d-sm-flex align-items-stretch">
               <div className="dest-img img my-10 order-md-last">
-                <img src={testimage}  className="img-fluid"></img>
+                <img src={testimage} className="img-fluid"></img>
               </div>
               <div className="main d-flex align-items-center">
                 <div>
@@ -229,27 +177,27 @@ the platform.
                     <div className="top-text">
                       <h3>Connect your first call for free!</h3>
                     </div>
-
                   </div>
-                  <p>Experience the exclusive opportunity to find a mentor for free! Get Rs. 200 of free video call talktime with your favourite professional. Grab this limited period opportunity right now. What are you waiting for?
-
-</p>
+                  <p>
+                    Experience the exclusive opportunity to find a mentor for
+                    free! Get Rs. 200 of free video call talktime with your
+                    favourite professional. Grab this limited period opportunity
+                    right now. What are you waiting for?
+                  </p>
+                  <p className="pt-3">
+                    <Link
+                      to="/oppLogin"
+                      className="btn btn-warning my-2 head-button-low block"
+                    >
+                      Sign up for free now! >>
+                    </Link>
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-        <div>
-        <p className="ps-5 py-5">
-                  <Link
-                    to="/oppLogin"
-                    className="btn btn-warning my-2 head-button block"
-                  >
-                    Sign up for free now! > 
-                  </Link>
-                </p>
-        </div>
+        <div></div>
       </section>
     );
   }
