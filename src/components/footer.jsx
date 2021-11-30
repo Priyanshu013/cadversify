@@ -25,9 +25,9 @@ class Footer extends React.Component {
                 Confused about your career? <br />
                 That’s where I was a few years back. I wanted to <br />
                 talk to someone who could give me the right advice based <br />
-                upon their own experience in the field in which I then
+                upon their own experience in the field which I then
                 <br />
-                wanted to be, but found no one compatible to talk to.
+                wanted to be in, but found no one compatible to talk to.
                 <br />
                 At the time, I wasn’t lucky enough to have a platform like
                 <br />

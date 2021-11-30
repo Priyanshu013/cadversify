@@ -6,9 +6,23 @@ import "../CSS/homeBody.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
 import LowerHomeBody from "./lowerHomeBody";
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { BsInfoCircleFill } from "react-icons/bs";
 
 class HomeBody extends React.Component {
   render() {
+    const renderTooltip1 = (props) => (
+      <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
+        Choose this If you are here to learn from experienced professionals who
+        are working in your dream career for years.
+      </Tooltip>
+    );
+    const renderTooltip2 = (props) => (
+      <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
+        A Cadvocate is a jargon for a working professional who wishes to share
+        their experiences and learnings with others
+      </Tooltip>
+    );
     Aos.init();
     return (
       <div>
@@ -38,7 +52,7 @@ class HomeBody extends React.Component {
             data-aos-duration="2000"
           >
             <span className="card-home text-black border-dark ">
-              <h3 className="icon-box-icons">
+              <h3 className="icon-box-icons pt-2">
                 <FaUserGraduate />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
@@ -46,9 +60,20 @@ class HomeBody extends React.Component {
                   <p style={{ color: "red" }}>Become an opportunist</p>
                 </Link>
               </h4>
+              <div className="text-center">
+                <OverlayTrigger
+                  placement="bottom"
+                  delay={{ show: 25, hide: 40 }}
+                  overlay={renderTooltip1}
+                >
+                  <p className="pt-2">
+                    <BsInfoCircleFill className="icon-box-icons2" />
+                  </p>
+                </OverlayTrigger>
+              </div>
             </span>
             <span className="card-home text-black border-dark ">
-              <h3 className="icon-box-icons">
+              <h3 className="icon-box-icons pt-2">
                 <FaUserTie />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
@@ -56,6 +81,17 @@ class HomeBody extends React.Component {
                   <p style={{ color: "red" }}>Become a Cadvocate</p>
                 </NavLink>
               </h4>
+              <div className="text-center">
+                <OverlayTrigger
+                  placement="bottom"
+                  delay={{ show: 25, hide: 40 }}
+                  overlay={renderTooltip2}
+                >
+                  <p className="pt-2">
+                    <BsInfoCircleFill className="icon-box-icons2" />
+                  </p>
+                </OverlayTrigger>
+              </div>
             </span>
           </div>
         </section>

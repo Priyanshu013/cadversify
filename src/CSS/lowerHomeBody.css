@@ -31,18 +31,23 @@
   height: auto;
 }
 
-.places {
-  width: 100%;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
 .dest-img {
   width: 50%;
-}
-.my-10 {
   padding-top: 40px;
   padding-bottom: 40px;
+  text-align: center;
 }
+
+.home-text-right {
+  text-align: right;
+}
+
+.img-fluid {
+  padding: 30px;
+  height: 500px;
+  border-radius: 70px;
+}
+
 .main {
   width: 50%;
   padding: 30px 20px;

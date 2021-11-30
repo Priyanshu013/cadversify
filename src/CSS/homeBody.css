@@ -2,7 +2,15 @@
   text-align: center;
   font-size: xxx-large;
 }
-
+.icon-box-icons2 {
+  text-align: center;
+  font-size: 35px;
+  color: #41a3ff;
+}
+.tooltip-card {
+  font-size: large;
+  font-family: inherit;
+}
 .headline {
   color: rgba(255, 255, 255, 0.945);
   font-size: 60px;
@@ -43,11 +51,6 @@
   height: 220px;
   border-style: groove;
   border-width: 1.6px;
-}
-
-.card-home:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 .home-background {
