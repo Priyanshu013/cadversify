@@ -4,13 +4,13 @@
 }
 
 .btt-btn {
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(88, 88, 88);
   width: 100%;
 }
 
 .footer-title-main {
   font-weight: bolder;
-  font-size: 45px;
+  font-size: 30px;
   color: rgb(255, 255, 255);
   font-variant: small-caps;
   text-shadow: 2px 2px #000000;
@@ -18,7 +18,7 @@
 
 .foot-note {
   color: rgb(255, 255, 255);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bolder;
   text-shadow: 1px 1px #000000;
 }
@@ -37,7 +37,7 @@
 
 .quick-link {
   color: rgb(255, 255, 255);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bolder;
   text-shadow: 1px 1px #000000;
   text-decoration: none;
@@ -51,6 +51,6 @@
   border-style: groove;
   border-width: thick;
   color: rgb(255, 255, 255);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bolder;
 }

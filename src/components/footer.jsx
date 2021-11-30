@@ -7,12 +7,15 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import NavBar from "./navBar";
 
 class Footer extends React.Component {
   render() {
     return (
       <footer className="site-footer">
-        <button className="btn btn-secondary btt-btn">Back to top</button>
+        <NavLink className="btn btn-secondary btt-btn" to="">
+          Back to top
+        </NavLink>
         <section className=" pt-4 ms-5 row">
           <div className="col-sm">
             <div>
@@ -21,12 +24,16 @@ class Footer extends React.Component {
             <div className="foot-note">
               <p>
                 Confused about your career? <br />
-                That’s where I was a few years back. I wanted to talk to someone
-                who could give me the right advice based upon their own
-                experience in the field in which I then wanted to be, but found
-                no one compatible to talk to. At the time, I wasn’t lucky enough
-                to have a platform like Cadversify.com to find a mentor, BUT YOU
-                ARE!
+                That’s where I was a few years back. I wanted to <br />
+                talk to someone who could give me the right advice based <br />
+                upon their own experience in the field in which I then
+                <br />
+                wanted to be, but found no one compatible to talk to.
+                <br />
+                At the time, I wasn’t lucky enough to have a platform like
+                <br />
+                Cadversify.com to find a mentor, <br />
+                BUT YOU ARE!
               </p>
             </div>
           </div>
@@ -48,7 +55,7 @@ class Footer extends React.Component {
                 Email: Cadversify@gmail.com
               </span>
             </div>
-            <div className="ps-4 pt-3">
+            <div className="ps-2 py-3">
               <span className="social-icons">
                 <FaFacebook />
               </span>
@@ -65,7 +72,7 @@ class Footer extends React.Component {
             <div>
               <p className="footer-title-main">Quick Links</p>
             </div>
-            <div className="row">
+            <div className="row pb-3">
               <div className="col-sm">
                 <div>
                   <NavLink className="ps-2 quick-link" to="/about">
