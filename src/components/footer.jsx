@@ -6,8 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import NavBar from "./navBar";
+import { Link, NavLink } from "react-router-dom";
 
 class Footer extends React.Component {
   render() {
@@ -75,9 +74,9 @@ class Footer extends React.Component {
             <div className="row pb-3">
               <div className="col-sm">
                 <div>
-                  <NavLink className="ps-2 quick-link" to="/about">
+                  <Link className="ps-2 quick-link" to="/about">
                     About
-                  </NavLink>
+                  </Link>
                 </div>
                 <div>
                   <NavLink className="ps-2 quick-link" to="">
