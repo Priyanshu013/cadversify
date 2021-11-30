@@ -8,6 +8,7 @@ import Features from "./components/features";
 import About from "./components/about";
 import oppLogin from "./components/oppLogin";
 import cadLogin from "./components/cadLogin";
+import Footer from "./components/footer";
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class App extends React.Component {
           <Redirect from="/home" to="/" />
           <Route path="/" exact component={HomeBody}></Route>
         </main>
+        <Footer />
       </BrowserRouter>
     );
   }

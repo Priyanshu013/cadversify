@@ -1,0 +1,56 @@
+.site-footer {
+  background-color: rgba(78, 78, 78, 0.767);
+  width: auto;
+}
+
+.btt-btn {
+  background-color: rgb(61, 61, 61);
+  width: 100%;
+}
+
+.footer-title-main {
+  font-weight: bolder;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-variant: small-caps;
+  text-shadow: 2px 2px #000000;
+}
+
+.foot-note {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 1px 1px #000000;
+}
+
+.footer-icons {
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+}
+
+.social-icons {
+  padding: 10px;
+  padding-top: 30px;
+  font-size: 40px;
+  color: white;
+}
+
+.quick-link {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 1px 1px #000000;
+  text-decoration: none;
+}
+
+.quick-link:hover {
+  color: aqua;
+}
+
+.copyright {
+  border-style: groove;
+  border-width: thick;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bolder;
+}

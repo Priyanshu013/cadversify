@@ -14,7 +14,7 @@ class LiveSessions extends React.Component {
           data-aos="fade-up"
           data-aos-delay="500"
           data-aos-duration="1500"
-          className=" login-card"
+          className=" login-card-ls"
         >
           <section className="container-fluid">
             <form className="form-container">

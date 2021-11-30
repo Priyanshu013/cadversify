@@ -20,7 +20,10 @@ class HomeBody extends React.Component {
                   Talk to professionals working in your dream career
                 </h2>
                 <p className="ps-5 py-5">
-                  <Link to="" className="btn btn-warning my-2 head-button">
+                  <Link
+                    to="/oppLogin"
+                    className="btn btn-warning my-2 head-button"
+                  >
                     Connect your first call for free! >
                   </Link>
                 </p>

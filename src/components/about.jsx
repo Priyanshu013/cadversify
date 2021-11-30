@@ -47,7 +47,9 @@ class About extends React.Component {
                     </div>
                     <div className="card-body ps-3">
                       <h4 className="card-title">Priyanshu Jain</h4>
-                      <p className="card-text">Founder & CEO, Cadversify.</p>
+                      <p className="card-text">
+                        Founder & Web Developer, Cadversify.
+                      </p>
                       <p className="profile-desc">
                         I read this somewhere-
                         <br />

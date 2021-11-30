@@ -17,7 +17,7 @@ class oppLogin extends Component {
           data-aos="fade-up"
           data-aos-delay="500"
           data-aos-duration="1500"
-          className=" login-card mt-4"
+          className=" login-card my-5"
         >
           <section className="container-fluid">
             <Form className="form-container">
