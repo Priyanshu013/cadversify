@@ -6,15 +6,19 @@ import { MdEmail } from "react-icons/md";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { CgArrowUpR } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
+import BackToTop from "react-back-to-top-button";
 
 class Footer extends React.Component {
   render() {
     return (
       <footer className="site-footer">
-        <NavLink className="btn btn-secondary btt-btn" to="">
-          Back to top
-        </NavLink>
+        <BackToTop showAt={50}>
+          <span className="btt-btn">
+            <CgArrowUpR />
+          </span>
+        </BackToTop>
         <section className=" pt-4 ms-5 row">
           <div className="col-sm">
             <div>

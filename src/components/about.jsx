@@ -87,7 +87,7 @@ class About extends React.Component {
               data-aos-duration="1000"
             >
               <div className="row ">
-                <div className="col-12 mt-3">
+                <div className="col-12 mt-3 pb-5">
                   <div className="card-horizontal">
                     <div className="profile-card">
                       <img

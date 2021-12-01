@@ -15,7 +15,7 @@ class LowerHomeBody extends React.Component {
     Aos.init();
     return (
       <section
-        className="vh-50 home-background-low pt-5"
+        className=" home-background-low pt-5"
         style={{ color: "GrayText" }}
       >
         <div className="container text-center ">
@@ -46,15 +46,18 @@ class LowerHomeBody extends React.Component {
             </div>
             <div className="main d-flex align-items-center">
               <div className="home-text-right">
-                <div className="top-text ">
+                <div className="top-text">
                   <h3>What is Cadversify?</h3>
                 </div>
                 <p>
                   It is a platform which connects students to working
                   professionals from different domains all across the world.
                   Search for the career which you want to go ahead with, choose
-                  a suitable professional, book an appointment, and you’re all
-                  set to have deep conversations and know real-life experiences.
+                  a suitable professional who is already working in that field
+                  for years- based upon your requirements, book an appointment,
+                  and you're all set to build connections with amazing
+                  personalities and learn from their own real-life experiences.
+                  So, what are you waiting for?
                 </p>
               </div>
             </div>
@@ -71,8 +74,11 @@ class LowerHomeBody extends React.Component {
                   It is the largest community of experienced professionals who
                   are happy to share their years of experiences with people who
                   are planning to start off their career with the right
-                  mentorship and have a clear idea of real-life scenarios that
-                  will once become a daily routine for them
+                  mentorship and have the growth mindset embedded within
+                  themselves. With cadversify, you can build amazing one-to-one
+                  connections with people who may seem to be impossible to get
+                  in touch with, all thanks to our trusted cadvocates from 108
+                  countries across the globe.
                 </p>
               </div>
             </div>
@@ -90,15 +96,18 @@ class LowerHomeBody extends React.Component {
               <div className="home-text-right">
                 <div className="d-flex">
                   <div className="top-text">
-                    <h3>What is Cadversify's vision?</h3>
+                    <h3>Live Webinars</h3>
                   </div>
                 </div>
                 <p>
-                  Our vision is to eliminate the fear of deciding a career in a
-                  person’s mind and give them an opportunity to make a bold
-                  move, talk to professionals from all over the world, build
-                  connections, and get a clear understanding of what’s right for
-                  them.
+                  Want to watch live sessions hosted by professionals? We got
+                  you. Head to the live sessions page and choose the field in
+                  which you aspire to get into. Among the list of the live
+                  sessions that come up, which are hosted by our trusted
+                  cadvocates, choose the one which you would want to see. Not
+                  just this, but you can also chat with the professional during
+                  the live sessions, and get your doubts cleared. And yes,
+                  that's absolutely free of cost!
                 </p>
               </div>
             </div>
@@ -115,6 +124,11 @@ class LowerHomeBody extends React.Component {
                   Connect to verified professionals from a field on a one-on-on
                   video call session, enabling a personalised and an exclusive
                   experience to talk with some of the greatest minds out there!
+                  Also, send a list of questions before hand, so that you don't
+                  have to spend time while on call explaining your questions to
+                  the cadvocate. You can also bookmark your favourite
+                  cadvocates, so that you can connect with them for as many
+                  times as you wish, and build life-long connections.
                 </p>
               </div>
             </div>
@@ -138,9 +152,10 @@ class LowerHomeBody extends React.Component {
                 <p>
                   Connect to a working professional along with your friends who
                   share similar visions as you. Clear all your doubts together
-                  with up to 3 of your friends, and split up the bills! Not only
+                  with up to 2 of your friends, and split up the bills! Not only
                   this, you’ll be getting a special referral bonus if you get a
-                  new friend on the platform.
+                  new friend on the platform, which you can spend as talktime to
+                  be used while talking to professionals.
                 </p>
               </div>
             </div>

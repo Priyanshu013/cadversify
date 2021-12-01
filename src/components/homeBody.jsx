@@ -6,14 +6,14 @@ import "../CSS/homeBody.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
 import LowerHomeBody from "./lowerHomeBody";
-import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 
 class HomeBody extends React.Component {
   render() {
     const renderTooltip1 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
-        Choose this If you are here to learn from experienced professionals who
+        Choose this if you are here to learn from experienced professionals who
         are working in your dream career for years.
       </Tooltip>
     );
@@ -57,13 +57,14 @@ class HomeBody extends React.Component {
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
                 <Link to="" style={{ textDecoration: "none" }}>
-                  <p style={{ color: "red" }}>Become an opportunist</p>
+                  <p className="card-headline">Become an opportunist</p>
                 </Link>
               </h4>
               <div className="text-center">
                 <OverlayTrigger
-                  placement="bottom"
-                  delay={{ show: 25, hide: 40 }}
+                  trigger="click"
+                  placement="left"
+                  delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}
                 >
                   <p className="pt-2">
@@ -78,13 +79,14 @@ class HomeBody extends React.Component {
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
                 <NavLink to="" style={{ textDecoration: "none" }}>
-                  <p style={{ color: "red" }}>Become a Cadvocate</p>
+                  <p className="card-headline">Become a Cadvocate</p>
                 </NavLink>
               </h4>
               <div className="text-center">
                 <OverlayTrigger
+                  trigger="click"
                   placement="bottom"
-                  delay={{ show: 25, hide: 40 }}
+                  delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip2}
                 >
                   <p className="pt-2">
