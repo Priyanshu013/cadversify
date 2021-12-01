@@ -3,9 +3,16 @@
   width: auto;
 }
 
+.border-footer {
+  background-color: rgb(94, 94, 94);
+  width: 100%;
+  margin-top: -15px;
+  height: 20px;
+}
+
 .btt-btn {
   font-size: 70px;
-  color: brown;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .footer-title-main {
@@ -32,6 +39,9 @@
   padding: 10px;
   padding-top: 30px;
   font-size: 40px;
+}
+.social-icons-deco {
+  text-decoration: none;
   color: white;
 }
 

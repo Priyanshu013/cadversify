@@ -1,11 +1,12 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import "aos/dist/aos.css";
+import LowerHomeBody from "./lowerHomeBody";
+import Typewriter from "typewriter-effect";
 import Aos from "aos";
 import "../CSS/homeBody.css";
+import "aos/dist/aos.css";
+import { NavLink, Link } from "react-router-dom";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
-import LowerHomeBody from "./lowerHomeBody";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 
@@ -13,14 +14,14 @@ class HomeBody extends React.Component {
   render() {
     const renderTooltip1 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
-        Choose this if you are here to learn from experienced professionals who
-        are working in your dream career for years.
+        A cadent is a jargon for you if you are here to learn from experienced
+        professionals who are working in your dream career for years.
       </Tooltip>
     );
     const renderTooltip2 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
-        A Cadvocate is a jargon for a working professional who wishes to share
-        their experiences and learnings with others
+        A Cadvocate is a jargon for any working professional who wishes to share
+        their work-experiences and learnings with others
       </Tooltip>
     );
     Aos.init();
@@ -31,8 +32,22 @@ class HomeBody extends React.Component {
             <h1 className="ps-5 pt-5">
               <div className="col-lg-7 mt-4">
                 <h2 className="ps-5 pt-2 headline">
-                  Talk to professionals working in your dream career
+                  <Typewriter
+                    className="ps-5 pt-2 headline"
+                    onInit={(typewriter) => {
+                      typewriter
+                        .typeString("Confused about your career?")
+                        .pauseFor(1000)
+                        .deleteAll()
+                        .typeString(
+                          "Talk to professionals working in your dream career!"
+                        )
+                        .changeDelay(50)
+                        .start();
+                    }}
+                  />
                 </h2>
+
                 <p className="ps-5 py-5">
                   <Link
                     to="/oppLogin"
@@ -57,7 +72,7 @@ class HomeBody extends React.Component {
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
                 <Link to="" style={{ textDecoration: "none" }}>
-                  <p className="card-headline">Become an opportunist</p>
+                  <p className="card-headline">Become a Cadent</p>
                 </Link>
               </h4>
               <div className="text-center">

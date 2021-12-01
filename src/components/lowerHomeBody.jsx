@@ -39,7 +39,7 @@ class LowerHomeBody extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row ">
           <div className=" d-sm-flex">
             <div className="dest-img">
               <img src={homebody1} className="img-fluid"></img>
