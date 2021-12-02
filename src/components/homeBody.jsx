@@ -14,7 +14,7 @@ class HomeBody extends React.Component {
   render() {
     const renderTooltip1 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
-        A cadent is a jargon for you if you are here to learn from experienced
+        A Cadent is a jargon for you if you are here to learn from experienced
         professionals who are working in your dream career for years.
       </Tooltip>
     );
@@ -36,11 +36,14 @@ class HomeBody extends React.Component {
                     className="ps-5 pt-2 headline"
                     onInit={(typewriter) => {
                       typewriter
+                        .changeDelay(60)
                         .typeString("Confused about your career?")
-                        .pauseFor(1000)
+                        .changeDeleteSpeed(10)
+                        .pauseFor(500)
                         .deleteAll()
+                        .changeDelay(60)
                         .typeString(
-                          "Talk to professionals working in your dream career!"
+                          "Talk to professionals working in your dream career - TODAY!"
                         )
                         .changeDelay(50)
                         .start();

@@ -1,7 +1,7 @@
 .site-footer {
   background-color: rgba(78, 78, 78, 0.767);
   width: auto;
-  border-top: groove 10px rgb(88, 88, 88);
+  border-top: outset 25px rgb(88, 88, 88);
 }
 
 .border-footer {

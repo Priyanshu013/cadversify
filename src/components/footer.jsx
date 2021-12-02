@@ -15,12 +15,12 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="site-footer">
-        <BackToTop showAt={200} speed={300}>
+        <BackToTop showAt={500} speed={300}>
           <span className="btt-btn">
             <TiArrowUpThick />
           </span>
         </BackToTop>
-        <section className=" pt-4 ms-5 row">
+        <section className="mt-1 ms-5 row">
           <div className="col-sm">
             <div>
               <p className="footer-title-main">A note from the founder</p>
