@@ -20,9 +20,6 @@ class Footer extends React.Component {
             <TiArrowUpThick />
           </span>
         </BackToTop>
-        <section>
-          <Button className="btn border-footer"></Button>
-        </section>
         <section className=" pt-4 ms-5 row">
           <div className="col-sm">
             <div>

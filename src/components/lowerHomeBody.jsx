@@ -63,7 +63,7 @@ class LowerHomeBody extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row ">
           <div className=" d-sm-flex">
             <div className="main d-flex align-items-center">
               <div>
@@ -87,7 +87,7 @@ class LowerHomeBody extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row ">
           <div className=" d-sm-flex">
             <div className="dest-img">
               <img src={homebody3} className="img-fluid"></img>
@@ -113,7 +113,7 @@ class LowerHomeBody extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row ">
           <div className=" d-sm-flex">
             <div className="main d-flex align-items-center">
               <div>
@@ -137,7 +137,7 @@ class LowerHomeBody extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row ">
           <div className=" d-sm-flex">
             <div className="dest-img">
               <img src={homebody5} className="img-fluid"></img>

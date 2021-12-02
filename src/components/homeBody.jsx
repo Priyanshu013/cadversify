@@ -77,7 +77,7 @@ class HomeBody extends React.Component {
               </h4>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="click"
+                  trigger="hover"
                   placement="left"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}
@@ -99,7 +99,7 @@ class HomeBody extends React.Component {
               </h4>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="click"
+                  trigger="hover"
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip2}
