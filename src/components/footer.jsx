@@ -21,7 +21,7 @@ class Footer extends React.Component {
           </span>
         </BackToTop>
         <section className="mt-1 ms-5 row">
-          <div className="col-sm">
+          <div className="col-sm-5">
             <div>
               <p className="footer-title-main">A note from the founder</p>
             </div>
@@ -75,11 +75,13 @@ class Footer extends React.Component {
                 <FaTwitter className="social-icons-deco" />
               </span>
             </div>
+          </div>
+          <div className="col-sm">
             <div>
               <p className="footer-title-main">Quick Links</p>
             </div>
             <div className="row pb-3">
-              <div className="col-sm-4">
+              <div className="col-sm">
                 <div>
                   <Link className="ps-2 quick-link" to="/about">
                     About
@@ -91,22 +93,20 @@ class Footer extends React.Component {
                   </NavLink>
                 </div>
               </div>
-              <div className="col-sm ">
-                <div>
-                  <NavLink className="ps-2 quick-link" to="">
-                    Privacy Policy
-                  </NavLink>
-                </div>
-                <div>
-                  <NavLink className="ps-2 quick-link" to="">
-                    Refund & cancellation policy
-                  </NavLink>
-                </div>
+              <div>
+                <NavLink className="ps-2 quick-link" to="">
+                  Privacy Policy
+                </NavLink>
+              </div>
+              <div>
+                <NavLink className="ps-2 quick-link" to="">
+                  Refund & cancellation policy
+                </NavLink>
               </div>
             </div>
           </div>
         </section>
-        <div className="text-center py-2 copyright">
+        <div className="text-center copyright">
           © 2021 Copyright: Cadversify
         </div>
       </footer>

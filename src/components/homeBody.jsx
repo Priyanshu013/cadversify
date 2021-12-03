@@ -33,6 +33,9 @@ class HomeBody extends React.Component {
               <div className="col-lg-7 mt-4">
                 <h2 className="ps-5 pt-2 headline">
                   <Typewriter
+                    options={{
+                      loop: true,
+                    }}
                     className="ps-5 pt-2 headline"
                     onInit={(typewriter) => {
                       typewriter
@@ -45,7 +48,7 @@ class HomeBody extends React.Component {
                         .typeString(
                           "Talk to professionals working in your dream career - TODAY!"
                         )
-                        .changeDelay(50)
+                        .pauseFor(2000)
                         .start();
                     }}
                   />
