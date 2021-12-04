@@ -6,21 +6,22 @@ import { MdEmail } from "react-icons/md";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { CgArrowUpR } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
+import Button from "@restart/ui/esm/Button";
 import BackToTop from "react-back-to-top-button";
+import { TiArrowUpThick } from "react-icons/ti";
 
 class Footer extends React.Component {
   render() {
     return (
       <footer className="site-footer">
-        <BackToTop showAt={50}>
+        <BackToTop showAt={500} speed={300}>
           <span className="btt-btn">
-            <CgArrowUpR />
+            <TiArrowUpThick />
           </span>
         </BackToTop>
-        <section className=" pt-4 ms-5 row">
-          <div className="col-sm">
+        <section className="mt-1 ms-5 row">
+          <div className="col-sm-5">
             <div>
               <p className="footer-title-main">A note from the founder</p>
             </div>
@@ -60,18 +61,22 @@ class Footer extends React.Component {
             </div>
             <div className="ps-2 py-3">
               <span className="social-icons">
-                <FaFacebook />
+                <a href="https://www.facebook.com/" target="_blank">
+                  <FaFacebook className="social-icons-deco" />
+                </a>
               </span>
               <span className="social-icons">
-                <FaInstagramSquare />
+                <FaInstagramSquare className="social-icons-deco" />
               </span>
               <span className="social-icons">
-                <FaLinkedin />
+                <FaLinkedin className="social-icons-deco" />
               </span>
               <span className="social-icons">
-                <FaTwitter />
+                <FaTwitter className="social-icons-deco" />
               </span>
             </div>
+          </div>
+          <div className="col-sm">
             <div>
               <p className="footer-title-main">Quick Links</p>
             </div>
@@ -88,22 +93,20 @@ class Footer extends React.Component {
                   </NavLink>
                 </div>
               </div>
-              <div className="col-sm">
-                <div>
-                  <NavLink className="ps-2 quick-link" to="">
-                    Privacy Policy
-                  </NavLink>
-                </div>
-                <div>
-                  <NavLink className="ps-2 quick-link" to="">
-                    Refund & cancellation policy
-                  </NavLink>
-                </div>
+              <div>
+                <NavLink className="ps-2 quick-link" to="">
+                  Privacy Policy
+                </NavLink>
+              </div>
+              <div>
+                <NavLink className="ps-2 quick-link" to="">
+                  Refund & cancellation policy
+                </NavLink>
               </div>
             </div>
           </div>
         </section>
-        <div className="text-center py-2 copyright">
+        <div className="text-center copyright">
           © 2021 Copyright: Cadversify
         </div>
       </footer>

@@ -64,13 +64,13 @@ class About extends React.Component {
                           href="https://www.instagram.com/priyanshu_s_jain/"
                           target="_blank"
                         >
-                          <FaInstagramSquare className="iconStyle" />
+                          <FaInstagramSquare className="about-iconStyle" />
                         </a>
                         <a
                           href="https://www.facebook.com/priyanshu.jain.94651"
                           target="_blank"
                         >
-                          <FaFacebook className="iconStyle" />
+                          <FaFacebook className="about-iconStyle" />
                         </a>
                       </div>
                     </div>
@@ -110,10 +110,10 @@ class About extends React.Component {
                       </p>
                       <div>
                         <a href="">
-                          <FaInstagramSquare className="iconStyle" />
+                          <FaInstagramSquare className="about-iconStyle" />
                         </a>
                         <a href="">
-                          <FaFacebook className="iconStyle" />
+                          <FaFacebook className="about-iconStyle" />
                         </a>
                       </div>
                     </div>

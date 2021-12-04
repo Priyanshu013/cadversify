@@ -7,13 +7,6 @@
   background-color: rgb(255, 255, 255);
   border-style: groove;
 }
-.mb-10 {
-  margin-bottom: 100px;
-}
-.my-10 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
 .quote-carding:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgb(18, 168, 255), 0 4px 8px rgb(206, 206, 206);
@@ -26,7 +19,7 @@
 }
 
 .home-background-low {
-  background: url(../site_assets/about_lower_bg.jpg) no-repeat center;
+  background: url(../site_assets/about_lower_bg3.jpg) no-repeat center;
   background-size: 100% 100%;
   height: auto;
 }

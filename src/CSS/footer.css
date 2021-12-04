@@ -1,16 +1,25 @@
 .site-footer {
   background-color: rgba(78, 78, 78, 0.767);
   width: auto;
+  border-top: outset 15px rgb(88, 88, 88);
+}
+
+.border-footer {
+  background-color: rgb(94, 94, 94);
+  width: 100%;
+  margin-top: -15px;
+  height: 20px;
 }
 
 .btt-btn {
   font-size: 70px;
-  color: brown;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .footer-title-main {
   font-weight: bolder;
-  font-size: 30px;
+  padding-top: 20px;
+  font-size: 25px;
   color: rgb(255, 255, 255);
   font-variant: small-caps;
   text-shadow: 2px 2px #000000;
@@ -24,14 +33,17 @@
 }
 
 .footer-icons {
-  font-size: xx-large;
+  font-size: x-large;
   color: rgb(255, 255, 255);
 }
 
 .social-icons {
   padding: 10px;
   padding-top: 30px;
-  font-size: 40px;
+  font-size: 30px;
+}
+.social-icons-deco {
+  text-decoration: none;
   color: white;
 }
 
@@ -51,6 +63,6 @@
   border-style: groove;
   border-width: thick;
   color: rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bolder;
 }
