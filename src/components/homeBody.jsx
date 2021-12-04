@@ -42,7 +42,7 @@ class HomeBody extends React.Component {
                         .changeDelay(60)
                         .typeString("Confused about your career?")
                         .changeDeleteSpeed(10)
-                        .pauseFor(500)
+                        .pauseFor(1200)
                         .deleteAll()
                         .changeDelay(60)
                         .typeString(

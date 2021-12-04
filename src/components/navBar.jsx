@@ -40,7 +40,7 @@ const NavBar = () => {
           <li className="nav-item px">
             <NavLink to="/oppLogin">
               <button className="btn btn-outline-primary buttons">
-                Opportunist Login
+                Cadent Login
               </button>
             </NavLink>
           </li>

@@ -12,8 +12,8 @@ class LiveSessions extends React.Component {
       <section className="livesession-bg d-flex align-items-center justify-content-center">
         <div
           data-aos="fade-up"
-          data-aos-delay="500"
-          data-aos-duration="1500"
+          data-aos-delay=""
+          data-aos-duration="500"
           className=" login-card-ls"
         >
           <section className="container-fluid">
