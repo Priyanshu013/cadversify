@@ -12,6 +12,7 @@ import Footer from "./components/footer";
 import { Navbar } from "reactstrap";
 import oppSignup from "./components/oppSignup";
 import cadSignup from "./components/cadSignup";
+import TermsAndConditions from "./components/TermsAndConditions";
 class App extends React.Component {
   render() {
     return (
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Route path="/cadLogin" component={cadLogin}></Route>
           <Route path="/oppSignup" component={oppSignup}></Route>
           <Route path="/cadSignup" component={cadSignup}></Route>
+          <Route path="/TermsAndConditions" component={TermsAndConditions}></Route>
           <Redirect to="/not-found" />
           <Redirect from="/home" to="/" />
           <Route path="/" exact component={HomeBody}></Route>
