@@ -88,7 +88,7 @@ class Footer extends React.Component {
                   </Link>
                 </div>
                 <div>
-                  <NavLink className="ps-2 quick-link" to="">
+                  <NavLink className="ps-2 quick-link" to="/TermsAndConditions">
                     Terms & conditions
                   </NavLink>
                 </div>

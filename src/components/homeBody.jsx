@@ -77,7 +77,7 @@ class HomeBody extends React.Component {
                 <FaUserGraduate />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
-                <Link to="" style={{ textDecoration: "none" }}>
+                <Link to="/oppSignup" style={{ textDecoration: "none" }}>
                   <p className="card-headline">Become a Cadent</p>
                 </Link>
               </h4>
@@ -99,7 +99,7 @@ class HomeBody extends React.Component {
                 <FaUserTie />
               </h3>
               <h4 className="title" style={{ textAlign: "center" }}>
-                <NavLink to="" style={{ textDecoration: "none" }}>
+                <NavLink to="/cadSignup" style={{ textDecoration: "none" }}>
                   <p className="card-headline">Become a Cadvocate</p>
                 </NavLink>
               </h4>
