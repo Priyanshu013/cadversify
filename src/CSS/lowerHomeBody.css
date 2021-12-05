@@ -31,39 +31,35 @@
   text-align: center;
 }
 
-.home-text-right {
-  text-align: right;
-}
-
 .img-fluid {
-  padding: 30px;
-  height: 500px;
+  padding: 10px;
+  height: 450px;
   border-radius: 70px;
 }
 
-.main {
+.home-content {
   width: 50%;
   padding: 30px 20px;
   border: 1px solid #fff;
 }
 @media (max-width: 767px) {
-  .main {
+  .home-content {
     width: 100%;
   }
 }
-.main .top-text {
+.home-content .top-text {
   width: calc(100% - 80px);
 }
-.main .top-text h3 {
-  font-size: 50px;
+.home-content .top-text h3 {
+  font-size: 40px;
   font-family: algerian;
   color: rgb(255, 0, 0);
   margin-right: -70px;
 }
-.main p {
+.home-content p {
   margin-bottom: 0;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 30px;
+  font-size: 22px;
   font-family: nyala;
 }
 
