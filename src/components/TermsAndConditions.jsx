@@ -1,32 +1,16 @@
 import React from "react";
-import "../CSS/TermsAndConditions.css";
+import "../CSS/TermsAndConditions.css"
+import {Form} from "reactstrap";
 
-class TermsAndConditions extends React.Component {
+class TermsAndConditions extends React.Component{
   render() {
     return (
-      <div>
-        <div ng-if="UserInfo.approvedTermsAndConditions || !UserInfo.isAuthenticated">
-          <ncy-breadcrumb />
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 col-md-offset-2">
-              <form name="tandc" ng-submit="approveTandC()">
-                <div
-                  className="panel panel-default"
-                  style={{ marginTop: "20px" }}
-                >
-                  <div
-                    className="panel-body"
-                    style={{
-                      maxHeight: "600px",
-                      width: "1100px",
-                      overflowY: "scroll",
-                      backgroundColor: "white",
-                    }}
-                  >
-                    <div style={{ textAlign: "center" }}>
-                      <h1>Terms and Conditions</h1>
+      <section>
+        <div className=" login-card my-5">
+        <div className="container-fluid">
+            <Form className="form-container">
+              <div className="form-group">
+          
                       <p>
                         <h2>
                           <strong>Terms and Conditions</strong>
@@ -395,25 +379,11 @@ class TermsAndConditions extends React.Component {
                         </p>
                       </p>
                     </div>
-                  </div>
-                </div>
-                <div
-                  style={{ textAlign: "center" }}
-                  ng-if="settings.Authentication.RequireTermsAndConditions && !UserInfo.approvedTermsAndConditions && UserInfo.isAuthenticated"
-                >
-                  <button
-                    style={{ margin: "20px" }}
-                    className="btn btn-primary"
-                    type="submit"
-                  >
-                    Agree to Terms and Conditions
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+                 </Form>
+               </div>
+               </div>
+             </section>
+
     );
   }
 }

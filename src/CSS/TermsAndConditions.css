@@ -1,3 +1,6 @@
+.home-background-low { 
+  height: auto;
+}
 .login-form {
     width: 100%;
     max-width: 330px;
@@ -6,19 +9,18 @@
     height: 100%;
   }
   .login-card {
-    height: 600px;
-    width: 400px;
+    height: 100%;
+    width: 75%;
     padding-top: 20px;
     border-radius: 20px;
     text-align: center;
-    background-color: rgba(218, 218, 218, 0.795);
+    background-color: rgba(216, 215, 215, 0.795);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
   }
-  
   .form-container {
     border-radius: 10px;
     padding: 30px;
