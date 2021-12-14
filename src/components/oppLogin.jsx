@@ -39,7 +39,7 @@ class oppLogin extends Component {
                 <GoogleLoginButton className="mt-3 mb-3" />
                 <FacebookLoginButton className="mt-3 mb-3" />
                 <div className="text-center">
-                  <Link to="/sign-up">Sign up</Link>
+                  <Link to="/oppsignup">Sign up</Link>
                   <span className="p-2">|</span>
                   <Link to="/forgot-password">Forgot password</Link>
                 </div>

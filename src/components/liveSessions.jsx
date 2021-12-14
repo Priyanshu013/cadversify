@@ -48,7 +48,8 @@ class LiveSessions extends React.Component {
                 Login
               </Link>
               <p>
-                Don't have an account? <Link to="/">Register now!</Link>
+                Don't have an account?{" "}
+                <Link to="/oppsignup">Register now!</Link>
               </p>
             </form>
           </section>
