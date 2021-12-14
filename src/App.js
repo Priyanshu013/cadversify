@@ -4,7 +4,7 @@ import React from "react";
 import { Route, Redirect, BrowserRouter } from "react-router-dom";
 import LiveSessions from "./components/liveSessions";
 import HomeBody from "./components/homeBody";
-import Features from "./components/features";
+import OurCourses from "./components/OurCourses";
 import About from "./components/about";
 import oppLogin from "./components/oppLogin";
 import cadLogin from "./components/cadLogin";
@@ -20,7 +20,7 @@ class App extends React.Component {
         <NavBar />
         <main className="Container">
           <Route path="/live-sessions" component={LiveSessions}></Route>
-          <Route path="/features" component={Features}></Route>
+          <Route path="/OurCourses" component={OurCourses}></Route>
           <Route path="/about" component={About}></Route>
           <Route path="/oppLogin" component={oppLogin}></Route>
           <Route path="/cadLogin" component={cadLogin}></Route>
