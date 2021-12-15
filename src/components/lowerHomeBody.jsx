@@ -46,7 +46,7 @@ class LowerHomeBody extends React.Component {
               data-aos-delay="100"
               data-aos-duration="1000"
             >
-              <img src={homebody1} className="img-fluid"></img>
+              <img src={homebody1} className="img-fluid" />
             </div>
             <div
               className="home-content d-flex align-items-center"

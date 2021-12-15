@@ -59,7 +59,7 @@ class HomeBody extends React.Component {
                     to="/oppLogin"
                     className="btn btn-warning my-2 head-button"
                   >
-                    Connect your first call for free! >
+                    Connect your first call for free!
                   </Link>
                 </p>
               </div>

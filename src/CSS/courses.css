@@ -1,0 +1,42 @@
+.coursebanner {
+  width: 100%;
+}
+
+.course-container {
+  padding: 80px;
+}
+
+.course-arrow {
+  color: brown;
+}
+
+.course-card {
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.288), 0 0 6px rgba(211, 211, 211, 0.05);
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  height: auto;
+  border-style: groove;
+  text-align: center;
+}
+
+.course-card h4 {
+  color: firebrick;
+  font-weight: bold;
+}
+
+.course-card h6 {
+  color: rgb(129, 129, 129);
+  font-style: italic;
+}
+.course-rating {
+  padding-left: 130px;
+}
+.courseimg {
+  width: 360px;
+  height: 220px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
