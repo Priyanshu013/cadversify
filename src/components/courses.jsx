@@ -7,6 +7,10 @@ import commskills from "../site_assets/commskills.jpg";
 import interviewprep from "../site_assets/interviewprep.jpg";
 import publicspeaking from "../site_assets/publicspeaking.jpg";
 import coursebanner from "../site_assets/coursebanner.jpg";
+import webdev from "../site_assets/webdev.jpg";
+import python from "../site_assets/python.jpg";
+import machinelearning from "../site_assets/machinelearning.jpg";
+import ai from "../site_assets/ai.jpg";
 import { CgChevronDoubleLeftR } from "react-icons/cg";
 import { CgChevronDoubleRightR } from "react-icons/cg";
 import ReactStars from "react-rating-stars-component";
@@ -36,7 +40,7 @@ class Courses extends React.Component {
     const settings = {
       dots: true,
       speed: 1000,
-      slidesToShow: 3,
+      slidesToShow: 4,
       //autoplay: true,
       autoplaySpeed: 2000,
       nextArrow: <NextArrow />,
@@ -75,6 +79,7 @@ class Courses extends React.Component {
           <img src={coursebanner} className="coursebanner" />
         </div>
         <div className="coursespg-heading">Online courses we offer</div>
+
         <div className="course-container">
           <h3 className="course-section-heading">Most Popular</h3>
           <Slider {...settings}>
@@ -151,6 +156,160 @@ class Courses extends React.Component {
                 <h6>
                   Develop your communication skills effectively, for the
                   workplace
+                </h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+            <div>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
+                <h6>
+                  Develop your communication skills effectively, for the
+                  workplace
+                </h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+            <div>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
+                <h6>
+                  Develop your communication skills effectively, for the
+                  workplace
+                </h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+            <div>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
+                <h6>
+                  Develop your communication skills effectively, for the
+                  workplace
+                </h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+          </Slider>
+        </div>
+
+        <div className="course-container">
+          <h3 className="course-section-heading">Programming and technology</h3>
+          <Slider {...settings}>
+            <div>
+              <div className="course-card ">
+                <img src={python} className="courseimg mb-1"></img>
+                <h5>Python Programming</h5>
+                <h6>
+                  Get into the world of advanced programming with our Python
+                  course
+                </h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+            <div>
+              <div className="course-card">
+                <img src={webdev} className="courseimg mb-1"></img>
+                <h5>Web Development</h5>
+                <h6>Build your dream website in just 18 hours!</h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+            <div>
+              <div className="course-card">
+                <img src={machinelearning} className="courseimg mb-1"></img>
+                <h5>Machine Learning</h5>
+                <h6>Learn Machine Learning and land your dream job today!</h6>
+                <div>Duration: 18 hours</div>
+                <div className="course-rating">
+                  <ReactStars
+                    count={5}
+                    size={30}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star" />}
+                    halfIcon={<i className="fa fa-star-half-alt" />}
+                    fullIcon={<i className="fa fa-star" />}
+                  />
+                </div>
+                (1695 students)
+              </div>
+            </div>
+            <div>
+              <div className="course-card">
+                <img src={ai} className="courseimg mb-1"></img>
+                <h5>Artificial Intelligence</h5>
+                <h6>
+                  Dive into the world of Artificial Intelligence. Your search
+                  ends here!
                 </h6>
                 <div>Duration: 18 hours</div>
                 <div className="course-rating">
