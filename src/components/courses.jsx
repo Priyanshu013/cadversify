@@ -3,22 +3,70 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../CSS/courses.css";
-import courseimg from "../site_assets/course_image.jpg";
+import commskills from "../site_assets/commskills.jpg";
+import interviewprep from "../site_assets/interviewprep.jpg";
+import publicspeaking from "../site_assets/publicspeaking.jpg";
 import coursebanner from "../site_assets/coursebanner.jpg";
-import { AiOutlineRightSquare } from "react-icons/ai";
+import { CgChevronDoubleLeftR } from "react-icons/cg";
+import { CgChevronDoubleRightR } from "react-icons/cg";
 import ReactStars from "react-rating-stars-component";
 
 class Courses extends React.Component {
   render() {
+    function NextArrow(props) {
+      return (
+        <div>
+          <CgChevronDoubleRightR
+            className="slick-arrow slick-next"
+            onClick={props.onClick}
+          />
+        </div>
+      );
+    }
+
+    function PrevArrow(props) {
+      return (
+        <CgChevronDoubleLeftR
+          className="slick-arrow slick-prev"
+          onClick={props.onClick}
+        />
+      );
+    }
+
     const settings = {
       dots: true,
       speed: 1000,
       slidesToShow: 3,
-      focusOnSelect: true,
       //autoplay: true,
-      autoplaySpeed: 3000,
-      nextArrow: <AiOutlineRightSquare className="course-arrow" />,
-      prevArrow: <AiOutlineRightSquare className="course-arrow" />,
+      autoplaySpeed: 2000,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
 
     return (
@@ -26,16 +74,17 @@ class Courses extends React.Component {
         <div>
           <img src={coursebanner} className="coursebanner" />
         </div>
+        <div className="coursespg-heading">Online courses we offer</div>
         <div className="course-container">
-          <h3>Most Popular</h3>
+          <h3 className="course-section-heading">Most Popular</h3>
           <Slider {...settings}>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Communication Skills</h4>
+              <div className="course-card ">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
                 <h6>
-                  Develop your communication skills effectively, for the
-                  workplace.
+                  Develop your communication skills effectively with experienced
+                  speakers
                 </h6>
                 <div>Duration: 18 hours</div>
                 <div className="course-rating">
@@ -52,12 +101,12 @@ class Courses extends React.Component {
               </div>
             </div>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Interview Preparation</h4>
+              <div className="course-card">
+                <img src={interviewprep} className="courseimg mb-1"></img>
+                <h5>Interview Preparation</h5>
                 <h6>
-                  Master the guide of interviewing skills to land your dream
-                  job!
+                  Master the guide of interviewing skills for landing on your
+                  dream job!
                 </h6>
                 <div>Duration: 18 hours</div>
                 <div className="course-rating">
@@ -74,9 +123,9 @@ class Courses extends React.Component {
               </div>
             </div>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Public Speaking</h4>
+              <div className="course-card">
+                <img src={publicspeaking} className="courseimg mb-1"></img>
+                <h5>Public Speaking</h5>
                 <h6>
                   Master the art of public speaking and create an unforgettable
                   impression.
@@ -96,9 +145,9 @@ class Courses extends React.Component {
               </div>
             </div>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Communication Skills</h4>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
                 <h6>
                   Develop your communication skills effectively, for the
                   workplace
@@ -118,9 +167,9 @@ class Courses extends React.Component {
               </div>
             </div>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Communication Skills</h4>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
                 <h6>
                   Develop your communication skills effectively, for the
                   workplace
@@ -140,9 +189,9 @@ class Courses extends React.Component {
               </div>
             </div>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Communication Skills</h4>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
                 <h6>
                   Develop your communication skills effectively, for the
                   workplace
@@ -162,9 +211,9 @@ class Courses extends React.Component {
               </div>
             </div>
             <div>
-              <div className="course-card pb-2">
-                <img src={courseimg} className="courseimg mb-1"></img>
-                <h4>Communication Skills</h4>
+              <div className="course-card">
+                <img src={commskills} className="courseimg mb-1"></img>
+                <h5>Communication Skills</h5>
                 <h6>
                   Develop your communication skills effectively, for the
                   workplace
