@@ -6,7 +6,9 @@ import "../CSS/courses.css";
 import commskills from "../site_assets/commskills.jpg";
 import interviewprep from "../site_assets/interviewprep.jpg";
 import publicspeaking from "../site_assets/publicspeaking.jpg";
-import coursebanner from "../site_assets/coursebanner.jpg";
+import coursebanner1 from "../site_assets/coursebanner.jpg";
+import coursebanner2 from "../site_assets/coursebanner2.jpg";
+import coursebanner3 from "../site_assets/coursebanner3.jpg";
 import webdev from "../site_assets/webdev.jpg";
 import python from "../site_assets/python.jpg";
 import machinelearning from "../site_assets/machinelearning.jpg";
@@ -41,6 +43,7 @@ class Courses extends React.Component {
       dots: true,
       speed: 1000,
       slidesToShow: 4,
+      infinite: false,
       //autoplay: true,
       autoplaySpeed: 2000,
       nextArrow: <NextArrow />,
@@ -73,11 +76,27 @@ class Courses extends React.Component {
       ],
     };
 
+    const bannerSettings = {
+      arrows: false,
+      speed: 1000,
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    };
+
     return (
       <div>
-        <div>
-          <img src={coursebanner} className="coursebanner" />
-        </div>
+        <Slider {...bannerSettings}>
+          <div>
+            <img src={coursebanner1} className="coursebanner" />
+          </div>
+          <div>
+            <img src={coursebanner2} className="coursebanner" />
+          </div>
+          <div>
+            <img src={coursebanner3} className="coursebanner" />
+          </div>
+        </Slider>
         <div className="coursespg-heading">Online courses we offer</div>
 
         <div className="course-container">
@@ -91,7 +110,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively with experienced
                   speakers
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -102,7 +120,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -113,7 +134,6 @@ class Courses extends React.Component {
                   Master the guide of interviewing skills for landing on your
                   dream job!
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -124,7 +144,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -135,7 +158,6 @@ class Courses extends React.Component {
                   Master the art of public speaking and create an unforgettable
                   impression.
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -146,7 +168,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -157,7 +182,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -168,7 +192,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -179,7 +206,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -190,7 +216,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -201,7 +230,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -212,7 +240,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -223,7 +254,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -234,7 +264,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
           </Slider>
@@ -251,7 +284,6 @@ class Courses extends React.Component {
                   Get into the world of advanced programming with our Python
                   course
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -262,7 +294,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -270,7 +305,6 @@ class Courses extends React.Component {
                 <img src={webdev} className="courseimg mb-1"></img>
                 <h5>Web Development</h5>
                 <h6>Build your dream website in just 18 hours!</h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -281,7 +315,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -289,7 +326,6 @@ class Courses extends React.Component {
                 <img src={machinelearning} className="courseimg mb-1"></img>
                 <h5>Machine Learning</h5>
                 <h6>Learn Machine Learning and land your dream job today!</h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -300,7 +336,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -311,7 +350,6 @@ class Courses extends React.Component {
                   Dive into the world of Artificial Intelligence. Your search
                   ends here!
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -322,7 +360,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -333,7 +374,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -344,7 +384,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -355,7 +398,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -366,7 +408,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
             <div>
@@ -377,7 +422,6 @@ class Courses extends React.Component {
                   Develop your communication skills effectively, for the
                   workplace
                 </h6>
-                <div>Duration: 18 hours</div>
                 <div className="course-rating">
                   <ReactStars
                     count={5}
@@ -388,7 +432,10 @@ class Courses extends React.Component {
                     fullIcon={<i className="fa fa-star" />}
                   />
                 </div>
-                (1695 students)
+                <div>
+                  <span className="pe-4">Duration: 18 hours</span>
+                  <span>(1695 students)</span>
+                </div>
               </div>
             </div>
           </Slider>
