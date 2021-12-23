@@ -30,7 +30,7 @@ class LiveSessions extends React.Component {
                   type="email"
                   className="form-control mt-4 my-2"
                   id="InputEmail1"
-                  aria-describeby="emailHelp"
+                  //aria-describeby="emailHelp"
                   placeholder="Enter email"
                 />
                 <input

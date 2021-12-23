@@ -19,6 +19,13 @@
   margin: auto;
 }
 
+.cad-login-background {
+  background: url(../site_assets/sign-up-in-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .form-container {
   border-radius: 10px;
   padding: 30px;
@@ -32,5 +39,4 @@
 
 .login-logo {
   padding-left: 30px;
-  margin-top: -40px;
 }

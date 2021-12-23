@@ -1,0 +1,54 @@
+.signup-form {
+  width: 80%;
+  padding: 15px;
+  margin: auto;
+  height: auto;
+}
+
+.opp-signup-background {
+  background: url(../site_assets/sign-up-in-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.signup-heading {
+  font-family: algerian;
+  font-style: italic;
+  color: red;
+}
+
+.opp-signup-card {
+  height: auto;
+  width: 1000px;
+  padding-top: 20px;
+  border-radius: 20px;
+  text-align: left;
+  background-color: rgba(218, 218, 218, 0.795);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.form-container {
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.form-container h1 {
+  color: #1c4059;
+  font-family: algerian;
+  font-size: 30px;
+}
+
+.hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+.login-logo {
+  padding-left: 30px;
+  margin-top: -40px;
+}

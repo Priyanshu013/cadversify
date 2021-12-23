@@ -1,27 +1,29 @@
-.signup-form {
-  width: 80%;
+.login-form {
+  width: 100%;
+  max-width: 330px;
   padding: 15px;
   margin: auto;
-  height: auto;
+  height: 100%;
 }
-
-.signup-background {
-  background: url(../site_assets/about_lower_bg3.jpg);
-  height: auto;
-}
-
-.opp-signup-card {
-  height: auto;
-  width: 1000px;
+.login-card {
+  height: 600px;
+  width: 400px;
   padding-top: 20px;
   border-radius: 20px;
-  text-align: left;
+  text-align: center;
   background-color: rgba(218, 218, 218, 0.795);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.opp-login-background {
+  background: url(../site_assets/sign-up-in-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .form-container {
@@ -35,12 +37,6 @@
   font-size: 30px;
 }
 
-.hr.rounded {
-  border-top: 8px solid #bbb;
-  border-radius: 5px;
-}
-
 .login-logo {
   padding-left: 30px;
-  margin-top: -40px;
 }

@@ -19,9 +19,16 @@
 }
 
 .home-background-low {
-  background: url(../site_assets/about_lower_bg3.jpg) no-repeat center;
-  background-size: 100% 100%;
-  height: auto;
+  background: url(../site_assets/about_lower_bg3.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.lower-home-bullets {
+  font-size: x-large;
+  margin-right: 10px;
+  color: orange;
 }
 
 .dest-img {

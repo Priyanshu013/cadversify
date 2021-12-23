@@ -6,18 +6,18 @@ import { NavLink, Link } from "react-router-dom";
 class cadSignup extends React.Component {
   render() {
     return (
-      <div className="signup-background">
+      <div className="cad-signup-background">
         <section className="py-5">
           <div className="cad-signup-card my-5">
             <section>
               <div className="container">
-                <div className="title">
-                  <h1>NEW USER SIGNUP</h1>
+                <div className="cad-signup-heading text-center">
+                  <h1>CADVOCATE SIGNUP</h1>
                 </div>
                 <hr className="rounded" />
                 <Form className="form-container" action="#">
                   <div>
-                    <h3>Personal Details</h3>
+                    <h3 className="text-center pb-3">Personal Details</h3>
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
@@ -110,7 +110,7 @@ class cadSignup extends React.Component {
 
                     <hr className="rounded" />
 
-                    <h3>Professional Details</h3>
+                    <h3 className="text-center pb-3">Professional Details</h3>
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
@@ -211,7 +211,10 @@ class cadSignup extends React.Component {
                     </div>
 
                     <hr className="rounded" />
-                    <h3></h3>
+
+                    <h3 className="text-center pb-3">
+                      Personality check and interview
+                    </h3>
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
@@ -278,7 +281,7 @@ class cadSignup extends React.Component {
 
                     <hr className="rounded" />
 
-                    <div className="row">
+                    <div>
                       <div className="form-group col-sm-6 flex-column d-flex">
                         <label className="form-control-label px-3">
                           Referral code (optional)

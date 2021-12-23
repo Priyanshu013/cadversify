@@ -30,13 +30,12 @@ class HomeBody extends React.Component {
         <section className="home-background body">
           <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <h1 className="ps-5 pt-5">
-              <div className="col-lg-7 mt-4">
-                <h2 className="ps-5 pt-2 headline">
+              <div className="col-lg-7">
+                <h2 className="ps-5 headline">
                   <Typewriter
                     options={{
                       loop: true,
                     }}
-                    className="ps-5 pt-2 headline"
                     onInit={(typewriter) => {
                       typewriter
                         .changeDelay(60)
@@ -54,9 +53,9 @@ class HomeBody extends React.Component {
                   />
                 </h2>
 
-                <p className="ps-5 py-5">
+                <p className="ps-5 pt-5">
                   <Link
-                    to="/oppLogin"
+                    to="/oppSignup"
                     className="btn btn-warning my-2 head-button"
                   >
                     Connect your first call for free!
@@ -67,7 +66,7 @@ class HomeBody extends React.Component {
           </div>
 
           <div
-            className="container position-relative card-align card-deck pt-3 "
+            className="position-relative card-align card-deck pt-3"
             data-aos="fade-up"
             data-aos-delay="1000"
             data-aos-duration="2000"
@@ -83,7 +82,7 @@ class HomeBody extends React.Component {
               </h4>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="hover"
+                  trigger="click"
                   placement="left"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}
@@ -105,7 +104,7 @@ class HomeBody extends React.Component {
               </h4>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="hover"
+                  trigger="click"
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip2}

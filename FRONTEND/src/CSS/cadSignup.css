@@ -5,9 +5,21 @@
   height: auto;
 }
 
-.signup-background {
-  background: url(../site_assets/about_lower_bg3.jpg);
-  height: auto;
+.cad-signup-background {
+  background: url(../site_assets/sign-up-in-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.cad-signup-heading {
+  font-family: algerian;
+  font-style: italic;
+  color: red;
+}
+
+.title {
+  text-align: center;
 }
 
 .cad-signup-card {

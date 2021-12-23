@@ -6,13 +6,13 @@ import { NavLink, Link } from "react-router-dom";
 class oppSignup extends React.Component {
   render() {
     return (
-      <div className="signup-background">
+      <div className="opp-signup-background">
         <section className="py-5">
           <div className="opp-signup-card my-5">
             <section>
               <div className="container">
-                <div className="title text-center">
-                  <h1>NEW USER SIGNUP</h1>
+                <div className="signup-heading text-center">
+                  <h1>CADENT SIGNUP</h1>
                 </div>
                 <hr className="rounded" />
                 <Form className="form-container" action="#">
@@ -29,7 +29,7 @@ class oppSignup extends React.Component {
                           id="fname"
                           name="fname"
                           placeholder="First name"
-                          onblur="validate(1)"
+                          onBlur="validate(1)"
                           required
                         />
                       </div>
@@ -99,7 +99,6 @@ class oppSignup extends React.Component {
                         </label>
                         <Input
                           className="mt-2 mb-3"
-                          type="number"
                           placeholder="Enter your Phone Number"
                           onblur="validate(1)"
                           required
@@ -107,6 +106,7 @@ class oppSignup extends React.Component {
                       </div>
                     </div>
 
+                    <h3 className="text-center">Professional Details</h3>
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex py-2">
                         <label className="form-control-label px-1">

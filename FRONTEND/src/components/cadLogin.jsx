@@ -12,12 +12,12 @@ class cadLogin extends Component {
   render() {
     Aos.init();
     return (
-      <section>
+      <section className="cad-signup-background py-5">
         <div
           data-aos="fade-up"
           data-aos-delay=""
           data-aos-duration="500"
-          className=" login-card my-5"
+          className=" login-card my-5 "
         >
           <section className="container-fluid">
             <Form className="form-container">
@@ -25,7 +25,7 @@ class cadLogin extends Component {
                 <NavLink className="navbar-brand login-logo" to="/">
                   <img src={sitelogo} className="navbar-brand" />
                 </NavLink>
-                <h1 className="font-weight-bold">Login to Your Account</h1>
+                <h1 className="font-weight-bold pb-4">Cadvocate Login</h1>
                 <FormGroup>
                   <Input type="email" placeholder="Enter your Email" />
                 </FormGroup>
@@ -39,7 +39,7 @@ class cadLogin extends Component {
                 <GoogleLoginButton className="mt-3 mb-3" />
                 <FacebookLoginButton className="mt-3 mb-3" />
                 <div className="text-center">
-                  <Link to="/sign-up">Sign up</Link>
+                  <Link to="/cadSignup">Sign up</Link>
                   <span className="p-2">|</span>
                   <Link to="/forgot-password">Forgot password</Link>
                 </div>
