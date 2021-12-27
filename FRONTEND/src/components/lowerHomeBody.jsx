@@ -3,6 +3,9 @@ import { NavLink, Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import "../CSS/lowerHomeBody.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import homebody1 from "../site_assets/homebody1.jpg";
 import homebody2 from "../site_assets/homebody2.jpg";
 import homebody3 from "../site_assets/homebody3.jpg";
@@ -15,6 +18,15 @@ import { CgChevronDoubleRightR } from "react-icons/cg";
 
 class LowerHomeBody extends React.Component {
   render() {
+    const bannerSettings = {
+      arrows: false,
+      speed: 1000,
+      slidesToShow: 1,
+      //autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+    };
+
     Aos.init();
     return (
       <section className=" home-background-low pt-5">
@@ -24,26 +36,24 @@ class LowerHomeBody extends React.Component {
               <div className="my-auto">
                 <div className="quote-carding mb-10">
                   <div className="card-body px-5">
-                    <div className="text-center pb-2"></div>
-                    <figure className="text-center">
-                      <span className="text-warning fs-2 fst-italic">
-                        Our motto-
-                      </span>
-                      <figcaption className="quote-text">
-                        You dream, we envision
-                      </figcaption>
-                    </figure>
+                    <div className="text-warning fs-2 fst-italic">
+                      Our motto-
+                    </div>
+                    <figcaption className="quote-text">
+                      You dream, we envision
+                    </figcaption>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="row px-5 pt-5">
           <div className=" d-flex">
             <div
               className="dest-img"
-              data-aos="zoom-in"
+              data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="1000"
             >
@@ -51,7 +61,7 @@ class LowerHomeBody extends React.Component {
             </div>
             <div
               className="home-content d-flex align-items-center"
-              data-aos="zoom-in"
+              data-aos="fade-left"
               data-aos-delay="100"
               data-aos-duration="1000"
             >
@@ -91,7 +101,7 @@ class LowerHomeBody extends React.Component {
           <div className=" d-sm-flex">
             <div
               className="home-content d-flex align-items-center"
-              data-aos="zoom-in"
+              data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="1000"
             >
@@ -121,11 +131,64 @@ class LowerHomeBody extends React.Component {
             </div>
             <div
               className="dest-img"
-              data-aos="zoom-in"
+              data-aos="fade-left"
               data-aos-delay="100"
               data-aos-duration="1000"
             >
-              <img src={homebody2} className="img-fluid pe-5"></img>
+              <img src={homebody2} className="img-fluid me-5"></img>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-5 home-slider-bg">
+          <Slider {...bannerSettings}>
+            <div className="home-slider1 ">
+              <img src={homebody3} className="img-fluid "></img>
+            </div>
+            <div></div>
+            <div></div>
+          </Slider>
+        </div>
+
+        <div className="row px-5">
+          <div className=" d-sm-flex">
+            <div
+              className="home-content d-flex align-items-center"
+              data-aos="fade-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              <div className="pe-4">
+                <div className="d-flex top-text">
+                  <h3>Why Cadversify?</h3>
+                </div>
+                <p className="py-3">
+                  <CgEditBlackPoint className="lower-home-bullets" />
+                  It's the largest community of experienced professionals who
+                  are happy to share their years of experiences with people
+                </p>
+                <p className="py-3">
+                  <CgEditBlackPoint className="lower-home-bullets" />
+                  Find life-long mentors who will guide you on one-to-one video
+                  call sessions. You can also ask your friends who share same
+                  aspirations as you to join-in your session, and split up the
+                  bills!
+                </p>
+                <p className="py-3">
+                  <CgEditBlackPoint className="lower-home-bullets" />
+                  Build connections with people working in big MNCs, who may
+                  seem to be impossible to get in touch with, all thanks to our
+                  trusted cadvocates from 108 countries across the globe.
+                </p>
+              </div>
+            </div>
+            <div
+              className="dest-img"
+              data-aos="fade-left"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              <img src={homebody2} className="img-fluid me-5"></img>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="site-footer">
-        <BackToTop showAt={500} speed={300}>
+        <BackToTop showAt={100} speed={300}>
           <span className="btt-btn">
             <TiArrowUpThick />
           </span>

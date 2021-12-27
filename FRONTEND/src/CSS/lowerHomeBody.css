@@ -18,6 +18,13 @@
   font-size: xxx-large;
 }
 
+.home-slider1 {
+}
+
+.home-rounded {
+  border-top: 5px solid rgb(0, 0, 0);
+}
+
 .home-background-low {
   background: url(../site_assets/about_lower_bg3.jpg);
   background-attachment: fixed;
@@ -44,6 +51,12 @@
   border-radius: 70px;
 }
 
+.home-slider-bg {
+  background: url(../site_assets/sign-up-in-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
 .home-content {
   width: 50%;
   padding: 30px 20px;
