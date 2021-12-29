@@ -29,6 +29,12 @@
   font-family: hp simplified;
   height: 150px;
 }
+@media (max-width: 500px) {
+  #home-main-typewriter {
+    font-size: 20px;
+    text-align: center;
+  }
+}
 
 .head-button {
   font-size: 20px;

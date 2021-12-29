@@ -29,13 +29,13 @@ class HomeBody extends React.Component {
       <div>
         <section className="home-background body">
           <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <h1 className="ps-5 pt-5">
+            <div className="ps-5 pt-5">
               <div className="col-lg-7">
-                <h2 className="ps-5 headline">
+                <h2 id="home-main-typewriter" className="ps-5 headline">
                   <Typewriter
-                    options={{
+                    /* options={{
                       loop: true,
-                    }}
+                    }} */
                     onInit={(typewriter) => {
                       typewriter
                         .changeDelay(60)
@@ -62,7 +62,7 @@ class HomeBody extends React.Component {
                   </Link>
                 </p>
               </div>
-            </h1>
+            </div>
           </div>
 
           <div

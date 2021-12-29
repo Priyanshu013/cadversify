@@ -5,9 +5,9 @@ import { Form } from "reactstrap";
 class TermsAndConditions extends React.Component {
   render() {
     return (
-      <section>
-        <div className=" login-card-tc my-5">
-          <div className="container-fluid">
+      <section className="tc-background py-5">
+        <div className="login-card-tc">
+          <div className="container">
             <Form className="form-container">
               <div className="form-group">
                 <p>
@@ -56,7 +56,7 @@ class TermsAndConditions extends React.Component {
                   <p>
                     We employ the use of cookies. By accessing Cadversify, you
                     agreed to use cookies in agreement with the Cadversify's
-                    Privacy Policy.{" "}
+                    Privacy Policy.
                   </p>
 
                   <p>
