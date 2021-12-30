@@ -8,8 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import homebody1 from "../site_assets/homebody1.jpg";
 import homebody2 from "../site_assets/homebody2.jpg";
-import slidergif1 from "../site_assets/home-slider-gif1(1).gif";
-import slidergif2 from "../site_assets/home-slider-gif2.gif";
+import slider1 from "../site_assets/home-slider-gif1(1).gif";
+import slider2 from "../site_assets/home-slider-gif2.gif";
 import slidergifswipe from "../site_assets/home-slider-gifswipe.gif";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Typewriter from "typewriter-effect";
@@ -153,7 +153,7 @@ class LowerHomeBody extends React.Component {
                   data-aos-delay="100"
                   data-aos-duration="1000"
                 >
-                  <img src={slidergif1} className="img-fluid"></img>
+                  <img src={slider1} className="img-fluid"></img>
                 </div>
                 <div
                   className="home-slider-text"
@@ -169,7 +169,7 @@ class LowerHomeBody extends React.Component {
                     data-aos-delay="3000"
                     data-aos-duration="1000"
                   >
-                    Here's how you can never be like this. Swipe right
+                    Be bold and Swipe left
                     <img src={slidergifswipe} className="homeslidergifswipe" />
                   </div>
                 </div>
@@ -184,7 +184,7 @@ class LowerHomeBody extends React.Component {
                   data-aos-delay="100"
                   data-aos-duration="1000"
                 >
-                  <img src={slidergif2} className="img-fluid"></img>
+                  <img src={slider2} className="img-fluid"></img>
                 </div>
                 <div
                   className="home-slider-text"
@@ -194,10 +194,58 @@ class LowerHomeBody extends React.Component {
                 >
                   How about having a MENTOR?
                   <br />
-                  <br />
-                  Who can give you insights about how your life would look if
-                  you get into a career
+                  Who is there to guide and correct you from their experiences,
+                  in your career.
                   <img src={slidergifswipe} className="homeslidergifswipe" />
+                </div>
+              </div>
+            </div>
+            <div className="row px-5">
+              <div className="d-sm-flex">
+                <div
+                  className="home-content d-flex align-items-center"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <video width="620" height="480" controls>
+                    <source src={slider2} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div
+                  className="home-slider-text"
+                  data-aos="fade-left"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  Still unsure?
+                  <br /> No problem! Watch this video to understand how it
+                  works.
+                  <br />
+                  <div>
+                    <span>
+                      <NavLink to="/oppsignup">
+                        <button className="btn btn-primary btn-lg m-4 mt-5">
+                          Sign up
+                        </button>
+                      </NavLink>
+                    </span>
+                    <span>
+                      <NavLink to="live-sessions">
+                        <button className="btn btn-primary btn-lg m-4 mt-5">
+                          Live sessions
+                        </button>
+                      </NavLink>
+                    </span>
+                    <span>
+                      <NavLink to="about">
+                        <button className="btn btn-primary btn-lg m-4 mt-5">
+                          About us
+                        </button>
+                      </NavLink>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

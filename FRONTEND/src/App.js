@@ -13,11 +13,14 @@ import cadSignup from "./components/cadSignup";
 import TermsAndConditions from "./components/TermsAndConditions";
 import Courses from "./components/courses";
 import NotFound from "./components/notFound";
+import BackToTop from "./BackToTop";
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
+        <BackToTop />
+
         <NavBar />
         <Switch>
           <Route path="/live-sessions" component={LiveSessions} />
