@@ -10,6 +10,7 @@ import homebody1 from "../site_assets/homebody1.jpg";
 import homebody2 from "../site_assets/homebody2.jpg";
 import slider1 from "../site_assets/home-slider-gif1(1).gif";
 import slider2 from "../site_assets/home-slider-gif2.gif";
+import slider3 from "../site_assets/slider3.mp4";
 import slidergifswipe from "../site_assets/home-slider-gifswipe.gif";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Typewriter from "typewriter-effect";
@@ -209,7 +210,7 @@ class LowerHomeBody extends React.Component {
                   data-aos-duration="1000"
                 >
                   <video width="620" height="480" controls>
-                    <source src={slider2} type="video/mp4" />
+                    <source src={slider3} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
