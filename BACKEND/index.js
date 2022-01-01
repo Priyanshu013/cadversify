@@ -7,8 +7,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB...", err));
 
-app.get("/", (req, res) => {
-  res.send("Hello world");
+const courses = [
 });
 
 const port = process.env.PORT || 5000;
