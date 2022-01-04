@@ -1,3 +1,4 @@
+const config = require("config");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -5,6 +6,10 @@ const courses = require("./routes/courses");
 const cadvocates = require("./routes/cadvocates");
 const cadents = require("./routes/cadents");
 
+if (!config.get("jwtPrivateKey")) {
+  console.error("FATAL ERROR: jwtPrivateKey not defined");
+  process.exit(1); //anything other than 0 is code for exit with an error
+}
 mongoose
   .connect("mongodb://localhost/cadversify-test")
   .then(() => console.log("Connected to MongoDB"))
@@ -16,6 +21,7 @@ app.get("/", (req, res) => {
   );
 });
 
+app.use(express.json());
 app.use("/api/courses", courses);
 app.use("/api/cadvocates", cadvocates);
 app.use("/api/cadents", cadents);

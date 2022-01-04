@@ -15,8 +15,15 @@ const cadentSchema = new mongoose.Schema({
     maxlength: 255,
     unique: true,
   },
-  phone: {
+  password: {
     type: String,
+    required: true,
+    minlength: 5,
+    maxlength: 255,
+    password: true,
+  },
+  phone: {
+    type: Number,
     required: true,
     minlength: 8,
     maxlength: 15,
@@ -29,6 +36,7 @@ function validateCadent(cadent) {
     name: Joi.string().min(5).max(50).required(),
     email: Joi.string().min(3).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
+    phone: Joi.string().min(5).max(255).required(),
   }).unknown(true);
 
   const validation = schema.validate(cadent);
