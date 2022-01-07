@@ -2,9 +2,54 @@ import React from "react";
 import "../CSS/oppSignup.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
+import axios from "axios";
 
 class oppSignup extends React.Component {
+  state = {
+    cadent: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+      phonenumber: "",
+      designation: "",
+      organization: "",
+      futureaspirations: "",
+      referralcode: "",
+    },
+    errors: {},
+  };
+
+  handleChange = (event) => {
+    const cadent = { ...this.state.cadent };
+    cadent[event.currentTarget.name] = event.currentTarget.value;
+    this.setState({ cadent });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const cadent = {
+      firstName: this.state.cadent.firstname,
+      lastName: this.state.cadent.lastname,
+      email: this.state.cadent.email,
+      password: this.state.cadent.password,
+      phoneNumber: this.state.cadent.phonenumber,
+      designation: this.state.cadent.designation,
+      organization: this.state.cadent.organization,
+      futureAspirations: this.state.cadent.futureaspirations,
+      referralCode: this.state.cadent.referralcode,
+    };
+
+    axios.post(`http://localhost:5000/api/cadents/`, { cadent }).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
+  };
+
   render() {
+    const { cadent } = this.state;
     return (
       <div className="opp-signup-background">
         <section className="py-5">
@@ -15,7 +60,7 @@ class oppSignup extends React.Component {
                   <h1>CADENT SIGNUP</h1>
                 </div>
                 <hr className="rounded" />
-                <Form className="form-container" action="#">
+                <Form onSubmit={this.handleSubmit} className="form-container">
                   <div>
                     <div className="row">
                       <h3 className="text-center">Personal Details</h3>
@@ -27,9 +72,11 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           type="text"
                           id="fname"
-                          name="fname"
+                          name="firstname"
                           placeholder="First name"
                           onBlur="validate(1)"
+                          value={cadent.firstname}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -41,9 +88,11 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           type="text"
                           id="lname"
-                          name="lname"
+                          name="lastname"
                           placeholder="Last name"
                           onblur="validate(2)"
+                          value={cadent.lastname}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -57,8 +106,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="email"
+                          name="email"
                           placeholder="Enter your Email"
                           onblur="validate(1)"
+                          value={cadent.email}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -72,8 +124,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="password"
+                          name="password"
                           placeholder="Enter your Password"
                           onblur="validate(1)"
+                          value={cadent.password}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -85,8 +140,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="password"
+                          name="confirmpassword"
                           placeholder="Re-enter your Password"
                           onblur="validate(2)"
+                          value={cadent.confirmpassword}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -99,8 +157,11 @@ class oppSignup extends React.Component {
                         </label>
                         <Input
                           className="mt-2 mb-3"
+                          name="phonenumber"
                           placeholder="Enter your Phone Number"
                           onblur="validate(1)"
+                          value={cadent.phonenumber}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -115,8 +176,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="text"
+                          name="designation"
                           placeholder="Current education/working position"
                           onblur="validate(1)"
+                          value={cadent.designation}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -130,8 +194,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="text"
+                          name="organization"
                           placeholder="School/college/Company name"
                           onblur="validate(1)"
+                          value={cadent.organization}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -146,8 +213,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="text"
+                          name="futureaspirations"
                           placeholder="Future aspirations(Pilot/Doctor/etc.)"
                           onblur="validate(1)"
+                          value={cadent.futureaspirations}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -161,8 +231,11 @@ class oppSignup extends React.Component {
                         <Input
                           className="mt-2 mb-3"
                           type="code"
+                          name="referralcode"
                           placeholder="Type your answer here"
                           onblur="validate(1)"
+                          value={cadent.referralcode}
+                          onChange={this.handleChange}
                           required
                         />
                       </div>
@@ -175,7 +248,11 @@ class oppSignup extends React.Component {
                         </Link>
                       </label>
                       <br />
-                      <Button className="btn-lg btn-dark btn-block mb-2">
+                      <Button
+                        //onClick={this.handleSubmit}
+                        type="submit"
+                        className="btn-lg btn-dark btn-block mb-2"
+                      >
                         Sign up
                       </Button>
                       <br />

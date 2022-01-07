@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const courses = require("./routes/courses");
 const cadvocates = require("./routes/cadvocates");
 const cadents = require("./routes/cadents");
+var bodyParser = require("body-parser");
 
 if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: jwtPrivateKey not defined");
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
   );
 });
 
+app.use(bodyParser.json());
 app.use(express.json());
 app.use("/api/courses", courses);
 app.use("/api/cadvocates", cadvocates);

@@ -114,7 +114,7 @@ class cadSignup extends React.Component {
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
-                        <label className="form-control-label px-3">
+                        <label className="form-control-label">
                           What is your profession?
                           <span className="text-danger"> *</span>
                         </label>
@@ -130,9 +130,10 @@ class cadSignup extends React.Component {
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
-                        <label className="form-control-label px-3">
-                          The Organisation you are currently working / last
-                          worked with<span className="text-danger"> *</span>
+                        <label className="form-control-label pt-4">
+                          The Organisation you are currently working in. If
+                          retired, mention, and state the name of last company.
+                          <span className="text-danger"> *</span>
                         </label>
                         <Input
                           className="mt-2 nmb-3"
@@ -141,15 +142,12 @@ class cadSignup extends React.Component {
                           onblur="validate(1)"
                           required
                         />
-                        <label>
-                          <input type="checkbox"></input>I'm Retired
-                        </label>
                       </div>
                     </div>
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
-                        <label className="form-control-label px-3">
+                        <label className="form-control-label pt-4">
                           Your Designation in the company
                           <span className="text-danger"> *</span>
                         </label>
@@ -165,9 +163,9 @@ class cadSignup extends React.Component {
 
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
-                        <label className="form-control-label px-3">
+                        <label className="form-control-label pt-4">
                           Years of Experience
-                          <span className="text-danger"> *</span>
+                          <span className="text-danger">*</span>
                         </label>
                         <Input
                           className="mt-2 nmb-3"
