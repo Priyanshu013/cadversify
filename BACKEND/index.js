@@ -6,6 +6,7 @@ const courses = require("./routes/courses");
 const cadvocates = require("./routes/cadvocates");
 const cadents = require("./routes/cadents");
 var bodyParser = require("body-parser");
+var cors = require("cors");
 
 if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: jwtPrivateKey not defined");
@@ -17,11 +18,10 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB...", err));
 
 app.get("/", (req, res) => {
-  res.send(
-    '<p style="color:black; font-size:40px; padding-top:80px; text-align:center; font-weight:bold; font-family: verdana">WELCOME TO CADVERSIFY SERVER</p>'
-  );
+  res.send("WELCOME TO CADVERSIFY SERVER");
 });
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use("/api/courses", courses);

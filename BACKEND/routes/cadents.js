@@ -14,26 +14,25 @@ router.get("/me", auth, async (req, res) => {
 
 router.post("/", async (req, res) => {
   //Validate the given inputs
-  const result = validateCadent(req.body);
+  const result = validateCadent(req.body.cadent);
   if (result.error) {
     return res.status(400).send(result.error.details[0].message);
   }
-
   //Check if the cadent already exists or not
-  let cadent = await Cadent.findOne({ email: req.body.email });
+  let cadent = await Cadent.findOne({ email: req.body.cadent.email });
   if (cadent) return res.status(400).send("Cadent already registered");
 
   //Add new cadent
   cadent = new Cadent({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password,
-    phoneNumber: req.body.phoneNumber,
-    designation: req.body.designation,
-    organization: req.body.organization,
-    futureAspirations: req.body.futureAspirations,
-    referralCode: req.body.referralCode,
+    firstName: req.body.cadent.firstName,
+    lastName: req.body.cadent.lastName,
+    email: req.body.cadent.email,
+    password: req.body.cadent.password,
+    phoneNumber: req.body.cadent.phoneNumber,
+    designation: req.body.cadent.designation,
+    organization: req.body.cadent.organization,
+    futureAspirations: req.body.cadent.futureAspirations,
+    referralCode: req.body.cadent.referralCode,
   });
 
   const salt = await bcrypt.genSalt(10);

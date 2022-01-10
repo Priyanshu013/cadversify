@@ -1,7 +1,7 @@
 import React from "react";
 import "../CSS/oppSignup.css";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { NavLink, Link } from "react-router-dom";
+import { Form, Input } from "reactstrap";
+import { NavLink, Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
 class oppSignup extends React.Component {
@@ -18,7 +18,6 @@ class oppSignup extends React.Component {
       futureaspirations: "",
       referralcode: "",
     },
-    errors: {},
   };
 
   handleChange = (event) => {
@@ -42,9 +41,10 @@ class oppSignup extends React.Component {
       referralCode: this.state.cadent.referralcode,
     };
 
-    axios.post(`http://localhost:5000/api/cadents/`, { cadent }).then((res) => {
+    axios.post(`http://localhost:5000/api/cadents`, { cadent }).then((res) => {
       console.log(res);
       console.log(res.data);
+      <Redirect to="" />;
     });
   };
 
@@ -74,7 +74,7 @@ class oppSignup extends React.Component {
                           id="fname"
                           name="firstname"
                           placeholder="First name"
-                          onBlur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.firstname}
                           onChange={this.handleChange}
                           required
@@ -90,7 +90,7 @@ class oppSignup extends React.Component {
                           id="lname"
                           name="lastname"
                           placeholder="Last name"
-                          onblur="validate(2)"
+                          //onBlur="validate(2)"
                           value={cadent.lastname}
                           onChange={this.handleChange}
                           required
@@ -108,7 +108,7 @@ class oppSignup extends React.Component {
                           type="email"
                           name="email"
                           placeholder="Enter your Email"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.email}
                           onChange={this.handleChange}
                           required
@@ -126,7 +126,7 @@ class oppSignup extends React.Component {
                           type="password"
                           name="password"
                           placeholder="Enter your Password"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.password}
                           onChange={this.handleChange}
                           required
@@ -142,7 +142,7 @@ class oppSignup extends React.Component {
                           type="password"
                           name="confirmpassword"
                           placeholder="Re-enter your Password"
-                          onblur="validate(2)"
+                          //onBlur="validate(2)"
                           value={cadent.confirmpassword}
                           onChange={this.handleChange}
                           required
@@ -159,7 +159,7 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           name="phonenumber"
                           placeholder="Enter your Phone Number"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.phonenumber}
                           onChange={this.handleChange}
                           required
@@ -178,7 +178,7 @@ class oppSignup extends React.Component {
                           type="text"
                           name="designation"
                           placeholder="Current education/working position"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.designation}
                           onChange={this.handleChange}
                           required
@@ -196,7 +196,7 @@ class oppSignup extends React.Component {
                           type="text"
                           name="organization"
                           placeholder="School/college/Company name"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.organization}
                           onChange={this.handleChange}
                           required
@@ -215,7 +215,7 @@ class oppSignup extends React.Component {
                           type="text"
                           name="futureaspirations"
                           placeholder="Future aspirations(Pilot/Doctor/etc.)"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.futureaspirations}
                           onChange={this.handleChange}
                           required
@@ -233,10 +233,9 @@ class oppSignup extends React.Component {
                           type="code"
                           name="referralcode"
                           placeholder="Type your answer here"
-                          onblur="validate(1)"
+                          //onBlur="validate(1)"
                           value={cadent.referralcode}
                           onChange={this.handleChange}
-                          required
                         />
                       </div>
                     </div>
@@ -248,13 +247,13 @@ class oppSignup extends React.Component {
                         </Link>
                       </label>
                       <br />
-                      <Button
-                        //onClick={this.handleSubmit}
+                      <button
+                        //onClick={(event) => this.handleSubmit(event)}
                         type="submit"
                         className="btn-lg btn-dark btn-block mb-2"
                       >
                         Sign up
-                      </Button>
+                      </button>
                       <br />
                       Already have an account?{" "}
                       <Link to="/oppLogin">Log in!</Link>

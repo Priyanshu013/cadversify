@@ -5,33 +5,33 @@ const cadentSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 50,
   },
   lastName: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 50,
   },
   email: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 255,
     unique: true,
   },
   password: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 255,
     password: true,
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     required: true,
-    minlength: 8,
+    minlength: 1,
     maxlength: 15,
   },
   designation: {
@@ -57,18 +57,15 @@ const Cadent = mongoose.model("cadents", cadentSchema);
 
 function validateCadent(cadent) {
   const schema = Joi.object({
-    firstName: Joi.string().min(5).max(50).required(),
-    lastName: Joi.string().min(5).max(50).required(),
-    email: Joi.string().min(3).max(255).required().email(),
-    password: Joi.string().min(5).max(40).required(),
-    phoneNumber: Joi.string()
-      .pattern(/^[0-9]+$/)
-      .length(10)
-      .required(),
-    designation: Joi.string().min(5).max(255).required(),
-    organization: Joi.string().min(5).max(255).required(),
-    futureAspirations: Joi.string().min(5).max(456).required(),
-    referralCode: Joi.string().min(1).max(255),
+    firstName: Joi.string().max(50).trim(true).required(),
+    lastName: Joi.string().max(50).trim(true).required(),
+    email: Joi.string().email().trim(true).required(),
+    password: Joi.string().trim(true).required(),
+    phoneNumber: Joi.string().required(),
+    designation: Joi.string().max(255).trim(true).required(),
+    organization: Joi.string().max(255).trim(true).required(),
+    futureAspirations: Joi.string().max(456).trim(true).required(),
+    referralCode: Joi.string().trim(true).max(255),
   }).unknown(true);
 
   const validation = schema.validate(cadent);
