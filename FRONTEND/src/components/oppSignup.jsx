@@ -1,7 +1,7 @@
 import React from "react";
 import "../CSS/oppSignup.css";
 import { Form, Input } from "reactstrap";
-import { NavLink, Link, Redirect } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 
 class oppSignup extends React.Component {
@@ -18,6 +18,7 @@ class oppSignup extends React.Component {
       futureaspirations: "",
       referralcode: "",
     },
+    errors: {},
   };
 
   handleChange = (event) => {
@@ -26,8 +27,57 @@ class oppSignup extends React.Component {
     this.setState({ cadent });
   };
 
+  handleValidation() {
+    const cadent = this.state.cadent;
+    const errors = this.state.errors;
+    let formIsValid = true;
+
+    if (cadent.firstname == "") {
+      formIsValid = false;
+      errors.firstname = "FirstName cannot be empty";
+    } else {
+      errors.firstname = "";
+    }
+
+    if (cadent.lastname == "") {
+      formIsValid = false;
+      errors.lastname = "LastName cannot be empty";
+    } else {
+      errors.lastname = "";
+    }
+
+    if (typeof cadent.email !== "undefined") {
+      let lastAtPos = cadent.email.lastIndexOf("@");
+      let lastDotPos = cadent.email.lastIndexOf(".");
+      if (
+        !(
+          lastAtPos < lastDotPos &&
+          lastAtPos > 0 &&
+          cadent.email.indexOf("@@") == -1 &&
+          lastDotPos > 2 &&
+          cadent.email.length - lastDotPos > 2
+        )
+      ) {
+        formIsValid = false;
+        errors.email = "Email is not valid";
+      } else {
+        errors.email = "";
+      }
+    }
+
+    this.setState({ errors: errors });
+    return formIsValid;
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
+
+    if (this.handleValidation() == true) {
+      alert("Form submitted");
+    } else {
+      alert("Form has errors.");
+      return;
+    }
 
     const cadent = {
       firstName: this.state.cadent.firstname,
@@ -44,7 +94,6 @@ class oppSignup extends React.Component {
     axios.post(`http://localhost:5000/api/cadents`, { cadent }).then((res) => {
       console.log(res);
       console.log(res.data);
-      <Redirect to="" />;
     });
   };
 
@@ -77,8 +126,10 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.firstname}
                           onChange={this.handleChange}
-                          required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.firstname}
+                        </span>
                       </div>
                       <div className="form-group col-sm-4 flex-column d-flex py-2">
                         <label className="form-control-label px-1">
@@ -93,8 +144,11 @@ class oppSignup extends React.Component {
                           //onBlur="validate(2)"
                           value={cadent.lastname}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.lastname}
+                        </span>
                       </div>
                     </div>
 
@@ -111,8 +165,11 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.email}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.email}
+                        </span>
                       </div>
                     </div>
 
@@ -129,7 +186,7 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.password}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
                       </div>
                       <div className="form-group col-sm-6 flex-column d-flex py-2">
@@ -145,7 +202,7 @@ class oppSignup extends React.Component {
                           //onBlur="validate(2)"
                           value={cadent.confirmpassword}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
                       </div>
                     </div>
@@ -162,7 +219,7 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.phonenumber}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
                       </div>
                     </div>
@@ -181,7 +238,7 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.designation}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
                       </div>
                     </div>
@@ -199,7 +256,7 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.organization}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
                       </div>
                     </div>
@@ -218,7 +275,7 @@ class oppSignup extends React.Component {
                           //onBlur="validate(1)"
                           value={cadent.futureaspirations}
                           onChange={this.handleChange}
-                          required
+                          //required
                         />
                       </div>
                     </div>
@@ -241,7 +298,7 @@ class oppSignup extends React.Component {
                     </div>
                     <p className="text-center pt-3">
                       <label className="mb-2">
-                        <input type="checkbox" required></input> I agree to the{" "}
+                        <input type="checkbox"></input> I agree to the{" "}
                         <Link to="/Termsandconditions">
                           terms and conditions
                         </Link>
