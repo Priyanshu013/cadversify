@@ -27,25 +27,48 @@ class oppSignup extends React.Component {
     this.setState({ cadent });
   };
 
+  passwordToggle() {
+    const x = document.getElementById("password");
+
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+  confirmpasswordToggle() {
+    const y = document.getElementById("confirmpassword");
+
+    if (y.type === "password") {
+      y.type = "text";
+    } else {
+      y.type = "password";
+    }
+  }
+
   handleValidation() {
     const cadent = this.state.cadent;
     const errors = this.state.errors;
     let formIsValid = true;
 
-    if (cadent.firstname == "") {
+    //firstname
+    if (cadent.firstname === "") {
       formIsValid = false;
       errors.firstname = "FirstName cannot be empty";
     } else {
       errors.firstname = "";
     }
 
-    if (cadent.lastname == "") {
+    //lastname
+    if (cadent.lastname === "") {
       formIsValid = false;
       errors.lastname = "LastName cannot be empty";
     } else {
       errors.lastname = "";
     }
 
+    //email
     if (typeof cadent.email !== "undefined") {
       let lastAtPos = cadent.email.lastIndexOf("@");
       let lastDotPos = cadent.email.lastIndexOf(".");
@@ -53,7 +76,7 @@ class oppSignup extends React.Component {
         !(
           lastAtPos < lastDotPos &&
           lastAtPos > 0 &&
-          cadent.email.indexOf("@@") == -1 &&
+          cadent.email.indexOf("@@") === -1 &&
           lastDotPos > 2 &&
           cadent.email.length - lastDotPos > 2
         )
@@ -65,6 +88,63 @@ class oppSignup extends React.Component {
       }
     }
 
+    //password
+    if (cadent.password === "") {
+      formIsValid = false;
+      errors.password = "Password cannot be empty";
+    } else if (!cadent.password.match(/\d/)) {
+      formIsValid = false;
+      errors.password = "Password must contain numbers";
+    } else {
+      errors.password = "";
+    }
+
+    //confirmpassword
+    if (cadent.confirmpassword === "") {
+      formIsValid = false;
+      errors.confirmpassword = "Confirm password cannot be empty";
+    } else if (cadent.confirmpassword !== cadent.password) {
+      formIsValid = false;
+      errors.confirmpassword = "Passwords do not match";
+    } else {
+      errors.confirmpassword = "";
+    }
+
+    //phonenumber
+    if (cadent.phonenumber === "") {
+      formIsValid = false;
+      errors.phonenumber = "Phone Number cannot be empty";
+    } else if (!cadent.phonenumber.match(/^\d{10}$/)) {
+      formIsValid = false;
+      errors.phonenumber = "Enter a 10 digit valid number";
+    } else {
+      errors.phonenumber = "";
+    }
+
+    //designation
+    if (cadent.designation === "") {
+      formIsValid = false;
+      errors.designation = "Designation cannot be empty";
+    } else {
+      errors.designation = "";
+    }
+
+    //organization
+    if (cadent.organization === "") {
+      formIsValid = false;
+      errors.organization = "Organization cannot be empty";
+    } else {
+      errors.organization = "";
+    }
+
+    //futureaspirations
+    if (cadent.futureaspirations === "") {
+      formIsValid = false;
+      errors.futureaspirations = "Future Aspirations cannot be empty";
+    } else {
+      errors.futureaspirations = "";
+    }
+
     this.setState({ errors: errors });
     return formIsValid;
   }
@@ -72,8 +152,8 @@ class oppSignup extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    if (this.handleValidation() == true) {
-      alert("Form submitted");
+    if (this.handleValidation()) {
+      alert("Form submitted. You can log in now");
     } else {
       alert("Form has errors.");
       return;
@@ -91,10 +171,16 @@ class oppSignup extends React.Component {
       referralCode: this.state.cadent.referralcode,
     };
 
-    axios.post(`http://localhost:5000/api/cadents`, { cadent }).then((res) => {
-      console.log(res);
-      console.log(res.data);
-    });
+    axios
+      .post(`http://localhost:5000/api/cadents/register`, { cadent })
+      .then((res) => {
+        if (res.status === 200) {
+          window.location = "/oppLogin";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   render() {
@@ -123,7 +209,6 @@ class oppSignup extends React.Component {
                           id="fname"
                           name="firstname"
                           placeholder="First name"
-                          //onBlur="validate(1)"
                           value={cadent.firstname}
                           onChange={this.handleChange}
                         />
@@ -141,10 +226,8 @@ class oppSignup extends React.Component {
                           id="lname"
                           name="lastname"
                           placeholder="Last name"
-                          //onBlur="validate(2)"
                           value={cadent.lastname}
                           onChange={this.handleChange}
-                          //required
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.lastname}
@@ -162,10 +245,8 @@ class oppSignup extends React.Component {
                           type="email"
                           name="email"
                           placeholder="Enter your Email"
-                          //onBlur="validate(1)"
                           value={cadent.email}
                           onChange={this.handleChange}
-                          //required
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.email}
@@ -182,12 +263,21 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           type="password"
                           name="password"
+                          id="password"
                           placeholder="Enter your Password"
-                          //onBlur="validate(1)"
                           value={cadent.password}
                           onChange={this.handleChange}
-                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.password}
+                        </span>
+                        <label>
+                          <input
+                            type="checkbox"
+                            onClick={this.passwordToggle}
+                          />{" "}
+                          Show Password
+                        </label>
                       </div>
                       <div className="form-group col-sm-6 flex-column d-flex py-2">
                         <label className="form-control-label px-1">
@@ -198,12 +288,21 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           type="password"
                           name="confirmpassword"
+                          id="confirmpassword"
                           placeholder="Re-enter your Password"
-                          //onBlur="validate(2)"
                           value={cadent.confirmpassword}
                           onChange={this.handleChange}
-                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.confirmpassword}
+                        </span>
+                        <label>
+                          <input
+                            type="checkbox"
+                            onClick={this.confirmpasswordToggle}
+                          />{" "}
+                          Show Password
+                        </label>
                       </div>
                     </div>
 
@@ -216,11 +315,12 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           name="phonenumber"
                           placeholder="Enter your Phone Number"
-                          //onBlur="validate(1)"
                           value={cadent.phonenumber}
                           onChange={this.handleChange}
-                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.phonenumber}
+                        </span>
                       </div>
                     </div>
 
@@ -235,11 +335,12 @@ class oppSignup extends React.Component {
                           type="text"
                           name="designation"
                           placeholder="Current education/working position"
-                          //onBlur="validate(1)"
                           value={cadent.designation}
                           onChange={this.handleChange}
-                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.designation}
+                        </span>
                       </div>
                     </div>
 
@@ -253,11 +354,12 @@ class oppSignup extends React.Component {
                           type="text"
                           name="organization"
                           placeholder="School/college/Company name"
-                          //onBlur="validate(1)"
                           value={cadent.organization}
                           onChange={this.handleChange}
-                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.organization}
+                        </span>
                       </div>
                     </div>
 
@@ -272,11 +374,12 @@ class oppSignup extends React.Component {
                           type="text"
                           name="futureaspirations"
                           placeholder="Future aspirations(Pilot/Doctor/etc.)"
-                          //onBlur="validate(1)"
                           value={cadent.futureaspirations}
                           onChange={this.handleChange}
-                          //required
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.futureaspirations}
+                        </span>
                       </div>
                     </div>
 
@@ -290,7 +393,6 @@ class oppSignup extends React.Component {
                           type="code"
                           name="referralcode"
                           placeholder="Type your answer here"
-                          //onBlur="validate(1)"
                           value={cadent.referralcode}
                           onChange={this.handleChange}
                         />
@@ -298,7 +400,7 @@ class oppSignup extends React.Component {
                     </div>
                     <p className="text-center pt-3">
                       <label className="mb-2">
-                        <input type="checkbox"></input> I agree to the{" "}
+                        <input type="checkbox" required></input> I agree to the{" "}
                         <Link to="/Termsandconditions">
                           terms and conditions
                         </Link>

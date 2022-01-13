@@ -12,12 +12,21 @@ router.get("/me", auth, async (req, res) => {
   res.send(cadent);
 });
 
-router.post("/", async (req, res) => {
+router.post("emailcheck", async (req, res) => {
+  let cadent = await Cadent.findOne({ email: req.body });
+  if (cadent) {
+    res.send("emailfound");
+  }
+  next();
+});
+
+router.post("/register", async (req, res) => {
   //Validate the given inputs
   const result = validateCadent(req.body.cadent);
   if (result.error) {
     return res.status(400).send(result.error.details[0].message);
   }
+
   //Check if the cadent already exists or not
   let cadent = await Cadent.findOne({ email: req.body.cadent.email });
   if (cadent) return res.status(400).send("Cadent already registered");
