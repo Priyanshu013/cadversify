@@ -3,6 +3,8 @@ import "../CSS/oppSignup.css";
 import { Form, Input } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
 class oppSignup extends React.Component {
   state = {
@@ -26,6 +28,8 @@ class oppSignup extends React.Component {
     cadent[event.currentTarget.name] = event.currentTarget.value;
     this.setState({ cadent });
   };
+
+  notify = () => toast("Registration successful! You can log in now.");
 
   passwordToggle() {
     const x = document.getElementById("password");
@@ -153,34 +157,37 @@ class oppSignup extends React.Component {
     event.preventDefault();
 
     if (this.handleValidation()) {
-      alert("Form submitted. You can log in now");
+      const cadent = {
+        firstName: this.state.cadent.firstname,
+        lastName: this.state.cadent.lastname,
+        email: this.state.cadent.email,
+        password: this.state.cadent.password,
+        phoneNumber: this.state.cadent.phonenumber,
+        designation: this.state.cadent.designation,
+        organization: this.state.cadent.organization,
+        futureAspirations: this.state.cadent.futureaspirations,
+        referralCode: this.state.cadent.referralcode,
+      };
+      axios
+        .post(`http://localhost:5000/api/cadents/register`, { cadent })
+        .then((res) => {
+          if (res.status === 200) {
+            setTimeout(function () {
+              window.location = "/oppLogin";
+            }, 5000);
+            this.notify();
+          }
+        })
+        .catch((err) => {
+          if (err.res === undefined) {
+            alert("Email already registered");
+            return;
+          }
+        });
     } else {
       alert("Form has errors.");
       return;
     }
-
-    const cadent = {
-      firstName: this.state.cadent.firstname,
-      lastName: this.state.cadent.lastname,
-      email: this.state.cadent.email,
-      password: this.state.cadent.password,
-      phoneNumber: this.state.cadent.phonenumber,
-      designation: this.state.cadent.designation,
-      organization: this.state.cadent.organization,
-      futureAspirations: this.state.cadent.futureaspirations,
-      referralCode: this.state.cadent.referralcode,
-    };
-
-    axios
-      .post(`http://localhost:5000/api/cadents/register`, { cadent })
-      .then((res) => {
-        if (res.status === 200) {
-          window.location = "/oppLogin";
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
 
   render() {
@@ -413,6 +420,18 @@ class oppSignup extends React.Component {
                       >
                         Sign up
                       </button>
+                      <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                      />
+                      ;
                       <br />
                       Already have an account?{" "}
                       <Link to="/oppLogin">Log in!</Link>
