@@ -12,14 +12,6 @@ router.get("/me", auth, async (req, res) => {
   res.send(cadent);
 });
 
-router.post("emailcheck", async (req, res) => {
-  let cadent = await Cadent.findOne({ email: req.body });
-  if (cadent) {
-    res.send("emailfound");
-  }
-  next();
-});
-
 router.post("/register", async (req, res) => {
   //Validate the given inputs
   const result = validateCadent(req.body.cadent);

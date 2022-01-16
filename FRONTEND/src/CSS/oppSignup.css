@@ -14,8 +14,14 @@
 
 .signup-heading {
   font-family: algerian;
-  font-style: italic;
+  font-style: bold;
   color: red;
+  display: inline;
+  text-align: center;
+}
+
+#overlaytrigger #signup-heading {
+  display: inline-flex;
 }
 
 .opp-signup-card {

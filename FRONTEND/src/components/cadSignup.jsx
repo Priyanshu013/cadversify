@@ -2,9 +2,17 @@ import React from "react";
 import "../CSS/cadSignup.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { BsInfoCircleFill } from "react-icons/bs";
 
 class cadSignup extends React.Component {
   render() {
+    const renderTooltip = (props) => (
+      <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
+        A Cadvocate is a jargon for any working professional who wishes to share
+        their work-experiences and learnings with others
+      </Tooltip>
+    );
     return (
       <div className="cad-signup-background">
         <section className="py-5">
@@ -13,6 +21,16 @@ class cadSignup extends React.Component {
               <div className="container">
                 <div className="cad-signup-heading text-center">
                   <h1>CADVOCATE SIGNUP</h1>
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="bottom"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <p>
+                      <BsInfoCircleFill className="icon-box-icons2" />
+                    </p>
+                  </OverlayTrigger>
                 </div>
                 <hr className="rounded" />
                 <Form className="form-container" action="#">

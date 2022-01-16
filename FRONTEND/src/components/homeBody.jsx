@@ -5,8 +5,8 @@ import Aos from "aos";
 import "../CSS/homeBody.css";
 import "aos/dist/aos.css";
 import { NavLink, Link } from "react-router-dom";
-import { FaUserGraduate } from "react-icons/fa";
-import { FaUserTie } from "react-icons/fa";
+import { FcManager } from "react-icons/fc";
+import { FcBusinessman } from "react-icons/fc";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 
@@ -72,14 +72,14 @@ class HomeBody extends React.Component {
             data-aos-duration="2000"
           >
             <span className="card-home text-black border-dark ">
-              <h3 className="icon-box-icons pt-2">
-                <FaUserGraduate />
-              </h3>
-              <h4 className="title" style={{ textAlign: "center" }}>
-                <Link to="/oppSignup" style={{ textDecoration: "none" }}>
+              <Link to="/oppSignup" style={{ textDecoration: "none" }}>
+                <h3 className="icon-box-icons ">
+                  <FcManager />
+                </h3>
+                <h4 className="title" style={{ textAlign: "center" }}>
                   <p className="card-headline">Become a Cadent</p>
-                </Link>
-              </h4>
+                </h4>
+              </Link>
               <div className="text-center">
                 <OverlayTrigger
                   trigger="click"
@@ -93,15 +93,16 @@ class HomeBody extends React.Component {
                 </OverlayTrigger>
               </div>
             </span>
+
             <span className="card-home text-black border-dark ">
-              <h3 className="icon-box-icons pt-2">
-                <FaUserTie />
-              </h3>
-              <h4 className="title" style={{ textAlign: "center" }}>
-                <NavLink to="/cadSignup" style={{ textDecoration: "none" }}>
+              <NavLink to="/cadSignup" style={{ textDecoration: "none" }}>
+                <h3 className="icon-box-icons">
+                  <FcBusinessman />
+                </h3>
+                <h4 className="title" style={{ textAlign: "center" }}>
                   <p className="card-headline">Become a Cadvocate</p>
-                </NavLink>
-              </h4>
+                </h4>
+              </NavLink>
               <div className="text-center">
                 <OverlayTrigger
                   trigger="click"

@@ -35,8 +35,8 @@ router.post("/", async (req, res) => {
     profession: req.body.profession,
     organization: req.body.organization,
     designation: req.body.designation,
-    yearsOfExperience: req.body.yearsOfExperience,
-    somethingAboutYourself: req.body.somethingAboutYourself,
+    experience: req.body.experience,
+    aboutYourself: req.body.aboutYourself,
     whyCadversify: req.body.whyCadversify,
     referralCode: req.body.referralCode,
   });

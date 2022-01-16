@@ -4,6 +4,9 @@ import { Form, Input } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { BsInfoCircleFill } from "react-icons/bs";
+
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
 class oppSignup extends React.Component {
@@ -30,6 +33,8 @@ class oppSignup extends React.Component {
   };
 
   notify = () => toast("Registration successful! You can log in now.");
+  alertnotify = () => toast("Form has errors.");
+  emailnotify = () => toast("Email is already registered.");
 
   passwordToggle() {
     const x = document.getElementById("password");
@@ -168,30 +173,39 @@ class oppSignup extends React.Component {
         futureAspirations: this.state.cadent.futureaspirations,
         referralCode: this.state.cadent.referralcode,
       };
+
       axios
         .post(`http://localhost:5000/api/cadents/register`, { cadent })
         .then((res) => {
           if (res.status === 200) {
             setTimeout(function () {
               window.location = "/oppLogin";
-            }, 5000);
+            }, 4000);
             this.notify();
           }
         })
         .catch((err) => {
           if (err.res === undefined) {
-            alert("Email already registered");
+            //alert("Email already registered");
+            this.emailnotify();
             return;
           }
         });
     } else {
-      alert("Form has errors.");
+      //alert("Form has errors.");
+      this.alertnotify();
       return;
     }
   };
 
   render() {
     const { cadent } = this.state;
+    const renderTooltip = (props) => (
+      <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
+        A Cadent is a jargon for you if you are here to learn from experienced
+        professionals who are working in your dream career for years.
+      </Tooltip>
+    );
     return (
       <div className="opp-signup-background">
         <section className="py-5">
@@ -200,6 +214,16 @@ class oppSignup extends React.Component {
               <div className="container">
                 <div className="signup-heading text-center">
                   <h1>CADENT SIGNUP</h1>
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="bottom"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <p>
+                      <BsInfoCircleFill className="icon-box-icons2" />
+                    </p>
+                  </OverlayTrigger>
                 </div>
                 <hr className="rounded" />
                 <Form onSubmit={this.handleSubmit} className="form-container">
@@ -422,7 +446,7 @@ class oppSignup extends React.Component {
                       </button>
                       <ToastContainer
                         position="top-right"
-                        autoClose={5000}
+                        autoClose={4000}
                         hideProgressBar={false}
                         newestOnTop={false}
                         closeOnClick
@@ -431,7 +455,6 @@ class oppSignup extends React.Component {
                         draggable
                         pauseOnHover
                       />
-                      ;
                       <br />
                       Already have an account?{" "}
                       <Link to="/oppLogin">Log in!</Link>
