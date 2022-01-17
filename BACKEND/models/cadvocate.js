@@ -52,13 +52,13 @@ const cadvocateSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 200,
   },
-  yearsOfExperience: {
+  experience: {
     type: Number,
     required: true,
     minlength: 1,
     maxlength: 456,
   },
-  somethingAboutYourself: {
+  aboutYourself: {
     type: String,
     required: true,
     minlength: 100,
@@ -75,20 +75,16 @@ const Cadvocate = mongoose.model("cadvocates", cadvocateSchema);
 
 function validateCadvocate(cadvocates) {
   const schema = Joi.object({
-    firstName: Joi.string().min(5).max(50).required(),
-    lastName: Joi.string().min(5).max(50).required(),
-    email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(5).max(40).required(),
-    phoneNumber: Joi.string()
-      .pattern(/^[0-9]+$/)
-      .min(10)
-      .max(15)
-      .required(),
+    firstName: Joi.string().min(1).max(50).required(),
+    lastName: Joi.string().min(1).max(50).required(),
+    email: Joi.string().min(3).max(255).required().email(),
+    password: Joi.string().min(1).max(400).required(),
+    phoneNumber: Joi.string().required(),
     profession: Joi.string().min(1).max(255).required(),
-    designation: Joi.string().min(5).max(255).required(),
-    organization: Joi.string().min(5).max(255).required(),
-    yearsOfExperience: Joi.number().min(1).max(50).required(),
-    somethingAboutYourself: Joi.string().min(100).max(300).required(),
+    designation: Joi.string().min(1).max(255).required(),
+    organization: Joi.string().min(1).max(255).required(),
+    experience: Joi.number().min(1).max(50).required(),
+    aboutYourself: Joi.string().min(100).max(300).required(),
     whyCadversify: Joi.string().min(1).max(300).required(),
     referralCode: Joi.string().min(1).max(255),
   }).unknown(true);

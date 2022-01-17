@@ -15,7 +15,8 @@ class HomeBody extends React.Component {
     const renderTooltip1 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
         A Cadent is a jargon for you if you are here to learn from experienced
-        professionals who are working in your dream career for years.
+        professionals (i.e. cadvocates) who are working in your dream career for
+        years.
       </Tooltip>
     );
     const renderTooltip2 = (props) => (
@@ -83,7 +84,7 @@ class HomeBody extends React.Component {
               <div className="text-center">
                 <OverlayTrigger
                   trigger="click"
-                  placement="left"
+                  placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}
                 >

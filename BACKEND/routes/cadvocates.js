@@ -35,6 +35,8 @@ router.post("/", async (req, res) => {
     profession: req.body.profession,
     organization: req.body.organization,
     designation: req.body.designation,
+    resume: req.body.resume,
+    photoid: req.body.photoid,
     experience: req.body.experience,
     aboutYourself: req.body.aboutYourself,
     whyCadversify: req.body.whyCadversify,
