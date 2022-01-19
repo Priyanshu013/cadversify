@@ -429,7 +429,7 @@ class oppSignup extends React.Component {
                         />
                       </div>
                     </div>
-                    <p className="text-center pt-3">
+                    <div className="text-center pt-3">
                       <label className="mb-2">
                         <input type="checkbox" required></input> I agree to the{" "}
                         <Link to="/Termsandconditions">
@@ -458,7 +458,7 @@ class oppSignup extends React.Component {
                       <br />
                       Already have an account?{" "}
                       <Link to="/oppLogin">Log in!</Link>
-                    </p>
+                    </div>
                   </div>
                 </Form>
                 <div></div>

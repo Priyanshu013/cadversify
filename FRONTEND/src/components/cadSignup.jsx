@@ -18,8 +18,8 @@ class cadSignup extends React.Component {
       password: "",
       confirmpassword: "",
       phonenumber: "",
-      resume: "",
-      photoid: "",
+      resume: [],
+      photoid: [],
       profession: "",
       organization: "",
       designation: "",
@@ -33,11 +33,33 @@ class cadSignup extends React.Component {
     errors: {},
   };
 
+  handleResumeChange(event) {
+    this.setState({
+      cadvocate: event.target.files[0],
+    });
+  }
+
+  handlePhotoidChange(event) {
+    const cadvocate = { ...this.state.cadvocate };
+    this.setState({
+      cadvocate: event.target.files[0],
+    });
+  }
+
   handleChange = (event) => {
     const cadvocate = { ...this.state.cadvocate };
     cadvocate[event.currentTarget.name] = event.currentTarget.value;
     this.setState({ cadvocate });
   };
+
+  /* 
+  handleFileChange = (event) => {
+    const cadvocate = { ...this.state.cadvocate };
+    cadvocate[event.currentTarget.name] = event.target.files[0];
+    console.log(event.target.files[0]);
+    this.setState({ cadvocate: event.target.files[0] });
+  };
+ */
 
   notify = () => toast("Registration successful! You can log in now.");
   alertnotify = () => toast("Form has errors.");
@@ -88,7 +110,7 @@ class cadSignup extends React.Component {
     if (cadvocate.password === "") {
       formIsValid = false;
       errors.password = "Password cannot be empty";
-    } else if (!cadvocate.password.match(/\d/)) {
+    } else if (!cadvocate.password(/\d/)) {
       formIsValid = false;
       errors.password = "Password must contain numbers";
     } else {
@@ -150,15 +172,15 @@ class cadSignup extends React.Component {
     }
 
     //resume
-    if (cadvocate.resume === "") {
+    if (cadvocate.resume === []) {
       formIsValid = false;
       errors.resume = "Please upload your resume";
-    } else if (cadvocate.resume.input.files[0].size / 1024 / 1024 > 2) {
+    } else if (cadvocate.resume / 1024 / 1024 > 2) {
       formIsValid = false;
       errors.resume = "File size should be less than 2MB.";
     } else if (
-      !cadvocate.resume.type.match("pdf.*") ||
-      !cadvocate.resume.type.match("docx.*")
+      !cadvocate.resume.contains(".pdf") ||
+      !cadvocate.resume.contains(".docx")
     ) {
       formIsValid = false;
       errors.resume = "File type should be PDF or word.";
@@ -167,23 +189,26 @@ class cadSignup extends React.Component {
     }
 
     //photoid
-    if (cadvocate.photoid === "") {
+    if (cadvocate.photoid === []) {
       formIsValid = false;
       errors.photoid = "Please upload your photoid";
-    } else if (cadvocate.photoid.files[0].size / 1024 / 1024 > 2) {
+    } else if (cadvocate.photoid / 1024 / 1024 > 2) {
       formIsValid = false;
       errors.photoid = "File size should be less than 2MB.";
     } else if (
-      !cadvocate.photoid.type.match("jpg.*") ||
-      !cadvocate.photoid.type.match("png.*") ||
-      !cadvocate.photoid.type.match("jpeg.*") ||
-      !cadvocate.photoid.type.match("pdf.*")
+      !cadvocate.photoid.find.name.contains(".jpg") ||
+      !cadvocate.photoid.name.contains(".png") ||
+      !cadvocate.photoid.name.contains(".jpeg") ||
+      !cadvocate.photoid.name.contains(".pdf")
     ) {
       formIsValid = false;
       errors.photoid = "Photo ID type should be an image or pdf.";
     } else {
       errors.photoid = "";
     }
+
+    this.setState({ errors: errors });
+    return formIsValid;
   };
 
   handleSubmit = (event) => {
@@ -243,16 +268,18 @@ class cadSignup extends React.Component {
               <div className="container">
                 <div className="cad-signup-heading text-center">
                   <h1>CADVOCATE SIGNUP</h1>
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="bottom"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <p>
-                      <BsInfoCircleFill className="icon-box-icons2" />
-                    </p>
-                  </OverlayTrigger>
+                  <div>
+                    <OverlayTrigger
+                      trigger="click"
+                      placement="bottom"
+                      delay={{ show: 250, hide: 400 }}
+                      overlay={renderTooltip}
+                    >
+                      <p>
+                        <BsInfoCircleFill className="icon-box-icons2" />
+                      </p>
+                    </OverlayTrigger>
+                  </div>
                 </div>
                 <hr className="rounded" />
                 <Form className="form-container" onSubmit={this.handleSubmit}>
@@ -322,6 +349,7 @@ class cadSignup extends React.Component {
                           className="mt-1 mb-2"
                           type="password"
                           name="password"
+                          id="password"
                           placeholder="Enter your Password"
                           value={cadvocate.password}
                           onChange={this.handleChange}
@@ -472,7 +500,7 @@ class cadSignup extends React.Component {
                         className="form-control"
                         multiple=""
                         value={cadvocate.resume}
-                        onChange={this.handleChange}
+                        onChange={this.handleResumeChange}
                         accept=".doc,.docx,.pdf"
                       />
                       <span style={{ color: "red" }}>
@@ -491,7 +519,7 @@ class cadSignup extends React.Component {
                         className="form-control"
                         multiple=""
                         value={cadvocate.photoid}
-                        onChange={this.handleChange}
+                        onChange={this.handlePhotoidChange}
                         accept=".jpg,.jpeg,.pdf,.png"
                       />
                       <span style={{ color: "red" }}>
@@ -519,6 +547,9 @@ class cadSignup extends React.Component {
                           value={cadvocate.aboutyourself}
                           onChange={this.handleChange}
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.aboutyourself}
+                        </span>
                       </div>
                     </div>
 
@@ -536,17 +567,20 @@ class cadSignup extends React.Component {
                           value={cadvocate.whycadversify}
                           onChange={this.handleChange}
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.whycadversify}
+                        </span>
                       </div>
                     </div>
 
                     <div className="row">
                       <label>
                         When are you available for an video call interview with
-                        us?<span class="text-danger"> *</span>
+                        us?<span className="text-danger"> *</span>
                       </label>
-                      <div class="form-group col-sm-6 flex-column d-flex">
-                        <label class="form-control-label">
-                          Enter Date<span class="text-danger"> *</span>
+                      <div className="form-group col-sm-6 flex-column d-flex">
+                        <label className="form-control-label">
+                          Enter Date<span className="text-danger"> *</span>
                         </label>
                         <Input
                           className="mt-1"
@@ -556,10 +590,13 @@ class cadSignup extends React.Component {
                           value={cadvocate.interviewdate}
                           onChange={this.handleChange}
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.interviewdate}
+                        </span>
                       </div>
-                      <div class="form-group col-sm-6 flex-column d-flex">
-                        <label class="form-control-label">
-                          Enter Time<span class="text-danger"> *</span>
+                      <div className="form-group col-sm-6 flex-column d-flex">
+                        <label className="form-control-label">
+                          Enter Time<span className="text-danger"> *</span>
                         </label>
                         <Input
                           className="mt-1"
@@ -569,6 +606,9 @@ class cadSignup extends React.Component {
                           value={cadvocate.interviewtime}
                           onChange={this.handleChange}
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.interviewtime}
+                        </span>
                       </div>
                     </div>
 
@@ -587,6 +627,9 @@ class cadSignup extends React.Component {
                           value={cadvocate.referralcode}
                           onChange={this.handleChange}
                         />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.referralcode}
+                        </span>
                       </div>
                     </div>
                     <div className="text-center pt-3">

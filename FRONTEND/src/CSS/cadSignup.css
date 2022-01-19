@@ -13,9 +13,10 @@
 }
 
 .cad-signup-heading {
-  font-family: algerian;
-  font-style: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 900;
   color: red;
+  font-display: inline;
 }
 
 .title {
