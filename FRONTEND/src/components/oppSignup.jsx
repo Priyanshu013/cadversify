@@ -384,7 +384,7 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           type="text"
                           name="organization"
-                          placeholder="School/college/Company name"
+                          placeholder="Education institute/Company name"
                           value={cadent.organization}
                           onChange={this.handleChange}
                         />

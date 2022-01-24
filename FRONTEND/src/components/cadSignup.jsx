@@ -6,6 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
+import { DateTimePickerComponent } from "@syncfusion/ej2-react-calendars";
 
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
@@ -26,25 +27,11 @@ class cadSignup extends React.Component {
       experience: "",
       aboutyourself: "",
       whycadversify: "",
-      interviewdate: "",
-      interviewtime: "",
+      interviewdatetime: "",
       referralcode: "",
     },
     errors: {},
   };
-
-  handleResumeChange(event) {
-    this.setState({
-      cadvocate: event.target.files[0],
-    });
-  }
-
-  handlePhotoidChange(event) {
-    const cadvocate = { ...this.state.cadvocate };
-    this.setState({
-      cadvocate: event.target.files[0],
-    });
-  }
 
   handleChange = (event) => {
     const cadvocate = { ...this.state.cadvocate };
@@ -52,14 +39,11 @@ class cadSignup extends React.Component {
     this.setState({ cadvocate });
   };
 
-  /* 
-  handleFileChange = (event) => {
+  handleFileChange(event) {
     const cadvocate = { ...this.state.cadvocate };
     cadvocate[event.currentTarget.name] = event.target.files[0];
-    console.log(event.target.files[0]);
-    this.setState({ cadvocate: event.target.files[0] });
-  };
- */
+    this.setState({ cadvocate });
+  }
 
   notify = () => toast("Registration successful! You can log in now.");
   alertnotify = () => toast("Form has errors.");
@@ -110,7 +94,7 @@ class cadSignup extends React.Component {
     if (cadvocate.password === "") {
       formIsValid = false;
       errors.password = "Password cannot be empty";
-    } else if (!cadvocate.password(/\d/)) {
+    } else if (!cadvocate.password.match(/\d/)) {
       formIsValid = false;
       errors.password = "Password must contain numbers";
     } else {
@@ -172,39 +156,49 @@ class cadSignup extends React.Component {
     }
 
     //resume
-    if (cadvocate.resume === []) {
+    if (cadvocate.resume.length === 0) {
       formIsValid = false;
       errors.resume = "Please upload your resume";
-    } else if (cadvocate.resume / 1024 / 1024 > 2) {
+    } else if (cadvocate.resume.size / 1024 / 1024 > 2) {
       formIsValid = false;
       errors.resume = "File size should be less than 2MB.";
-    } else if (
-      !cadvocate.resume.contains(".pdf") ||
-      !cadvocate.resume.contains(".docx")
-    ) {
-      formIsValid = false;
-      errors.resume = "File type should be PDF or word.";
     } else {
       errors.resume = "";
     }
 
     //photoid
-    if (cadvocate.photoid === []) {
+    if (cadvocate.photoid.length === 0) {
       formIsValid = false;
       errors.photoid = "Please upload your photoid";
-    } else if (cadvocate.photoid / 1024 / 1024 > 2) {
+    } else if (cadvocate.photoid.size / 1024 / 1024 > 5) {
       formIsValid = false;
-      errors.photoid = "File size should be less than 2MB.";
-    } else if (
-      !cadvocate.photoid.find.name.contains(".jpg") ||
-      !cadvocate.photoid.name.contains(".png") ||
-      !cadvocate.photoid.name.contains(".jpeg") ||
-      !cadvocate.photoid.name.contains(".pdf")
-    ) {
-      formIsValid = false;
-      errors.photoid = "Photo ID type should be an image or pdf.";
+      errors.photoid = "File size should be less than 5MB.";
     } else {
       errors.photoid = "";
+    }
+
+    //aboutyourself
+    if (cadvocate.aboutyourself === "") {
+      formIsValid = false;
+      errors.aboutyourself = "Please mention something about yourself";
+    } else if (cadvocate.aboutyourself.length === 100) {
+      formIsValid = false;
+      errors.aboutyourself =
+        "Please mention something about yourself in 20-25 words minimum.";
+    } else if (cadvocate.aboutyourself.length >= 200) {
+      errors.aboutyourself = "Content too long. Please shorten it.";
+    } else {
+      errors.aboutyourself = "";
+    }
+
+    //whycadversify
+    if (cadvocate.whycadversify === "") {
+      formIsValid = false;
+      errors.whycadversify = "Please mention why did you choose cadversify";
+    } else if (cadvocate.whycadversify.length >= 200) {
+      errors.whycadversify = "Content too long. Please shorten it.";
+    } else {
+      errors.whycadversify = "";
     }
 
     this.setState({ errors: errors });
@@ -213,6 +207,7 @@ class cadSignup extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(this.state.cadvocate.interviewdate);
 
     if (this.handleValidation()) {
       const cadvocate = {
@@ -260,6 +255,15 @@ class cadSignup extends React.Component {
         their work-experiences and learnings with others
       </Tooltip>
     );
+
+    const current = new Date();
+
+    const aminDate = new Date(current.getTime() + 86400000 * 2);
+    const minDate = aminDate.toLocaleDateString();
+
+    const amaxDate = new Date(current.getTime() + 86400000 * 30);
+    const maxDate = amaxDate.toLocaleDateString();
+
     return (
       <div className="cad-signup-background">
         <section className="py-5">
@@ -328,7 +332,7 @@ class cadSignup extends React.Component {
                         </label>
                         <Input
                           className="mt-1 mb-2"
-                          type="email"
+                          type="text"
                           name="email"
                           placeholder="Enter your Email"
                           value={cadvocate.email}
@@ -498,9 +502,8 @@ class cadSignup extends React.Component {
                         type="file"
                         name="resume"
                         className="form-control"
-                        multiple=""
-                        value={cadvocate.resume}
-                        onChange={this.handleResumeChange}
+                        //value={cadvocate.resume}
+                        onChange={this.handleFileChange.bind(this)}
                         accept=".doc,.docx,.pdf"
                       />
                       <span style={{ color: "red" }}>
@@ -518,8 +521,8 @@ class cadSignup extends React.Component {
                         name="photoid"
                         className="form-control"
                         multiple=""
-                        value={cadvocate.photoid}
-                        onChange={this.handlePhotoidChange}
+                        //value={cadvocate.photoid}
+                        onChange={this.handleFileChange.bind(this)}
                         accept=".jpg,.jpeg,.pdf,.png"
                       />
                       <span style={{ color: "red" }}>
@@ -536,7 +539,7 @@ class cadSignup extends React.Component {
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
                         <label className="form-control-label">
-                          Tell us something about yourself in about 80-100 words
+                          Tell us something about yourself in a few words
                           <span className="text-danger"> *</span>
                         </label>
                         <Input
@@ -582,32 +585,17 @@ class cadSignup extends React.Component {
                         <label className="form-control-label">
                           Enter Date<span className="text-danger"> *</span>
                         </label>
-                        <Input
-                          className="mt-1"
-                          type="date"
-                          placeholder="Type your answer here"
+                        <DateTimePickerComponent
+                          placeholder="Choose a date and time"
                           name="interviewdate"
-                          value={cadvocate.interviewdate}
-                          onChange={this.handleChange}
+                          value={minDate}
+                          min={minDate}
+                          max={maxDate}
+                          allowEdit={false}
+                          //onChange={this.handleDateTimeChange()}
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.interviewdate}
-                        </span>
-                      </div>
-                      <div className="form-group col-sm-6 flex-column d-flex">
-                        <label className="form-control-label">
-                          Enter Time<span className="text-danger"> *</span>
-                        </label>
-                        <Input
-                          className="mt-1"
-                          type="time"
-                          name="interviewtime"
-                          placeholder="Type your answer here"
-                          value={cadvocate.interviewtime}
-                          onChange={this.handleChange}
-                        />
-                        <span style={{ color: "red" }}>
-                          {this.state.errors.interviewtime}
                         </span>
                       </div>
                     </div>
