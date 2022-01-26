@@ -20,7 +20,6 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <BackToTop />
-
         <NavBar />
         <Switch>
           <Route path="/live-sessions" component={LiveSessions} />

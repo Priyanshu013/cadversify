@@ -11,6 +11,9 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 
 class HomeBody extends React.Component {
+  componentDidMount() {
+    document.title = "CADVERSIFY";
+  }
   render() {
     const renderTooltip1 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
@@ -83,7 +86,7 @@ class HomeBody extends React.Component {
               </Link>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="click"
+                  trigger={["click", "hover"]}
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}
@@ -106,7 +109,7 @@ class HomeBody extends React.Component {
               </NavLink>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="click"
+                  triggers="click"
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip2}

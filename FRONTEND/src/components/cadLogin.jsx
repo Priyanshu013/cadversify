@@ -9,6 +9,9 @@ import "../CSS/cadLogin.css";
 import sitelogo from "../site_assets/brand_logo_1.png";
 
 class cadLogin extends Component {
+  componentDidMount() {
+    document.title = "Cadvocate Login";
+  }
   render() {
     Aos.init();
     return (

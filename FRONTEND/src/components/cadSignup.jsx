@@ -6,11 +6,13 @@ import { NavLink, Link } from "react-router-dom";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
-import { DateTimePickerComponent } from "@syncfusion/ej2-react-calendars";
-
+import DateTimePicker from "react-datetime-picker";
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
 class cadSignup extends React.Component {
+  componentDidMount() {
+    document.title = "Cadvocate Signup";
+  }
   state = {
     cadvocate: {
       firstname: "",
@@ -19,6 +21,8 @@ class cadSignup extends React.Component {
       password: "",
       confirmpassword: "",
       phonenumber: "",
+      city: "",
+      country: "",
       resume: [],
       photoid: [],
       profession: "",
@@ -123,6 +127,22 @@ class cadSignup extends React.Component {
       errors.phonenumber = "";
     }
 
+    //city
+    if (cadvocate.city === "") {
+      formIsValid = false;
+      errors.city = "City cannot be empty";
+    } else {
+      errors.city = "";
+    }
+
+    //country
+    if (cadvocate.country === "") {
+      formIsValid = false;
+      errors.country = "Country cannot be empty";
+    } else {
+      errors.country = "";
+    }
+
     //profession
     if (cadvocate.profession === "") {
       formIsValid = false;
@@ -207,7 +227,7 @@ class cadSignup extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.cadvocate.interviewdate);
+    console.log(this.state.cadvocate.interviewdatetime);
 
     if (this.handleValidation()) {
       const cadvocate = {
@@ -216,10 +236,17 @@ class cadSignup extends React.Component {
         email: this.state.cadvocate.email,
         password: this.state.cadvocate.password,
         phoneNumber: this.state.cadvocate.phonenumber,
+        city: this.state.cadvocate.city,
+        country: this.state.cadvocate.country,
         profession: this.state.cadvocate.designation,
-        designation: this.state.cadvocate.designation,
         organization: this.state.cadvocate.organization,
-        futureAspirations: this.state.cadvocate.futureaspirations,
+        designation: this.state.cadvocate.designation,
+        experience: this.state.cadvocate.experience,
+        resume: this.state.cadvocate.resume,
+        photoid: this.state.cadvocate.photoid,
+        aboutYourself: this.state.cadvocate.aboutyourself,
+        whyCadversify: this.state.cadvocate.whycadversify,
+        interviewDateTime: this.state.cadvocate.interviewdatetime,
         referralCode: this.state.cadvocate.referralcode,
       };
 
@@ -234,6 +261,7 @@ class cadSignup extends React.Component {
           }
         })
         .catch((err) => {
+          console.log(err);
           if (err.res === undefined) {
             //alert("Email already registered");
             this.emailnotify();
@@ -256,13 +284,8 @@ class cadSignup extends React.Component {
       </Tooltip>
     );
 
-    const current = new Date();
-
-    const aminDate = new Date(current.getTime() + 86400000 * 2);
-    const minDate = aminDate.toLocaleDateString();
-
-    const amaxDate = new Date(current.getTime() + 86400000 * 30);
-    const maxDate = amaxDate.toLocaleDateString();
+    const minDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    const maxDate = new Date(Date.now() + 24 * 60 * 60 * 1000 * 31);
 
     return (
       <div className="cad-signup-background">
@@ -286,7 +309,11 @@ class cadSignup extends React.Component {
                   </div>
                 </div>
                 <hr className="rounded" />
-                <Form className="form-container" onSubmit={this.handleSubmit}>
+                <Form
+                  className="form-container"
+                  enctype="multipart/form-data"
+                  onSubmit={this.handleSubmit}
+                >
                   <div>
                     <h3 className="text-center pb-3">Personal Details</h3>
 
@@ -362,6 +389,7 @@ class cadSignup extends React.Component {
                           {this.state.errors.password}
                         </span>
                       </div>
+
                       <div className="form-group col-sm-6 flex-column d-flex">
                         <label className="form-control-label">
                           Confirm Password
@@ -396,6 +424,42 @@ class cadSignup extends React.Component {
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.phonenumber}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="form-group col-sm-6 flex-column d-flex">
+                        <label className="form-control-label">
+                          City<span className="text-danger"> *</span>
+                        </label>
+                        <Input
+                          className="mt-1 mb-2"
+                          type="text"
+                          name="city"
+                          placeholder="Enter your City"
+                          value={cadvocate.city}
+                          onChange={this.handleChange}
+                        />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.city}
+                        </span>
+                      </div>
+
+                      <div className="form-group col-sm-6 flex-column d-flex">
+                        <label className="form-control-label">
+                          Country<span className="text-danger"> *</span>
+                        </label>
+                        <Input
+                          className="mt-1 mb-2"
+                          type="text"
+                          name="country"
+                          placeholder="Enter your Country"
+                          value={cadvocate.country}
+                          onChange={this.handleChange}
+                        />
+                        <span style={{ color: "red" }}>
+                          {this.state.errors.country}
                         </span>
                       </div>
                     </div>
@@ -583,16 +647,24 @@ class cadSignup extends React.Component {
                       </label>
                       <div className="form-group col-sm-6 flex-column d-flex">
                         <label className="form-control-label">
-                          Enter Date<span className="text-danger"> *</span>
+                          Enter Date and time
+                          <span className="text-danger"> *</span>
                         </label>
-                        <DateTimePickerComponent
-                          placeholder="Choose a date and time"
-                          name="interviewdate"
-                          value={minDate}
-                          min={minDate}
-                          max={maxDate}
-                          allowEdit={false}
-                          //onChange={this.handleDateTimeChange()}
+                        <DateTimePicker
+                          name="interviewdatetime"
+                          value={cadvocate.interviewdatetime}
+                          dayPlaceholder="Day"
+                          hourPlaceholder="Hour"
+                          minutePlaceholder="Min"
+                          yearPlaceholder="Year"
+                          monthPlaceholder="Month"
+                          minDate={minDate}
+                          maxDate={maxDate}
+                          onChange={(event) => {
+                            const cadvocate = { ...this.state.cadvocate };
+                            cadvocate.interviewdatetime = event;
+                            this.setState({ cadvocate });
+                          }}
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.interviewdate}
@@ -628,7 +700,11 @@ class cadSignup extends React.Component {
                         </Link>
                       </label>
                       <br />
-                      <button className="btn-lg btn-dark mt-4" type="submit">
+                      <button
+                        className="btn-lg btn-dark mt-4"
+                        type="submit"
+                        //onClick={this.handleSubmit}
+                      >
                         Sign up
                       </button>
                       <ToastContainer

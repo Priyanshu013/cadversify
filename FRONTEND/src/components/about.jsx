@@ -9,6 +9,9 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 class About extends React.Component {
+  componentDidMount() {
+    document.title = "About us";
+  }
   render() {
     Aos.init();
     return (

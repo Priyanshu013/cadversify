@@ -18,6 +18,9 @@ import { CgChevronDoubleRightR } from "react-icons/cg";
 import ReactStars from "react-rating-stars-component";
 
 class Courses extends React.Component {
+  componentDidMount() {
+    document.title = "Our Courses";
+  }
   render() {
     function NextArrow(props) {
       return (

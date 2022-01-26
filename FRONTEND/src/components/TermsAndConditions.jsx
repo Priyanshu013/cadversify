@@ -3,6 +3,9 @@ import "../CSS/TermsAndConditions.css";
 import { Form } from "reactstrap";
 
 class TermsAndConditions extends React.Component {
+  componentDidMount() {
+    document.title = "Terms and Conditions";
+  }
   render() {
     return (
       <section className="tc-background py-5">

@@ -9,6 +9,9 @@ import "../CSS/oppLogin.css";
 import sitelogo from "../site_assets/brand_logo_1.png";
 
 class oppLogin extends Component {
+  componentDidMount() {
+    document.title = "Cadent Login";
+  }
   render() {
     Aos.init();
     return (

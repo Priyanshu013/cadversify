@@ -6,6 +6,8 @@ const router = express.Router();
 const lodash = require("lodash");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 
 router.get("/me", auth, async (req, res) => {
   const cadvocate = await Cadvocate.findById(req.cadvocate._id).select(
@@ -14,7 +16,12 @@ router.get("/me", auth, async (req, res) => {
   res.send(cadvocate);
 });
 
-router.post("/", async (req, res) => {
+const files = upload.fields([
+  { name: "resume", maxCount: 1 },
+  { name: "photoid", maxCount: 1 },
+]);
+
+router.post("/register", files, async (req, res) => {
   //Validate the given inputs
   const result = validateCadvocate(req.body);
   if (result.error) {
@@ -32,14 +39,17 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     password: req.body.password,
     phoneNumber: req.body.phoneNumber,
+    city: req.body.city,
+    country: req.body.country,
     profession: req.body.profession,
     organization: req.body.organization,
     designation: req.body.designation,
-    resume: req.body.resume,
-    photoid: req.body.photoid,
+    resume: req.files["resume"],
+    photoid: req.files["photoid"],
     experience: req.body.experience,
     aboutYourself: req.body.aboutYourself,
     whyCadversify: req.body.whyCadversify,
+    interviewDateTime: req.body.interviewDateTime,
     referralCode: req.body.referralCode,
   });
 

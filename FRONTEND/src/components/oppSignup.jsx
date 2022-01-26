@@ -10,6 +10,9 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
 class oppSignup extends React.Component {
+  componentDidMount() {
+    document.title = "Cadent Signup";
+  }
   state = {
     cadent: {
       firstname: "",
