@@ -40,31 +40,31 @@ router.post("/register", files, async (req, res) => {
   }
 
   //Check if the cadvocate already exists or not
-  let cadvocate = await Cadvocate.findOne({ email: req.body.cadvocate.email });
+  let cadvocate = await Cadvocate.findOne({ email: req.body.email });
   if (cadvocate) return res.status(400).send("Cadvocate already registered");
 
   //Add new cadvocate
   cadvocate = new Cadvocate({
-    firstName: req.body.cadvocate.firstName,
-    lastName: req.body.cadvocate.lastName,
-    email: req.body.cadvocate.email,
-    password: req.body.cadvocate.password,
-    phoneNumber: req.body.cadvocate.phoneNumber,
-    city: req.body.cadvocate.city,
-    country: req.body.cadvocate.country,
-    profession: req.body.cadvocate.profession,
-    organization: req.body.cadvocate.organization,
-    designation: req.body.cadvocate.designation,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+    phoneNumber: req.body.phoneNumber,
+    city: req.body.city,
+    country: req.body.country,
+    profession: req.body.profession,
+    organization: req.body.organization,
+    designation: req.body.designation,
     resume: req.files["resume"][0].path,
     photoid: req.files["photoid"][0].path,
-    experience: req.body.cadvocate.experience,
-    aboutYourself: req.body.cadvocate.aboutYourself,
-    whyCadversify: req.body.cadvocate.whyCadversify,
-    interviewDateTime: req.body.cadvocate.interviewDateTime,
-    referralCode: req.body.cadvocate.referralCode,
+    experience: req.body.experience,
+    aboutYourself: req.body.aboutYourself,
+    whyCadversify: req.body.whyCadversify,
+    interviewDateTime: req.body.interviewDateTime,
+    referralCode: req.body.referralCode,
   });
 
-  console.log(req.body.cadvocate.firstName);
+  //console.log(req.body.cadvocate.firstName);
 
   const salt = await bcrypt.genSalt(10);
   cadvocate.password = await bcrypt.hash(cadvocate.password, salt);
