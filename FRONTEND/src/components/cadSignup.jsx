@@ -13,6 +13,7 @@ class cadSignup extends React.Component {
   componentDidMount() {
     document.title = "Cadvocate Signup";
   }
+
   state = {
     cadvocate: {
       firstname: "",
@@ -45,13 +46,14 @@ class cadSignup extends React.Component {
 
   handleFileChange(event) {
     const cadvocate = { ...this.state.cadvocate };
-    cadvocate[event.currentTarget.name] = event.target.files[0];
-    this.setState({ cadvocate });
+    cadvocate[event.currentTarget.name].push(event.target.files[0]);
   }
 
   notify = () => toast("Registration successful! You can log in now.");
   alertnotify = () => toast("Form has errors.");
   emailnotify = () => toast("Email is already registered.");
+  somethingwentwrong = () =>
+    toast("Something went wrong. Please try again in a few minutes.");
 
   handleValidation = () => {
     const cadvocate = this.state.cadvocate;
@@ -227,7 +229,6 @@ class cadSignup extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.cadvocate.interviewdatetime);
 
     if (this.handleValidation()) {
       const cadvocate = {
@@ -262,14 +263,15 @@ class cadSignup extends React.Component {
         })
         .catch((err) => {
           console.log(err);
-          if (err.res === undefined) {
-            //alert("Email already registered");
+          if (err.response.data == "Cadent already registered") {
             this.emailnotify();
+            return;
+          } else {
+            this.somethingwentwrong();
             return;
           }
         });
     } else {
-      //alert("Form has errors.");
       this.alertnotify();
       return;
     }
@@ -284,7 +286,7 @@ class cadSignup extends React.Component {
       </Tooltip>
     );
 
-    const minDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    const minDate = new Date(Date.now() + 24 * 60 * 60 * 1000 * 2);
     const maxDate = new Date(Date.now() + 24 * 60 * 60 * 1000 * 31);
 
     return (
@@ -311,7 +313,7 @@ class cadSignup extends React.Component {
                 <hr className="rounded" />
                 <Form
                   className="form-container"
-                  enctype="multipart/form-data"
+                  encType="multipart/form-data"
                   onSubmit={this.handleSubmit}
                 >
                   <div>

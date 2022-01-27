@@ -38,6 +38,8 @@ class oppSignup extends React.Component {
   notify = () => toast("Registration successful! You can log in now.");
   alertnotify = () => toast("Form has errors.");
   emailnotify = () => toast("Email is already registered.");
+  somethingwentwrong = () =>
+    toast("Something went wrong. Please try again in a few mintues");
 
   passwordToggle() {
     const x = document.getElementById("password");
@@ -188,9 +190,12 @@ class oppSignup extends React.Component {
           }
         })
         .catch((err) => {
-          if (err.res === undefined) {
-            //alert("Email already registered");
+          console.log(err.response);
+          if (err.response.data == "Cadent already registered") {
             this.emailnotify();
+            return;
+          } else {
+            this.somethingwentwrong();
             return;
           }
         });

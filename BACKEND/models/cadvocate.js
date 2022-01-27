@@ -64,6 +64,16 @@ const cadvocateSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 200,
   },
+  resume: {
+    type: String,
+    required: true,
+    maxsize: 500,
+  },
+  photoid: {
+    type: String,
+    required: true,
+    maxsize: 500,
+  },
   experience: {
     type: Number,
     required: true,
@@ -81,6 +91,10 @@ const cadvocateSchema = new mongoose.Schema({
     required: true,
     minlength: 1,
     maxlength: 300,
+  },
+  interviewDateTime: {
+    type: String,
+    required: true,
   },
 });
 const Cadvocate = mongoose.model("cadvocates", cadvocateSchema);
@@ -100,6 +114,7 @@ function validateCadvocate(cadvocates) {
     experience: Joi.number().min(1).max(50).required(),
     aboutYourself: Joi.string().min(100).max(300).required(),
     whyCadversify: Joi.string().min(1).max(300).required(),
+    interviewDateTime: Joi.string().required(),
     referralCode: Joi.string().min(1).max(255),
   }).unknown(true);
 

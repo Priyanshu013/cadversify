@@ -12,7 +12,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 
 class HomeBody extends React.Component {
   componentDidMount() {
-    document.title = "CADVERSIFY";
+    document.title = "Cadversify- Find your mentor today";
   }
   render() {
     const renderTooltip1 = (props) => (
