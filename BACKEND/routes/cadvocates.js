@@ -35,7 +35,6 @@ router.post("/register", files, async (req, res) => {
   //Validate the given inputs
   const result = validateCadvocate(req.body);
   if (result.error) {
-    console.log(result.error.details[0].message);
     return res.status(400).send(result.error.details[0].message);
   }
 
@@ -63,8 +62,6 @@ router.post("/register", files, async (req, res) => {
     interviewDateTime: req.body.interviewDateTime,
     referralCode: req.body.referralCode,
   });
-
-  //console.log(req.body.cadvocate.firstName);
 
   const salt = await bcrypt.genSalt(10);
   cadvocate.password = await bcrypt.hash(cadvocate.password, salt);

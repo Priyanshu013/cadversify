@@ -70,6 +70,9 @@ class oppSignup extends React.Component {
     if (cadent.firstname === "") {
       formIsValid = false;
       errors.firstname = "FirstName cannot be empty";
+    } else if (cadent.firstname.length >= 20) {
+      formIsValid = false;
+      errors.firstname = "First Name length is too long.";
     } else {
       errors.firstname = "";
     }
@@ -78,6 +81,9 @@ class oppSignup extends React.Component {
     if (cadent.lastname === "") {
       formIsValid = false;
       errors.lastname = "LastName cannot be empty";
+    } else if (cadent.firstname.length >= 20) {
+      formIsValid = false;
+      errors.lastname = "Last Name length is too long.";
     } else {
       errors.lastname = "";
     }
@@ -106,6 +112,9 @@ class oppSignup extends React.Component {
     if (cadent.password === "") {
       formIsValid = false;
       errors.password = "Password cannot be empty";
+    } else if (cadent.password.length >= 30) {
+      formIsValid = false;
+      errors.password = "Password length is too long.";
     } else if (!cadent.password.match(/\d/)) {
       formIsValid = false;
       errors.password = "Password must contain numbers";
@@ -139,6 +148,9 @@ class oppSignup extends React.Component {
     if (cadent.designation === "") {
       formIsValid = false;
       errors.designation = "Designation cannot be empty";
+    } else if (cadent.designation.length >= 30) {
+      formIsValid = false;
+      errors.designation = "Designation length is too long.";
     } else {
       errors.designation = "";
     }
@@ -147,6 +159,9 @@ class oppSignup extends React.Component {
     if (cadent.organization === "") {
       formIsValid = false;
       errors.organization = "Organization cannot be empty";
+    } else if (cadent.organization.length >= 30) {
+      formIsValid = false;
+      errors.organization = "Organization length is too long.";
     } else {
       errors.organization = "";
     }
@@ -155,6 +170,9 @@ class oppSignup extends React.Component {
     if (cadent.futureaspirations === "") {
       formIsValid = false;
       errors.futureaspirations = "Future Aspirations cannot be empty";
+    } else if (cadent.futureaspirations.length >= 100) {
+      formIsValid = false;
+      errors.futureaspirations = "Future Aspirations length is too long.";
     } else {
       errors.futureaspirations = "";
     }

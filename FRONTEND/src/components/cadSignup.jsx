@@ -8,6 +8,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 import DateTimePicker from "react-datetime-picker";
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
+import FormData, { getHeaders } from "form-data";
 
 class cadSignup extends React.Component {
   componentDidMount() {
@@ -24,8 +25,8 @@ class cadSignup extends React.Component {
       phonenumber: "",
       city: "",
       country: "",
-      resume: [],
-      photoid: [],
+      resume: "",
+      photoid: "",
       profession: "",
       organization: "",
       designation: "",
@@ -41,19 +42,39 @@ class cadSignup extends React.Component {
   handleChange = (event) => {
     const cadvocate = { ...this.state.cadvocate };
     cadvocate[event.currentTarget.name] = event.currentTarget.value;
-    this.setState({ cadvocate });
+    this.setState({ cadvocate: cadvocate });
   };
 
   handleFileChange(event) {
     const cadvocate = { ...this.state.cadvocate };
-    cadvocate[event.currentTarget.name].push(event.target.files[0]);
+    cadvocate[event.currentTarget.name] = event.target.files[0];
+    this.setState({ cadvocate: cadvocate });
   }
 
   notify = () => toast("Registration successful! You can log in now.");
-  alertnotify = () => toast("Form has errors.");
+  errornotify = () => toast("Form has errors.");
   emailnotify = () => toast("Email is already registered.");
-  somethingwentwrong = () =>
-    toast("Something went wrong. Please try again in a few minutes.");
+  somethingwentwrong = () => toast("Something went wrong.");
+
+  passwordToggle() {
+    const x = document.getElementById("password");
+
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+  confirmpasswordToggle() {
+    const y = document.getElementById("confirmpassword");
+
+    if (y.type === "password") {
+      y.type = "text";
+    } else {
+      y.type = "password";
+    }
+  }
 
   handleValidation = () => {
     const cadvocate = this.state.cadvocate;
@@ -63,7 +84,10 @@ class cadSignup extends React.Component {
     //firstname
     if (cadvocate.firstname === "") {
       formIsValid = false;
-      errors.firstname = "FirstName cannot be empty";
+      errors.firstname = "First Name cannot be empty.";
+    } else if (cadvocate.firstname.length >= 20) {
+      formIsValid = false;
+      errors.firstname = "First Name length is too long.";
     } else {
       errors.firstname = "";
     }
@@ -72,6 +96,9 @@ class cadSignup extends React.Component {
     if (cadvocate.lastname === "") {
       formIsValid = false;
       errors.lastname = "LastName cannot be empty";
+    } else if (cadvocate.lastname.length >= 20) {
+      formIsValid = false;
+      errors.lastname = "Last Name length is too long.";
     } else {
       errors.lastname = "";
     }
@@ -100,6 +127,12 @@ class cadSignup extends React.Component {
     if (cadvocate.password === "") {
       formIsValid = false;
       errors.password = "Password cannot be empty";
+    } else if (cadvocate.password.length <= 5) {
+      formIsValid = false;
+      errors.password = "Password length is too short.";
+    } else if (cadvocate.password.length >= 30) {
+      formIsValid = false;
+      errors.password = "Password length is too long.";
     } else if (!cadvocate.password.match(/\d/)) {
       formIsValid = false;
       errors.password = "Password must contain numbers";
@@ -133,6 +166,9 @@ class cadSignup extends React.Component {
     if (cadvocate.city === "") {
       formIsValid = false;
       errors.city = "City cannot be empty";
+    } else if (cadvocate.city.length >= 20) {
+      formIsValid = false;
+      errors.firstname = "City length is too long.";
     } else {
       errors.city = "";
     }
@@ -141,6 +177,9 @@ class cadSignup extends React.Component {
     if (cadvocate.country === "") {
       formIsValid = false;
       errors.country = "Country cannot be empty";
+    } else if (cadvocate.country.length >= 20) {
+      formIsValid = false;
+      errors.firstname = "Country length is too long.";
     } else {
       errors.country = "";
     }
@@ -149,6 +188,9 @@ class cadSignup extends React.Component {
     if (cadvocate.profession === "") {
       formIsValid = false;
       errors.profession = "Profession cannot be empty";
+    } else if (cadvocate.profession.length >= 30) {
+      formIsValid = false;
+      errors.firstname = "Profession length is too long.";
     } else {
       errors.profession = "";
     }
@@ -157,6 +199,9 @@ class cadSignup extends React.Component {
     if (cadvocate.organization === "") {
       formIsValid = false;
       errors.organization = "Organization cannot be empty";
+    } else if (cadvocate.organization.length >= 20) {
+      formIsValid = false;
+      errors.organization = "Organization length is too long.";
     } else {
       errors.organization = "";
     }
@@ -165,6 +210,9 @@ class cadSignup extends React.Component {
     if (cadvocate.designation === "") {
       formIsValid = false;
       errors.designation = "Designation cannot be empty";
+    } else if (cadvocate.designation.length >= 20) {
+      formIsValid = false;
+      errors.designation = "Designation length is too long.";
     } else {
       errors.designation = "";
     }
@@ -173,6 +221,12 @@ class cadSignup extends React.Component {
     if (cadvocate.experience === "") {
       formIsValid = false;
       errors.experience = "Experience cannot be empty";
+    } else if (isNaN(cadvocate.firstname.length)) {
+      formIsValid = false;
+      errors.firstname = "Input should be a number";
+    } else if (cadvocate.experience.length >= 20) {
+      formIsValid = false;
+      errors.experience = "Experience length is too long.";
     } else {
       errors.experience = "";
     }
@@ -231,28 +285,30 @@ class cadSignup extends React.Component {
     event.preventDefault();
 
     if (this.handleValidation()) {
-      const cadvocate = {
-        firstName: this.state.cadvocate.firstname,
-        lastName: this.state.cadvocate.lastname,
-        email: this.state.cadvocate.email,
-        password: this.state.cadvocate.password,
-        phoneNumber: this.state.cadvocate.phonenumber,
-        city: this.state.cadvocate.city,
-        country: this.state.cadvocate.country,
-        profession: this.state.cadvocate.designation,
-        organization: this.state.cadvocate.organization,
-        designation: this.state.cadvocate.designation,
-        experience: this.state.cadvocate.experience,
-        resume: this.state.cadvocate.resume,
-        photoid: this.state.cadvocate.photoid,
-        aboutYourself: this.state.cadvocate.aboutyourself,
-        whyCadversify: this.state.cadvocate.whycadversify,
-        interviewDateTime: this.state.cadvocate.interviewdatetime,
-        referralCode: this.state.cadvocate.referralcode,
-      };
+      let formData = new FormData();
+
+      formData.append("firstName", this.state.cadvocate.firstname);
+      formData.append("lastName", this.state.cadvocate.lastname);
+      formData.append("email", this.state.cadvocate.email);
+      formData.append("password", this.state.cadvocate.password);
+      formData.append("phoneNumber", this.state.cadvocate.phonenumber);
+      formData.append("city", this.state.cadvocate.city);
+      formData.append("country", this.state.cadvocate.country);
+      formData.append("profession", this.state.cadvocate.profession);
+      formData.append("organization", this.state.cadvocate.organization);
+      formData.append("designation", this.state.cadvocate.designation);
+      formData.append("experience", this.state.cadvocate.experience);
+      formData.append("resume", this.state.cadvocate.resume);
+      formData.append("photoid", this.state.cadvocate.photoid);
+      formData.append("aboutYourself", this.state.cadvocate.aboutyourself);
+      formData.append("whyCadversify", this.state.cadvocate.whycadversify);
+      formData.append(
+        "interviewDateTime",
+        this.state.cadvocate.interviewdatetime
+      );
 
       axios
-        .post(`http://localhost:5000/api/cadvocates/register`, { cadvocate })
+        .post(`http://localhost:5000/api/cadvocates/register`, formData)
         .then((res) => {
           if (res.status === 200) {
             setTimeout(function () {
@@ -263,16 +319,17 @@ class cadSignup extends React.Component {
         })
         .catch((err) => {
           console.log(err);
-          if (err.response.data == "Cadent already registered") {
+          if (err.response.data == "Cadvocate already registered") {
             this.emailnotify();
             return;
           } else {
             this.somethingwentwrong();
+            console.log(err.response.data);
             return;
           }
         });
     } else {
-      this.alertnotify();
+      this.errornotify();
       return;
     }
   };
@@ -390,6 +447,14 @@ class cadSignup extends React.Component {
                         <span style={{ color: "red" }}>
                           {this.state.errors.password}
                         </span>
+                        <label>
+                          <input
+                            type="checkbox"
+                            onClick={this.passwordToggle}
+                            className="mb-3"
+                          />{" "}
+                          Show Password
+                        </label>
                       </div>
 
                       <div className="form-group col-sm-6 flex-column d-flex">
@@ -401,6 +466,7 @@ class cadSignup extends React.Component {
                           className="mt-1 mb-2"
                           type="password"
                           name="confirmpassword"
+                          id="confirmpassword"
                           placeholder="Re-enter your Password"
                           value={cadvocate.confirmpassword}
                           onChange={this.handleChange}
@@ -408,6 +474,14 @@ class cadSignup extends React.Component {
                         <span style={{ color: "red" }}>
                           {this.state.errors.confirmpassword}
                         </span>
+                        <label>
+                          <input
+                            type="checkbox"
+                            className="mb-3"
+                            onClick={this.confirmpasswordToggle}
+                          />{" "}
+                          Show Password
+                        </label>
                       </div>
                     </div>
 
@@ -537,7 +611,7 @@ class cadSignup extends React.Component {
                     <div className="row">
                       <div className="form-group col-sm-6 flex-column d-flex">
                         <label className="form-control-label pt-3">
-                          Years of Experience
+                          Years of Experience (In numbers only)
                           <span className="text-danger">*</span>
                         </label>
                         <Input
@@ -603,18 +677,19 @@ class cadSignup extends React.Component {
                     </h3>
 
                     <div className="row">
-                      <div className="form-group col-sm-6 flex-column d-flex">
+                      <div className="form-group  flex-column d-flex">
                         <label className="form-control-label">
-                          Tell us something about yourself in a few words
+                          Tell us something about yourself in about 20-25 words
                           <span className="text-danger"> *</span>
                         </label>
-                        <Input
-                          className="mt-1"
+                        <textarea
+                          className="mt-1 textareas"
                           type="text"
                           name="aboutyourself"
-                          placeholder="Type your answer here"
+                          placeholder=" Type your answer here"
                           value={cadvocate.aboutyourself}
                           onChange={this.handleChange}
+                          rows="4"
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.aboutyourself}
@@ -623,18 +698,19 @@ class cadSignup extends React.Component {
                     </div>
 
                     <div className="row">
-                      <div className="form-group col-sm-6 flex-column d-flex py-4">
+                      <div className="form-group flex-column d-flex py-4">
                         <label className="form-control-label">
                           Why are you applying for Cadversify?
                           <span className="text-danger"> *</span>
                         </label>
-                        <Input
-                          className="mt-1"
+                        <textarea
+                          className="mt-1 textareas"
                           type="text"
                           name="whycadversify"
-                          placeholder="Type your answer here"
+                          placeholder=" Type your answer here"
                           value={cadvocate.whycadversify}
                           onChange={this.handleChange}
+                          rows="4"
                         />
                         <span style={{ color: "red" }}>
                           {this.state.errors.whycadversify}
@@ -702,11 +778,7 @@ class cadSignup extends React.Component {
                         </Link>
                       </label>
                       <br />
-                      <button
-                        className="btn-lg btn-dark mt-4"
-                        type="submit"
-                        //onClick={this.handleSubmit}
-                      >
+                      <button className="btn-lg btn-dark mt-4" type="submit">
                         Sign up
                       </button>
                       <ToastContainer
