@@ -202,7 +202,7 @@ class oppSignup extends React.Component {
         .then((res) => {
           if (res.status === 200) {
             setTimeout(function () {
-              window.location = "/oppLogin";
+              window.location = "/oppsignupSuccess";
             }, 4000);
             this.notify();
           }

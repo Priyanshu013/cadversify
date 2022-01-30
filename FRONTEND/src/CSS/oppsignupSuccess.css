@@ -1,0 +1,39 @@
+.logo {
+  font-size: 250px;
+  color: limegreen;
+  margin-top: -40px;
+  padding-bottom: 40px;
+}
+
+.signupsuccess-card {
+  width: 1200px;
+  display: flex;
+  transition: 1s transform cubic-bezier(0.155, 1.105, 0.295, 0.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.781);
+  border-style: groove;
+  text-align: center;
+}
+
+.signup-success-background {
+  background: url(../site_assets/sign-up-in-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.success-card-title {
+  padding-top: 70px;
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  font-variant: small-caps;
+}
+
+.success-desc {
+  font-size: 26px;
+  font-style: italic;
+  font-family: unset;
+  color: #000;
+}

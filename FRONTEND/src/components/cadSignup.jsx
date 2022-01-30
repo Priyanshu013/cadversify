@@ -312,7 +312,7 @@ class cadSignup extends React.Component {
         .then((res) => {
           if (res.status === 200) {
             setTimeout(function () {
-              window.location = "/cadLogin";
+              window.location = "/signupSuccess";
             }, 4000);
             this.notify();
           }
@@ -747,6 +747,26 @@ class cadSignup extends React.Component {
                         <span style={{ color: "red" }}>
                           {this.state.errors.interviewdate}
                         </span>
+                      </div>
+                      <div>
+                        <p>
+                          <br />
+                          <b>
+                            <i>Instructions-</i>
+                          </b>
+                          <br />
+                          1. Choose a time only between 10AM and 8PM.
+                          <br />
+                          2. We're closed on weekends, so kindly do not choose
+                          those dates.
+                          <br />
+                          3. Your interview may be rescheduled in case our HR
+                          team is not available at the time you requested.
+                          <br />
+                          4. You will receive a confirmation email with your
+                          interview details.
+                          <br />
+                        </p>
                       </div>
                     </div>
 
