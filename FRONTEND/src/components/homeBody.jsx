@@ -11,11 +11,15 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsInfoCircleFill } from "react-icons/bs";
 
 class HomeBody extends React.Component {
+  componentDidMount() {
+    document.title = "Cadversify- Find your mentor today";
+  }
   render() {
     const renderTooltip1 = (props) => (
       <Tooltip id="icon-tooltip" className="tooltip-card" {...props}>
         A Cadent is a jargon for you if you are here to learn from experienced
-        professionals who are working in your dream career for years.
+        professionals (i.e. cadvocates) who are working in your dream career for
+        years.
       </Tooltip>
     );
     const renderTooltip2 = (props) => (
@@ -82,8 +86,8 @@ class HomeBody extends React.Component {
               </Link>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="click"
-                  placement="left"
+                  trigger={["click", "hover"]}
+                  placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}
                 >
@@ -105,7 +109,7 @@ class HomeBody extends React.Component {
               </NavLink>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger="click"
+                  triggers="click"
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip2}

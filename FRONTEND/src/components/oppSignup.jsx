@@ -10,6 +10,9 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
 class oppSignup extends React.Component {
+  componentDidMount() {
+    document.title = "Cadent Signup";
+  }
   state = {
     cadent: {
       firstname: "",
@@ -32,9 +35,10 @@ class oppSignup extends React.Component {
     this.setState({ cadent });
   };
 
-  notify = () => toast("Registration successful! You can log in now.");
+  notify = () => toast("Registration successful!");
   alertnotify = () => toast("Form has errors.");
   emailnotify = () => toast("Email is already registered.");
+  somethingwentwrong = () => toast("Something went wrong");
 
   passwordToggle() {
     const x = document.getElementById("password");
@@ -65,6 +69,9 @@ class oppSignup extends React.Component {
     if (cadent.firstname === "") {
       formIsValid = false;
       errors.firstname = "FirstName cannot be empty";
+    } else if (cadent.firstname.length >= 20) {
+      formIsValid = false;
+      errors.firstname = "First Name length is too long.";
     } else {
       errors.firstname = "";
     }
@@ -73,6 +80,9 @@ class oppSignup extends React.Component {
     if (cadent.lastname === "") {
       formIsValid = false;
       errors.lastname = "LastName cannot be empty";
+    } else if (cadent.firstname.length >= 20) {
+      formIsValid = false;
+      errors.lastname = "Last Name length is too long.";
     } else {
       errors.lastname = "";
     }
@@ -101,6 +111,9 @@ class oppSignup extends React.Component {
     if (cadent.password === "") {
       formIsValid = false;
       errors.password = "Password cannot be empty";
+    } else if (cadent.password.length >= 30) {
+      formIsValid = false;
+      errors.password = "Password length is too long.";
     } else if (!cadent.password.match(/\d/)) {
       formIsValid = false;
       errors.password = "Password must contain numbers";
@@ -134,6 +147,9 @@ class oppSignup extends React.Component {
     if (cadent.designation === "") {
       formIsValid = false;
       errors.designation = "Designation cannot be empty";
+    } else if (cadent.designation.length >= 30) {
+      formIsValid = false;
+      errors.designation = "Designation length is too long.";
     } else {
       errors.designation = "";
     }
@@ -142,6 +158,9 @@ class oppSignup extends React.Component {
     if (cadent.organization === "") {
       formIsValid = false;
       errors.organization = "Organization cannot be empty";
+    } else if (cadent.organization.length >= 30) {
+      formIsValid = false;
+      errors.organization = "Organization length is too long.";
     } else {
       errors.organization = "";
     }
@@ -150,6 +169,9 @@ class oppSignup extends React.Component {
     if (cadent.futureaspirations === "") {
       formIsValid = false;
       errors.futureaspirations = "Future Aspirations cannot be empty";
+    } else if (cadent.futureaspirations.length >= 100) {
+      formIsValid = false;
+      errors.futureaspirations = "Future Aspirations length is too long.";
     } else {
       errors.futureaspirations = "";
     }
@@ -179,15 +201,18 @@ class oppSignup extends React.Component {
         .then((res) => {
           if (res.status === 200) {
             setTimeout(function () {
-              window.location = "/oppLogin";
+              window.location = "/oppsignupSuccess";
             }, 4000);
             this.notify();
           }
         })
         .catch((err) => {
-          if (err.res === undefined) {
-            //alert("Email already registered");
+          console.log(err.response);
+          if (err.response.data == "Cadent already registered") {
             this.emailnotify();
+            return;
+          } else {
+            this.somethingwentwrong();
             return;
           }
         });
@@ -384,7 +409,7 @@ class oppSignup extends React.Component {
                           className="mt-2 mb-3"
                           type="text"
                           name="organization"
-                          placeholder="School/college/Company name"
+                          placeholder="Education institute/Company name"
                           value={cadent.organization}
                           onChange={this.handleChange}
                         />
@@ -429,7 +454,7 @@ class oppSignup extends React.Component {
                         />
                       </div>
                     </div>
-                    <p className="text-center pt-3">
+                    <div className="text-center pt-3">
                       <label className="mb-2">
                         <input type="checkbox" required></input> I agree to the{" "}
                         <Link to="/Termsandconditions">
@@ -458,7 +483,7 @@ class oppSignup extends React.Component {
                       <br />
                       Already have an account?{" "}
                       <Link to="/oppLogin">Log in!</Link>
-                    </p>
+                    </div>
                   </div>
                 </Form>
                 <div></div>

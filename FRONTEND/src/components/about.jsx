@@ -9,6 +9,9 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 class About extends React.Component {
+  componentDidMount() {
+    document.title = "About us";
+  }
   render() {
     Aos.init();
     return (
@@ -21,7 +24,7 @@ class About extends React.Component {
         <section className="about_lower_bg">
           <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
             <p id="title">WHO ARE WE</p>
-            <p id="sub-title">
+            <p id="sub-title" className="px-5">
               We're the students of Thakur College of Science and College,
               Mumbai University. As students, we truly resonate with your
               problem of finding the right mentor to get you going, and that's

@@ -6,6 +6,9 @@ import "../CSS/liveSessions.css";
 import sitelogo from "../site_assets/brand_logo_1.png";
 
 class LiveSessions extends React.Component {
+  componentDidMount() {
+    document.title = "Live Sessions";
+  }
   render() {
     Aos.init();
     return (

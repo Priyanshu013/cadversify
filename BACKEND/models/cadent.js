@@ -52,6 +52,12 @@ const cadentSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 456,
   },
+  /* referralcode: {
+    type: String,
+    required: false,
+    minlength: 1,
+    maxlength: 456,
+  }, */
 });
 const Cadent = mongoose.model("cadents", cadentSchema);
 
@@ -65,7 +71,7 @@ function validateCadent(cadent) {
     designation: Joi.string().max(255).trim(true).required(),
     organization: Joi.string().max(255).trim(true).required(),
     futureAspirations: Joi.string().max(456).trim(true).required(),
-    referralCode: Joi.string().trim(true).max(255),
+    //referralCode: Joi.string().trim(true).max(255),
   }).unknown(true);
 
   const validation = schema.validate(cadent);

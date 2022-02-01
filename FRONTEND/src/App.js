@@ -11,6 +11,8 @@ import Footer from "./components/footer";
 import oppSignup from "./components/oppSignup";
 import cadSignup from "./components/cadSignup";
 import TermsAndConditions from "./components/TermsAndConditions";
+import cadsignupSuccess from "./components/cadsignupSuccess";
+import oppsignupSuccess from "./components/oppsignupSuccess";
 import Courses from "./components/courses";
 import NotFound from "./components/notFound";
 import BackToTop from "./BackToTop";
@@ -32,6 +34,8 @@ class App extends React.Component {
           <Route path="/oppSignup" component={oppSignup} />
           <Route path="/cadSignup" component={cadSignup} />
           <Route path="/TermsAndConditions" component={TermsAndConditions} />
+          <Route path="/cadsignupSuccess" component={cadsignupSuccess} />
+          <Route path="/oppsignupSuccess" component={oppsignupSuccess} />
           <Route path="/" exact component={HomeBody} />
           <Route path="/not-found" exact component={NotFound} />
           <Redirect from="/home" to="/" />

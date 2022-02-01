@@ -164,12 +164,12 @@ class LowerHomeBody extends React.Component {
                 >
                   About 70% of people are unhappy at their work place and would
                   not recommend their own company to a friend.
-                  <br />
                   <div
-                    data-aos="fade-up"
+                    data-aos="fade-right"
                     data-aos-delay="3000"
                     data-aos-duration="1000"
                   >
+                    <br />
                     Be bold and Swipe left
                     <img src={slidergifswipe} className="homeslidergifswipe" />
                   </div>

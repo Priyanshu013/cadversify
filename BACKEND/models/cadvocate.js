@@ -5,34 +5,46 @@ const cadvocateSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 50,
   },
   lastName: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 50,
   },
   email: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 255,
     unique: true,
   },
   password: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 255,
+    minlength: 1,
+    maxlength: 2550,
     password: true,
   },
   phoneNumber: {
     type: Number,
     required: true,
-    minlength: 8,
+    minlength: 1,
     maxlength: 15,
+  },
+  city: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 50,
+  },
+  country: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 50,
   },
   profession: {
     type: String,
@@ -52,16 +64,24 @@ const cadvocateSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 200,
   },
-  yearsOfExperience: {
+  resume: {
+    type: String,
+    required: true,
+  },
+  photoid: {
+    type: String,
+    required: true,
+  },
+  experience: {
     type: Number,
     required: true,
     minlength: 1,
     maxlength: 456,
   },
-  somethingAboutYourself: {
+  aboutYourself: {
     type: String,
     required: true,
-    minlength: 100,
+    minlength: 1,
     maxlength: 300,
   },
   whyCadversify: {
@@ -70,30 +90,33 @@ const cadvocateSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 300,
   },
+  interviewDateTime: {
+    type: String,
+    required: true,
+  },
 });
 const Cadvocate = mongoose.model("cadvocates", cadvocateSchema);
 
-function validateCadvocate(cadvocates) {
+function validateCadvocate(cadvocate) {
   const schema = Joi.object({
-    firstName: Joi.string().min(5).max(50).required(),
-    lastName: Joi.string().min(5).max(50).required(),
-    email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(5).max(40).required(),
-    phoneNumber: Joi.string()
-      .pattern(/^[0-9]+$/)
-      .min(10)
-      .max(15)
-      .required(),
-    profession: Joi.string().min(1).max(255).required(),
-    designation: Joi.string().min(5).max(255).required(),
-    organization: Joi.string().min(5).max(255).required(),
-    yearsOfExperience: Joi.number().min(1).max(50).required(),
-    somethingAboutYourself: Joi.string().min(100).max(300).required(),
-    whyCadversify: Joi.string().min(1).max(300).required(),
-    referralCode: Joi.string().min(1).max(255),
+    firstName: Joi.string().max(50).trim(true).required(),
+    lastName: Joi.string().max(50).trim(true).required(),
+    email: Joi.string().min(3).max(255).trim(true).required().email(),
+    password: Joi.string().max(400).trim(true).required(),
+    phoneNumber: Joi.string().required(),
+    city: Joi.string().max(50).trim(true).required(),
+    country: Joi.string().max(50).trim(true).required(),
+    profession: Joi.string().max(255).trim(true).required(),
+    designation: Joi.string().max(255).trim(true).required(),
+    organization: Joi.string().max(255).trim(true).required(),
+    experience: Joi.number().max(50).required(),
+    aboutYourself: Joi.string().max(300).trim(true).required(),
+    whyCadversify: Joi.string().max(300).trim(true).required(),
+    interviewDateTime: Joi.string().required(),
+    referralCode: Joi.string().max(255).trim(true),
   }).unknown(true);
 
-  const validation = schema.validate(cadvocates);
+  const validation = schema.validate(cadvocate);
   return validation;
 }
 

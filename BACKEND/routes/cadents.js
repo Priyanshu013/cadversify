@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
     designation: req.body.cadent.designation,
     organization: req.body.cadent.organization,
     futureAspirations: req.body.cadent.futureAspirations,
-    referralCode: req.body.cadent.referralCode,
+    //referralCode = req.body.cadent.referralCode
   });
 
   const salt = await bcrypt.genSalt(10);

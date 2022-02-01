@@ -6,7 +6,19 @@ const router = express.Router();
 const lodash = require("lodash");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const multer = require("multer");
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, new Date().toString().replace(/:/g, "-") + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+
+//REQUESTS
 router.get("/me", auth, async (req, res) => {
   const cadvocate = await Cadvocate.findById(req.cadvocate._id).select(
     "-password"
@@ -14,7 +26,12 @@ router.get("/me", auth, async (req, res) => {
   res.send(cadvocate);
 });
 
-router.post("/", async (req, res) => {
+const files = upload.fields([
+  { name: "resume", maxCount: 1 },
+  { name: "photoid", maxCount: 1 },
+]);
+
+router.post("/register", files, async (req, res) => {
   //Validate the given inputs
   const result = validateCadvocate(req.body);
   if (result.error) {
@@ -32,12 +49,17 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     password: req.body.password,
     phoneNumber: req.body.phoneNumber,
+    city: req.body.city,
+    country: req.body.country,
     profession: req.body.profession,
     organization: req.body.organization,
     designation: req.body.designation,
+    resume: req.files["resume"][0].path,
+    photoid: req.files["photoid"][0].path,
     experience: req.body.experience,
     aboutYourself: req.body.aboutYourself,
     whyCadversify: req.body.whyCadversify,
+    interviewDateTime: req.body.interviewDateTime,
     referralCode: req.body.referralCode,
   });
 
@@ -46,9 +68,7 @@ router.post("/", async (req, res) => {
   await cadvocate.save();
 
   const token = jwt.sign({ _id: cadvocate._id }, config.get("jwtPrivateKey"));
-  res
-    .header("x-auth-token", token)
-    .send(lodash.pick(cadvocate, ["_id", "firstName", "email"]));
+  res.header("x-auth-token", token).send(cadvocate);
 });
 
 module.exports = router;
