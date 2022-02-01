@@ -166,7 +166,7 @@ class LowerHomeBody extends React.Component {
                   not recommend their own company to a friend.
                   <div
                     data-aos="fade-right"
-                    data-aos-delay="0"
+                    data-aos-delay="3000"
                     data-aos-duration="1000"
                   >
                     <br />

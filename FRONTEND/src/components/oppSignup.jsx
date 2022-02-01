@@ -35,11 +35,10 @@ class oppSignup extends React.Component {
     this.setState({ cadent });
   };
 
-  notify = () => toast("Registration successful! You can log in now.");
+  notify = () => toast("Registration successful!");
   alertnotify = () => toast("Form has errors.");
   emailnotify = () => toast("Email is already registered.");
-  somethingwentwrong = () =>
-    toast("Something went wrong. Please try again in a few mintues");
+  somethingwentwrong = () => toast("Something went wrong");
 
   passwordToggle() {
     const x = document.getElementById("password");

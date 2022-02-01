@@ -103,6 +103,15 @@ class Footer extends React.Component {
                   Refund & cancellation policy
                 </NavLink>
               </div>
+              <div>
+                <Link
+                  to={{ pathname: "https://cadversify.blogspot.com/" }}
+                  target="_blank"
+                  className="ps-2 quick-link"
+                >
+                  View cadversify blog
+                </Link>
+              </div>
             </div>
           </div>
         </section>

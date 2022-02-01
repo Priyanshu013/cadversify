@@ -51,7 +51,7 @@ class cadSignup extends React.Component {
     this.setState({ cadvocate: cadvocate });
   }
 
-  notify = () => toast("Registration successful! You can log in now.");
+  notify = () => toast("Registration successful!");
   errornotify = () => toast("Form has errors.");
   emailnotify = () => toast("Email is already registered.");
   somethingwentwrong = () => toast("Something went wrong.");
@@ -221,9 +221,9 @@ class cadSignup extends React.Component {
     if (cadvocate.experience === "") {
       formIsValid = false;
       errors.experience = "Experience cannot be empty";
-    } else if (isNaN(cadvocate.firstname.length)) {
+    } else if (isNaN(cadvocate.experience)) {
       formIsValid = false;
-      errors.firstname = "Input should be a number";
+      errors.experience = "Input should be a number";
     } else if (cadvocate.experience.length >= 20) {
       formIsValid = false;
       errors.experience = "Experience length is too long.";
@@ -257,7 +257,7 @@ class cadSignup extends React.Component {
     if (cadvocate.aboutyourself === "") {
       formIsValid = false;
       errors.aboutyourself = "Please mention something about yourself";
-    } else if (cadvocate.aboutyourself.length === 100) {
+    } else if (cadvocate.aboutyourself.length <= 100) {
       formIsValid = false;
       errors.aboutyourself =
         "Please mention something about yourself in 20-25 words minimum.";
@@ -312,7 +312,7 @@ class cadSignup extends React.Component {
         .then((res) => {
           if (res.status === 200) {
             setTimeout(function () {
-              window.location = "/signupSuccess";
+              window.location = "/cadsignupSuccess";
             }, 4000);
             this.notify();
           }
