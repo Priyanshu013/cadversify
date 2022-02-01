@@ -29,9 +29,9 @@ class HomeBody extends React.Component {
       <div>
         <section className="home-background body">
           <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <div className="ps-5 pt-5">
+            <div className=" pt-5">
               <div className="col-lg-7">
-                <h2 id="home-main-typewriter" className="ps-5 headline">
+                <h2 id="home-main-typewriter" className=" headline">
                   <Typewriter
                     /* options={{
                       loop: true,
@@ -53,7 +53,7 @@ class HomeBody extends React.Component {
                   />
                 </h2>
 
-                <p className="ps-5 pt-5">
+                <p className="pt-5">
                   <Link
                     to="/oppSignup"
                     className="btn btn-warning my-2 head-button"
@@ -66,7 +66,7 @@ class HomeBody extends React.Component {
           </div>
 
           <div
-            className="position-relative card-align card-deck pt-3"
+            className="position-relative card-align card-deck pt-3 "
             data-aos="fade-up"
             data-aos-delay="1000"
             data-aos-duration="2000"

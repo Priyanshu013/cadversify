@@ -52,7 +52,7 @@ class LowerHomeBody extends React.Component {
 
         <div className="home-info-section">
           <div className="row px-5 pt-5">
-            <div className=" d-flex">
+            <div className="img-txt-alignment">
               <div
                 className="dest-img"
                 data-aos="fade-right"
@@ -62,7 +62,7 @@ class LowerHomeBody extends React.Component {
                 <img src={homebody1} className="img-fluid" />
               </div>
               <div
-                className="home-content d-flex align-items-center"
+                className="home-content align-items-center"
                 data-aos="fade-left"
                 data-aos-delay="100"
                 data-aos-duration="1000"
@@ -101,7 +101,7 @@ class LowerHomeBody extends React.Component {
           </div>
 
           <div className="row px-5">
-            <div className=" d-sm-flex">
+            <div className="txt-img-alignment">
               <div
                 className="home-content d-flex align-items-center"
                 data-aos="fade-right"
@@ -138,7 +138,7 @@ class LowerHomeBody extends React.Component {
                 data-aos-delay="100"
                 data-aos-duration="1000"
               >
-                <img src={homebody2} className="img-fluid me-5"></img>
+                <img src={homebody2} className="img-fluid "></img>
               </div>
             </div>
           </div>

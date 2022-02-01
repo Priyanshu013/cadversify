@@ -1,5 +1,5 @@
 import "./App.css";
-import NavBar from "./components/navBar";
+import NavigationBar from "./components/navBar";
 import React from "react";
 import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom";
 import LiveSessions from "./components/liveSessions";
@@ -14,6 +14,7 @@ import TermsAndConditions from "./components/TermsAndConditions";
 import Courses from "./components/courses";
 import NotFound from "./components/notFound";
 import BackToTop from "./BackToTop";
+import Navigationbar from "./components/navigationBar";
 
 class App extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class App extends React.Component {
       <BrowserRouter>
         <BackToTop />
 
-        <NavBar />
+        <Navigationbar />
         <Switch>
           <Route path="/live-sessions" component={LiveSessions} />
           <Route path="/ourcourses" component={Courses} />

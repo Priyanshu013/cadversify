@@ -4,16 +4,23 @@ import "../CSS/navBar.css";
 import sitelogo from "../site_assets/brand_logo_1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const NavBar = () => {
+class NavigationBar extends React.Component {
+  state = { clicked: false}
+
+    handleClick = () => {
+      this.setState({ clicked: !this.state.clicked})
+    }
+   render(){
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <div className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img src={sitelogo} className="navbar-brand" alt="" />
         </NavLink>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+        <div className="menu-icon collapse navbar-collapse" onClick={this.handleClick}>
+          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}/>
+          <ul className="navbar-nav" className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
             <li className="nav-item">
               <NavLink className="nav-link" exact to="/">
                 Home
@@ -36,7 +43,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <ul className="navbar-nav position-absolute end-0 mx-3 inline">
+        <ul className="navbar-nav position-absolute end-0 mx-3 inline" id="loginbuttons">
           <li className="nav-item px">
             <NavLink to="/oppLogin">
               <button className="btn btn-outline-primary buttons">
@@ -52,17 +59,9 @@ const NavBar = () => {
             </NavLink>
           </li>
         </ul>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
       </div>
-    </nav>
+    </div>
   );
-};
-
-export default NavBar;
+}
+}
+export default NavigationBar;

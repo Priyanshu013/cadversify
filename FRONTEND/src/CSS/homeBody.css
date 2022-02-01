@@ -30,11 +30,21 @@
   font-family: hp simplified;
   height: 150px;
 }
-@media (max-width: 500px) {
+#home-main-typewriter {
+  font-size: 4.5vw;
+  margin-left: 6.6vw;
+}
+@media (max-width: 990px) {
   #home-main-typewriter {
-    font-size: 20px;
-    text-align: center;
+    font-size: 50px; 
+    margin-right: 9vw!important;
   }
+}
+@media (max-width: 650px){
+  #home-main-typewriter {
+    font-size: 8vw;
+    margin-right: 9vw!important;
+}
 }
 
 .head-button {
@@ -44,7 +54,8 @@
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 11vw!important;
+  margin-left: 6.6vw;
   border-radius: 6px;
   background-color: rgb(240, 239, 239);
 }
@@ -65,7 +76,7 @@
   display: inline-block;
   background-color: rgb(255, 255, 255);
   width: 180px;
-  height: auto;
+  height: 230px;
   border-style: groove;
   border-width: 1.6px;
 }
@@ -78,5 +89,8 @@
 
 .card-align {
   text-align: right;
-  padding-right: 100px;
+  padding-right: 7.3vw;
+  margin-left: 11vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

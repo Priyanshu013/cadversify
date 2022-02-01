@@ -15,7 +15,7 @@
 .quote-text {
   font-family: algerian;
   color: red;
-  font-size: xxx-large;
+  font-size: 5vw;
 }
 
 .home-rounded {
@@ -66,13 +66,6 @@
   width: 50%;
   padding: 30px 20px;
 }
-
-@media (max-width: 767px) {
-  .home-content {
-    width: 100%;
-  }
-}
-
 .home-content .top-text {
   width: calc(100% - 80px);
 }
@@ -124,4 +117,33 @@
   margin-right: 20px;
   border-radius: 6px;
   background-color: rgb(240, 239, 239);
+}
+.img-txt-alignment{
+  display: flex;
+}
+.txt-img-alignment{
+  display: flex;
+}
+@media (max-width: 990px) {
+  
+  .img-txt-alignment{
+    display:block;
+  }
+  .txt-img-alignment{
+    flex-direction: column-reverse;
+  }
+  .dest-img{
+    width:100%;
+  }
+  .img-fluid{
+    padding: 30px;
+    height: auto;
+
+  }
+  .home-content {
+    width: 100%;
+  }
+  .home-content h3{
+    align-items: center;
+  }
 }

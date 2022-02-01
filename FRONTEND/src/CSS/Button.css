@@ -1,0 +1,55 @@
+:root{
+    --primary: #fff;
+}
+
+.navbar-btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.navbar-btn:hover {
+    padding: 8px 20px;
+    transition: all 0.3s ease-out;
+    background: #0C9CE1;
+    color: #fff;
+    transition: 250ms;
+} 
+
+.navbar-btn--primary {
+    background-color: var(--primary);
+    border-style: solid;
+    border-width:thin;
+    border-color: #0C9CE1;
+}
+
+.navbar-btn--outline {
+    background-color: black;
+    color: black;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+}
+
+.navbar-btn--medium{
+    border-radius: 4px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    transition: 0.9s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+      0.3s box-shadow,
+      0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    display: inline-block;
+    margin-right: 20px;
+    border-radius: 12px;
+    width: 190px;
+}
+
+.navbar-btn--large{
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-size: 20px;
+    color: #fff;
+} 
