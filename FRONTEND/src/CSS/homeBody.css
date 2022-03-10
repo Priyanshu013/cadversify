@@ -18,7 +18,7 @@
 .tooltip-card {
   font-size: 18px;
   font-style: italic;
-  margin-top: 30px;
+  margin-top: 70px;
 }
 
 .headline {
@@ -36,15 +36,15 @@
 }
 @media (max-width: 990px) {
   #home-main-typewriter {
-    font-size: 50px; 
-    margin-right: 9vw!important;
+    font-size: 50px;
+    margin-right: 9vw !important;
   }
 }
-@media (max-width: 650px){
+@media (max-width: 650px) {
   #home-main-typewriter {
     font-size: 8vw;
-    margin-right: 9vw!important;
-}
+    margin-right: 9vw !important;
+  }
 }
 
 .head-button {
@@ -54,7 +54,7 @@
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   display: inline-block;
-  margin-right: 11vw!important;
+  margin-right: 11vw !important;
   margin-left: 6.6vw;
   border-radius: 6px;
   background-color: rgb(240, 239, 239);
@@ -76,7 +76,7 @@
   display: inline-block;
   background-color: rgb(255, 255, 255);
   width: 180px;
-   height: 230px;
+  height: 230px;
   border-style: groove;
   border-width: 1.6px;
   height: auto;

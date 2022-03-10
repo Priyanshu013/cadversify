@@ -25,23 +25,22 @@
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
-.fa-bars{
+.fa-bars {
   color: black;
 }
-.menu-icon{
+.menu-icon {
   display: inline;
 }
 
-
-@media screen and (max-width: 990px){
-  #loginbuttons{
+@media screen and (max-width: 990px) {
+  #loginbuttons {
     display: none;
   }
-  .fa-bars{
+  .fa-bars {
     display: block;
     background-color: black;
   }
-  .nav-menu{
+  .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -52,7 +51,8 @@
     opacity: 1;
     transition: all 05s ease;
   }
-  .nav-menu.active{
+
+  .nav-menu.active {
     background: #6668f4;
     left: 0;
     opacity: 1;
@@ -69,7 +69,7 @@
     background-color: #7577fa;
     border-radius: 0;
   }*/
-  .menu-icon{
+  .menu-icon {
     display: block;
     position: absolute;
     top: 0;
@@ -78,7 +78,4 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
-
-
-  
 }

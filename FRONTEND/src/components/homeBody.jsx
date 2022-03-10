@@ -86,7 +86,7 @@ class HomeBody extends React.Component {
               </Link>
               <div className="text-center">
                 <OverlayTrigger
-                  trigger={["click", "hover"]}
+                  trigger="click"
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip1}

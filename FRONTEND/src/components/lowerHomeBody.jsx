@@ -148,51 +148,25 @@ class LowerHomeBody extends React.Component {
           <Slider {...bannerSettings}>
             <div className="row px-5">
               <div className="d-sm-flex">
-                <div
-                  className="home-content d-flex align-items-center"
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
+                <div className="home-content d-flex align-items-center">
                   <img src={slider1} className="img-fluid"></img>
                 </div>
-                <div
-                  className="home-slider-text"
-                  data-aos="fade-left"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
+                <div className="home-slider-text">
                   About 70% of people are unhappy at their work place and would
                   not recommend their own company to a friend.
-                  <div
-                    data-aos="fade-right"
-                    data-aos-delay="3000"
-                    data-aos-duration="1000"
-                  >
-                    <br />
-                    Be bold and Swipe left
-                    <img src={slidergifswipe} className="homeslidergifswipe" />
-                  </div>
+                  <br />
+                  Be bold and Swipe left
+                  <img src={slidergifswipe} className="homeslidergifswipe" />
                 </div>
               </div>
             </div>
 
             <div className="row px-5">
               <div className="d-sm-flex">
-                <div
-                  className="home-content d-flex align-items-center"
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
+                <div className="home-content d-flex align-items-center">
                   <img src={slider2} className="img-fluid"></img>
                 </div>
-                <div
-                  className="home-slider-text"
-                  data-aos="fade-left"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
+                <div className="home-slider-text">
                   How about having a MENTOR?
                   <br />
                   Who is there to guide and correct you from their experiences,
@@ -203,23 +177,13 @@ class LowerHomeBody extends React.Component {
             </div>
             <div className="row px-5">
               <div className="d-sm-flex">
-                <div
-                  className="home-content d-flex align-items-center"
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
+                <div className="home-content d-flex align-items-center">
                   <video width="620" height="480" controls>
                     <source src={slider3} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <div
-                  className="home-slider-text"
-                  data-aos="fade-left"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
+                <div className="home-slider-text">
                   Still unsure?
                   <br /> No problem! Watch this video to understand how it
                   works.
