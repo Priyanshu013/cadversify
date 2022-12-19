@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
   res.send("WELCOME TO CADVERSIFY SERVER");
 });
 
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
