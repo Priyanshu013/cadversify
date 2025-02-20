@@ -7,11 +7,12 @@ const cadvocates = require("./routes/cadvocates");
 const cadents = require("./routes/cadents");
 var bodyParser = require("body-parser");
 var cors = require("cors");
-
+/*
 if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: jwtPrivateKey not defined");
   process.exit(1); //anything other than 0 is code for exit with an error
 }
+*/
 mongoose
   .connect("mongodb://localhost/cadversify-test")
   .then(() => console.log("Connected to MongoDB"))

@@ -11,6 +11,7 @@ import coursebanner2 from "../site_assets/coursebanner2.jpg";
 import coursebanner3 from "../site_assets/coursebanner3.jpg";
 import webdev from "../site_assets/webdev.jpg";
 import python from "../site_assets/python.jpg";
+
 import machinelearning from "../site_assets/machinelearning.jpg";
 import ai from "../site_assets/ai.jpg";
 import { CgChevronDoubleLeftR } from "react-icons/cg";
